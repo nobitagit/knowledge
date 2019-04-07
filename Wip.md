@@ -12,6 +12,6 @@ sudo netstat -plunt
 -n numeric - instead of names, like ssh, http
 -t TCP
 
-### git
+## git
 
-- rebasing against remote branches is faster than keeping a local up to date copy. Just `git pull --rebase origin matter`. See https://twitter.com/hybridcattt/status/1114596481359581185?s=19
+- rebasing against remote branches is faster than keeping a local up to date copy. Just `git pull --rebase origin master`. See https://twitter.com/hybridcattt/status/1114596481359581185?s=19
