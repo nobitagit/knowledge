@@ -13,7 +13,7 @@ const foo = <T,>(o: T) => o
 
 ## How to suppress "Object is possibly 'null' or 'undefined'” error when strict null checks are enabled
 In some cases we are sure that an expression is non null and we want to override the error Ts is throwing.
-For example in a test I might have 
+For example in a test I might have:
 
 ```ts
 const svg = container.querySelector('svg');
@@ -22,5 +22,6 @@ expect(svg.style).toEqual('position: absolute'); // this will throw because svg 
 // but since it's a test file we are 100% sure the svg is there so:
 expect(svg!.style)... // error goes away
 ```
-
-See [here](https://stackoverflow.com/a/40350534/1446845) and [here](https://stackoverflow.com/a/38875179/1446845)
+Where `!` is a "Non-null assertion operator".
+See [here](https://stackoverflow.com/a/40350534/1446845) and [here](https://stackoverflow.com/a/38875179/1446845).
+Note, this is NOT to be confused with null safety like `svg && svg.style`, it will just suppress the warning!
