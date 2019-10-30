@@ -103,3 +103,31 @@ var x int
 
 The type defines which values a variable accepts and which operations this variable supports.
 For ex. if a variable is an integer it will support addition, division etc.
+
+Variable types are initialised on declaration. Type can also be inferred, although it's always preferable to be explicit
+
+```go
+var age int = 22
+var height = 177 // int is inferred
+```
+
+Values can be assigned to variables after declaration:
+
+```go
+var age int
+age = 22
+```
+
+Unitialised variables are automatically assigned the "zero" value of that type:
+
+```go
+var age int // 0
+var name string // ""
+```
+
+Variables can also be declared and initialised via **short variable declaration**:
+
+```go
+age := 22
+```
+Type is inferred from the right hand side. Short variable declarations can only be used **inside** functions.
