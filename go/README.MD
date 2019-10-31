@@ -131,3 +131,30 @@ Variables can also be declared and initialised via **short variable declaration*
 age := 22
 ```
 Type is inferred from the right hand side. Short variable declarations can only be used **inside** functions.
+
+## Data types
+
+### [Pointers](https://www.coursera.org/learn/golang-getting-started/lecture/uYnqu/m2-1-1-pointers)
+A pointer is an address to some data in memory. 2 operators are associated with pointers:
+
+ 1. `&`: returns the address of a variable/function
+ 2. `*`: returns data at an address (dereferencing) 
+
+So they are the opposite of one another.
+
+```go
+var x int = 1
+var y int
+var p *int // p is a pointer to an integer (any integer)
+
+p = &x // take the address in memory where the value 1 is stored and assign this reference to p
+y = *p // take the value that p references to and assign it to y
+```
+### New
+New is a function, used to create a variable and return a pointer to that variable.
+The variable is initialised to 0.
+
+```go
+num := new(int)
+*num = 1 // set the value of that integer
+```
