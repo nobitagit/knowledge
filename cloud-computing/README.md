@@ -48,3 +48,38 @@ config.vm.provision "shell", inline: <<-SHELL
               yum install vim -y
    SHELL
 ```
+
+## IaaS
+
+Infrastructure as a Service (IaaS) provide physical and virtual resources on demand. We can request storage, load balancers, computing resources etc.
+
+Let's say that you want to have a set of ten Linux systems with 4GB RAM each, and two Windows systems with 8GB each to deploy your software. You can go to any of the IaaS providers and request these systems. Generally, a IaaS provider creates the **respective VMs in the background, puts them in the same internal network, and shares the credentials with you**, thus allowing you to access them. Other than VMs, some IaaS providers offer **bare metal machines** for provisioning.
+
+### Amazon EC2
+
+EC2 is the IaaS solution of Amazon. From the panel or the command line we can request or deallocate resources.
+Amazon EC2 uses XEN and **KVM hypervisors** to provision compute resources.
+
+Amazon EC2 provides some preconfigured images, called **Amazon Machine Images (AMIs)**. These images can be used to quickly start instances. We can also create our own custom AMIs to boot our instances.
+
+EC2 supports the provisioning of dedicated hosts, which means we can get an **entire physical machine** for our use.
+
+### Azure
+
+Azure is the IaaS solution of Microsoft.
+
+### DigitalOcean
+
+All of the VMs are created on top of the KVM hypervisor and have SSD (Solid-State Drive) as the primary disk.
+
+### Google Cloud Platform
+
+As you might expect... it's from Google.
+
+## PaaS
+
+Platforms as a Service (PaaS) offer a solution for devs who don't want to worry about the underlying infra.
+Some examples are:
+
+- Cloud Foundry
+- Openshift: open source, by Red Hat
