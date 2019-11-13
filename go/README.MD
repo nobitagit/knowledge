@@ -298,134 +298,6 @@ const (
 
 As you see above, you only need to specify the first entry's type and assignment. The rest is done automatically. Value assignment starts at 1 and increases progressively. In this case Monday is 1, Tuesday is 2 etc. Having said that **you should not depend on this value**, that's not the idea of iota.
 
-## [Deallocating memory](https://www.coursera.org/learn/golang-getting-started/lecture/S9VsN/m2-1-3-deallocating-memory)
-
-Just like when claiming memory space to store variable data, we then need to deallocate it in order to free memory and avoid running out of memory.
-
-In the example below if we call `stuff` a thousand times, memory space to store `x` will be allocated once for each invocation.
-
-```go
-func stuff() {
-  var x int = 3
-  fmt.Printf("%d", x)
-}
-```
-
-To understand how memory space is claimed and freed we need to consider 2 parts that form the memory as a whole, ie the **stack** and the **heap**.
-
-### Stack
-
-The stack is an area of memory that is primarily dedicated to **function calls**.
-One of the things is stored in the stack are the **local variables** for a function. So every time you call a function there can be variables that you define in that function and generally they go into the stack.
-
-```go
-func stuff() {
-  var x int = 3 // this will be stored in the STACK
-  fmt.Printf("%d", x)
-}
-```
-
-Once the function finishes executing, the space in memory is automatically reclaimed.
-
-### Heap
-
-Object stored in the heap on the other hand are - **in many compiled languages, like C** - not garbage collected automatically. You will have to manually do it. This makes the language very fast, but also more error-prone.
-
-```go
-var x int = 3 // this will be stored in the HEAP
-func stuff() {
-  fmt.Printf("%d", x)
-}
-```
-
-Interpreted languages do that for you. This is safer, but slower.
-**Go** is different. While being compiled, it has garbage collection baked in.
-This was a conscious decision and a tradeoff between speed and safety/DX. Memory management is very hard if done manually.
-
-## Printing
-
-```go
-fmt.Printf("Hi %s", n) // where n is a string
-```
-
-## Integers
-
-Generic integer declaration
-
-```go
-var x int = 3
-```
-
-We can be more specific with the type if needed:
-
-```go
-// signed integers
-int8 // 0 -> 255
-int16
-int32
-int64
-// unsigned
-uint8
-uint16
-uint32
-uint64
-```
-
-Unsigned ints can be bigger since the memory space used for the sign is not needed in their case. Declaring as `int` is safer, we delegate to the compiler to infer the most suitable type.
-
-## Type conversion
-
-In general, binary operations (like =, +, - etc), require the two operands to be of **the same type**. This is not always possible.
-
-```go
-var x int8 = 3
-var y int16 = 7
-y = x // this not possible, types are different
-```
-
-To convert Go provides a method for each type, `T()` where `T` is the type we want to get:
-
-```go
-y = int16(x)
-```
-
-## Strings
-
-Strings are a sequence of bytes that have to be encoded using a standardised code.
-**ASCII** was the first commonly accepted one. Each character is associated to an 8-bit code.
-This means that a max number of 256 (8-bit goes from 0 to 255) can be represented. This is fine for a "simple" alphabet like the English one, but is insufficient to represent more complex ones, like Chinese.
-
-That's the problem that **Unicode** aims to solve. A Unicode character is 32-bits long.
-
-**UTF-8** is a subset of Unicode that has variable length characters, it has 8-bit chars but can go up to 32.
-The 8-bit chars **match the ones encoded with ASCII**, but to represent other characters it uses either 16 or 32 bits.
-
-Strings are immutable. UTF-8 is Go's default.
-
-## Constants
-
-Values that are known at compile time.
-
-### Iota
-
-When you a set of discrete values that you want to keep distinct but don't care too much about the value itself, as long as it's different from all the others in the set.
-For ex., you want to represent the days of the week. In this case you don't care about the way "Monday" is stored in memory (it can be 1, it can be 0, it can be 11292), as long as this value is _different_ from the representation of "Tuesday" or any other day.
-
-```go
-type Day int
-const (
-  Mon Day = iota
-  Tue
-  Wed
-  Thu
-  Fri
-  Sat
-  Sun
-)
-```
-
-As you see above, you only need to specify the first entry's type and assignment. The rest is done automatically. Value assignment starts at 1 and increases progressively. In this case Monday is 1, Tuesday is 2 etc. Having said that **you should not depend on this value**, that's not the idea of iota.
-
 ## Code flow
 
 ### For loops
@@ -526,3 +398,7 @@ func main() {
 ```
 
 ### Exercise 2.2
+
+Write a program which prompts the user to enter a string. The program searches through the entered string for the characters ‘i’, ‘a’, and ‘n’. The program should print “Found!” if the entered string starts with the character ‘i’, ends with the character ‘n’, and contains the character ‘a’. The program should print “Not Found!” otherwise. The program should not be case-sensitive, so it does not matter if the characters are upper-case or lower-case.
+
+Examples: The program should print “Found!” for the following example entered strings, “ian”, “Ian”, “iuiygaygn”, “I d skd a efju N”. The program should print “Not Found!” for the following strings, “ihhhhhn”, “ina”, “xian”.
