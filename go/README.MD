@@ -6,6 +6,7 @@
 - does not have the concept of class
 
 ## Structs
+
 Instead of `class`es Go has `struct`s.
 The are similar, but with some key limitation:
 
@@ -14,6 +15,7 @@ The are similar, but with some key limitation:
 - no generics
 
 ## Concurrency
+
 Moore's law says that the number of transistors doubles every 18 months.
 This meant that computers have been getting consistently faster every year. This used to be tru, but reality is now different. The development has hit limitations such as power/temperature constraints.
 Heat is one major road block, since transistors risk melting as temperatures increase.
@@ -32,11 +34,13 @@ Concurrency is key for large systems, and Go has primitives for it:
 - **select**: to handle task synchronisation
 
 ## Workspaces
+
 All go files are stored in workspaces, with a predefined hierarchy of directories.
 This convention favors sharing code, which is one of the most important points in Go.
 
 Workspaces are divided in 3 subdirectories:
-- **src**: for source code 
+
+- **src**: for source code
 - **pkg**: for libs
 - **bin**: for executables
 
@@ -51,11 +55,13 @@ The default one should be:
 All go tools assume the Go code is inside `GOPATH`.
 
 ## Packages
+
 The first line of each file gives the name to the package.
 
 ```go
 package dateutils
 ```
+
 ```go
 package currencyutils
 ```
@@ -83,6 +89,7 @@ func main() {
 ```
 
 ## [Go Tool](https://www.coursera.org/learn/golang-getting-started/lecture/09AcC/m1-2-3-go-tool)
+
 Go tool is downloaded with Go itself and includes a series of commands:
 
 - **`go build`**: compiles the program.
@@ -130,15 +137,17 @@ Variables can also be declared and initialised via **short variable declaration*
 ```go
 age := 22
 ```
+
 Type is inferred from the right hand side. Short variable declarations can only be used **inside** functions.
 
 ## Data types
 
 ### [Pointers](https://www.coursera.org/learn/golang-getting-started/lecture/uYnqu/m2-1-1-pointers)
+
 A pointer is an address to some data in memory. 2 operators are associated with pointers:
 
- 1. `&`: returns the address of a variable/function
- 2. `*`: returns data at an address (dereferencing) 
+1.  `&`: returns the address of a variable/function
+2.  `*`: returns data at an address (dereferencing)
 
 So they are the opposite of one another.
 
@@ -150,7 +159,9 @@ var p *int // p is a pointer to an integer (any integer)
 p = &x // take the address in memory where the value 1 is stored and assign this reference to p
 y = *p // take the value that p references to and assign it to y
 ```
+
 ### New
+
 New is a function, used to create a variable and return a pointer to that variable.
 The variable is initialised to 0.
 
@@ -175,8 +186,9 @@ func stuff() {
 To understand how memory space is claimed and freed we need to consider 2 parts that form the memory as a whole, ie the **stack** and the **heap**.
 
 ### Stack
+
 The stack is an area of memory that is primarily dedicated to **function calls**.
-One of the things is stored in the stack are the **local variables** for a function. So every time you call a function there can be variables that you define in that function and generally they go into the stack. 
+One of the things is stored in the stack are the **local variables** for a function. So every time you call a function there can be variables that you define in that function and generally they go into the stack.
 
 ```go
 func stuff() {
@@ -188,6 +200,7 @@ func stuff() {
 Once the function finishes executing, the space in memory is automatically reclaimed.
 
 ### Heap
+
 Object stored in the heap on the other hand are - **in many compiled languages, like C** - not garbage collected automatically. You will have to manually do it. This makes the language very fast, but also more error-prone.
 
 ```go
@@ -202,14 +215,17 @@ Interpreted languages do that for you. This is safer, but slower.
 This was a conscious decision and a tradeoff between speed and safety/DX. Memory management is very hard if done manually.
 
 ## Printing
+
 ```go
 fmt.Printf("Hi %s", n) // where n is a string
 ```
 
 ## Integers
+
 Generic integer declaration
+
 ```go
-var x int = 3 
+var x int = 3
 ```
 
 We can be more specific with the type if needed:
@@ -217,8 +233,8 @@ We can be more specific with the type if needed:
 ```go
 // signed integers
 int8 // 0 -> 255
-int16 
-int32 
+int16
+int32
 int64
 // unsigned
 uint8
@@ -230,6 +246,7 @@ uint64
 Unsigned ints can be bigger since the memory space used for the sign is not needed in their case. Declaring as `int` is safer, we delegate to the compiler to infer the most suitable type.
 
 ## Type conversion
+
 In general, binary operations (like =, +, - etc), require the two operands to be of **the same type**. This is not always possible.
 
 ```go
@@ -239,11 +256,13 @@ y = x // this not possible, types are different
 ```
 
 To convert Go provides a method for each type, `T()` where `T` is the type we want to get:
+
 ```go
 y = int16(x)
 ```
 
 ## Strings
+
 Strings are a sequence of bytes that have to be encoded using a standardised code.
 **ASCII** was the first commonly accepted one. Each character is associated to an 8-bit code.
 This means that a max number of 256 (8-bit goes from 0 to 255) can be represented. This is fine for a "simple" alphabet like the English one, but is insufficient to represent more complex ones, like Chinese.
@@ -256,11 +275,13 @@ The 8-bit chars **match the ones encoded with ASCII**, but to represent other ch
 Strings are immutable. UTF-8 is Go's default.
 
 ## Constants
+
 Values that are known at compile time.
 
 ### Iota
+
 When you a set of discrete values that you want to keep distinct but don't care too much about the value itself, as long as it's different from all the others in the set.
-For ex., you want to represent the days of the week. In this case you don't care about the way "Monday" is stored in memory (it can be 1, it can be 0, it can be 11292), as long as this value is *different* from the representation of "Tuesday" or any other day.
+For ex., you want to represent the days of the week. In this case you don't care about the way "Monday" is stored in memory (it can be 1, it can be 0, it can be 11292), as long as this value is _different_ from the representation of "Tuesday" or any other day.
 
 ```go
 type Day int
@@ -274,6 +295,7 @@ const (
   Sun
 )
 ```
+
 As you see above, you only need to specify the first entry's type and assignment. The rest is done automatically. Value assignment starts at 1 and increases progressively. In this case Monday is 1, Tuesday is 2 etc. Having said that **you should not depend on this value**, that's not the idea of iota.
 
 ## [Deallocating memory](https://www.coursera.org/learn/golang-getting-started/lecture/S9VsN/m2-1-3-deallocating-memory)
@@ -292,8 +314,9 @@ func stuff() {
 To understand how memory space is claimed and freed we need to consider 2 parts that form the memory as a whole, ie the **stack** and the **heap**.
 
 ### Stack
+
 The stack is an area of memory that is primarily dedicated to **function calls**.
-One of the things is stored in the stack are the **local variables** for a function. So every time you call a function there can be variables that you define in that function and generally they go into the stack. 
+One of the things is stored in the stack are the **local variables** for a function. So every time you call a function there can be variables that you define in that function and generally they go into the stack.
 
 ```go
 func stuff() {
@@ -305,6 +328,7 @@ func stuff() {
 Once the function finishes executing, the space in memory is automatically reclaimed.
 
 ### Heap
+
 Object stored in the heap on the other hand are - **in many compiled languages, like C** - not garbage collected automatically. You will have to manually do it. This makes the language very fast, but also more error-prone.
 
 ```go
@@ -319,14 +343,17 @@ Interpreted languages do that for you. This is safer, but slower.
 This was a conscious decision and a tradeoff between speed and safety/DX. Memory management is very hard if done manually.
 
 ## Printing
+
 ```go
 fmt.Printf("Hi %s", n) // where n is a string
 ```
 
 ## Integers
+
 Generic integer declaration
+
 ```go
-var x int = 3 
+var x int = 3
 ```
 
 We can be more specific with the type if needed:
@@ -334,8 +361,8 @@ We can be more specific with the type if needed:
 ```go
 // signed integers
 int8 // 0 -> 255
-int16 
-int32 
+int16
+int32
 int64
 // unsigned
 uint8
@@ -347,6 +374,7 @@ uint64
 Unsigned ints can be bigger since the memory space used for the sign is not needed in their case. Declaring as `int` is safer, we delegate to the compiler to infer the most suitable type.
 
 ## Type conversion
+
 In general, binary operations (like =, +, - etc), require the two operands to be of **the same type**. This is not always possible.
 
 ```go
@@ -356,11 +384,13 @@ y = x // this not possible, types are different
 ```
 
 To convert Go provides a method for each type, `T()` where `T` is the type we want to get:
+
 ```go
 y = int16(x)
 ```
 
 ## Strings
+
 Strings are a sequence of bytes that have to be encoded using a standardised code.
 **ASCII** was the first commonly accepted one. Each character is associated to an 8-bit code.
 This means that a max number of 256 (8-bit goes from 0 to 255) can be represented. This is fine for a "simple" alphabet like the English one, but is insufficient to represent more complex ones, like Chinese.
@@ -373,11 +403,13 @@ The 8-bit chars **match the ones encoded with ASCII**, but to represent other ch
 Strings are immutable. UTF-8 is Go's default.
 
 ## Constants
+
 Values that are known at compile time.
 
 ### Iota
+
 When you a set of discrete values that you want to keep distinct but don't care too much about the value itself, as long as it's different from all the others in the set.
-For ex., you want to represent the days of the week. In this case you don't care about the way "Monday" is stored in memory (it can be 1, it can be 0, it can be 11292), as long as this value is *different* from the representation of "Tuesday" or any other day.
+For ex., you want to represent the days of the week. In this case you don't care about the way "Monday" is stored in memory (it can be 1, it can be 0, it can be 11292), as long as this value is _different_ from the representation of "Tuesday" or any other day.
 
 ```go
 type Day int
@@ -391,11 +423,13 @@ const (
   Sun
 )
 ```
+
 As you see above, you only need to specify the first entry's type and assignment. The rest is done automatically. Value assignment starts at 1 and increases progressively. In this case Monday is 1, Tuesday is 2 etc. Having said that **you should not depend on this value**, that's not the idea of iota.
 
 ## Code flow
 
 ### For loops
+
 ```go
 for i := 0; i<10; i++ {
   // .. do stuff
@@ -411,6 +445,7 @@ for i < 10 {
 ```
 
 ## Switch
+
 ```go
 switch x { // <== tag
   case "next":
@@ -421,9 +456,11 @@ switch x { // <== tag
     // default case
 }
 ```
+
 Note that unlike other lang, you don't need a `break`.
 
 ### Tagless switch
+
 ```go
 switch { // <== notice, no tag
   case x > 1:
@@ -436,6 +473,7 @@ switch { // <== notice, no tag
 ```
 
 ## Scan
+
 Reads user input, takes a pointer as argument.
 Data is then written to the pointer.
 Returns the number of scanned items.
@@ -448,3 +486,43 @@ num, err := fmt.Scan(&name)
 
 fmt.Printf(name)
 ```
+
+### Exercise 2.1
+
+Write a program which prompts the user to enter a floating point number and prints the integer which is a truncated version of the floating point number that was entered. Truncation is the process of removing the digits to the right of the decimal place.
+
+```go
+package main
+
+import (
+	"fmt"
+	"log"
+	"strconv"
+)
+
+var resp string
+
+func read() {
+	fmt.Printf("Please type a float\n")
+	fmt.Printf("Type \"exit\" to close\n")
+	_, err := fmt.Scan(&resp)
+	if err != nil {
+		fmt.Println(err)
+		log.Fatal(err)
+	}
+	if resp != "exit" {
+		num, err := strconv.ParseFloat(resp, 64)
+		if err != nil {
+			fmt.Println(err)
+			log.Fatal(err)
+		}
+		fmt.Printf("Here's your result: %d\n", int(num))
+		read()
+	}
+}
+func main() {
+	read()
+}
+```
+
+### Exercise 2.2
