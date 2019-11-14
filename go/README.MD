@@ -402,3 +402,50 @@ func main() {
 Write a program which prompts the user to enter a string. The program searches through the entered string for the characters ‘i’, ‘a’, and ‘n’. The program should print “Found!” if the entered string starts with the character ‘i’, ends with the character ‘n’, and contains the character ‘a’. The program should print “Not Found!” otherwise. The program should not be case-sensitive, so it does not matter if the characters are upper-case or lower-case.
 
 Examples: The program should print “Found!” for the following example entered strings, “ian”, “Ian”, “iuiygaygn”, “I d skd a efju N”. The program should print “Not Found!” for the following strings, “ihhhhhn”, “ina”, “xian”.
+
+```go
+package main
+
+import (
+	"fmt"
+	"os"
+	"strings"
+)
+
+var startsWith string = "i"
+var endsWith string = "n"
+var contains string = "a"
+
+func parse() {
+	var str string
+
+	fmt.Printf("Please type a string here below:\n")
+	_, err := fmt.Scan(&str)
+
+	if err != nil {
+		os.Exit(1)
+	}
+
+	var lower string = strings.ToLower(str)
+
+	if lower == "exit" {
+		return
+	}
+
+	var found bool = strings.HasPrefix(lower, startsWith) &&
+		strings.HasSuffix(lower, endsWith) &&
+		strings.Contains(lower, contains)
+
+	if found == true {
+		fmt.Printf("Found!\n")
+	} else {
+		fmt.Printf("Not found!\n")
+	}
+
+	parse()
+
+}
+func main() {
+	parse()
+}
+```
