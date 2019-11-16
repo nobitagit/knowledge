@@ -160,6 +160,16 @@ p = &x // take the address in memory where the value 1 is stored and assign this
 y = *p // take the value that p references to and assign it to y
 ```
 
+Go is **strongly typed**, so we can't assign a value of another type to an initialised variable.
+
+```go
+func main() {
+  stuff := 'stuff'
+  stuff := 23 // Error
+}
+
+```
+
 ### New
 
 New is a function, used to create a variable and return a pointer to that variable.
@@ -449,3 +459,5 @@ func main() {
 	parse()
 }
 ```
+
+## Part 3
