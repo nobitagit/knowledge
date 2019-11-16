@@ -91,3 +91,18 @@ func main() {
 ```
 
 Read the rest of this [article](https://medium.com/rungo/pointers-in-go-a789eafccd53), especially on how to create a pointer with `new`.
+
+## Concurrency in Go
+
+You might want to refresh [concurrency, parallelism and threads](../general-programming/README.MD#Concurrency) or check [this article](https://medium.com/rungo/achieving-concurrency-in-go-3f84cbf870ca).
+
+Traditional OOP languages like Java have a Thread class that provides the functionality of creating multiple threads in the same process.
+Go doesn't have that, but it provides **goroutines**.
+
+Goroutines behave like threads, but they are **an abstraction over threads**.
+A Go program creates a few threads. A thread will be executing a goroutine, and if that is blocked, another goroutine will take over and run on that thread.
+This behaviour is comparable to the [Thread scheduling](../general-programming/README.MD#Concurrency#Thread&scheduling), but it's faster.
+
+The suggestion is to run the goroutines on one core, and that's the default. If one wants to use more cores it is possible by setting an env variable, but it has to be noted that using multiple cores might be slower than only one. At any given time only one thread per core is allowed to run.
+
+For a comparison of thread vs goroutines read [this great table](https://medium.com/rungo/achieving-concurrency-in-go-3f84cbf870ca), under the section "Threads vs Goroutines\*\* or [this gist](https://gist.github.com/thatisuday/1a357a725113e1c1cdf174a537287afd#file-threasvsgoroutines-md).
