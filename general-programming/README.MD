@@ -36,7 +36,7 @@ A thread is a lightweight process inside a process, and it's the actual executor
 
 ## Examples
 
-When we start a browser, some code is executed and that spins up a new process. That process can in turn ask the OS to spin up another process so a new tab can be created and run. That tab needs to be able to support different activities at the same time, like scrolling (one thread), palying a video (another thread), render a popup (another thread).
+When we start a browser, some code is executed and that spins up a new process. That process can in turn ask the OS to spin up another process so a new tab can be created and run. That tab needs to be able to support different activities at the same time, like scrolling (one thread), playing a video (another thread), render a popup (another thread).
 
 This is **multi-threading**. If we open Activity Monitor we will see that each application runs multiple processes, and each process spawns one or more threads.
 

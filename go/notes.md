@@ -50,4 +50,44 @@ func main() {
 // Value: <nil>
 ```
 
-To access an address of a variable memory, go provides a simple operator & (ampersand) which if used in front of the variable name, and returns the memory address.
+An un-initialised pointer does not refer to any point in memory, a we saw above.
+
+```go
+func main() {
+  x := 6
+  var px *int
+  px = &x
+	fmt.Printf("Type: %T\nValue: %v", px, px)
+}
+// Type: *int
+// Value: 0x40e020
+```
+
+To access an **address in memory** of a variable, Go provides the **& operator** (ampersand) which is used in front of the variable name, and returns the memory address.
+To access the **value** of a pointer, Go provides the **\* operator**. This is called **dereferencing**.
+
+```go
+func main() {
+  x := 6
+  var px *int
+  px = &x
+	fmt.Printf("Type: %T\nValue: %v", px, *px)
+}
+// Type: *int
+// Value: 6
+```
+
+We can also change the value of that pointer. This is interesting:
+
+```go
+func main() {
+  x := 6
+  px := &x // px points the same memory location of x
+  *px = 7 // we change the value of THAT SAME location
+  fmt.Printf("x is %v\n", x) // x is 7 (!!!)
+  fmt.Printf("the memory location %v holds the value %v\n", px, *px)
+  // the memory location 0x40e020 holds the value 7
+}
+```
+
+Read the rest of this [article](https://medium.com/rungo/pointers-in-go-a789eafccd53), especially on how to create a pointer with `new`.
