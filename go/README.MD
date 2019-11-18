@@ -460,4 +460,98 @@ func main() {
 }
 ```
 
-## Part 3
+## Part 3. Composite Data Types
+
+## Arrays
+
+- Fixed size
+- Index start at 0
+- Elements ar ealways initialised to the 0 value of that data type ( `int` => `0`, `string` => `""`, etc.)
+
+```go
+var names [3]string
+
+names[0] = "Sia"
+fmt.Printf("%v", names[1]) // ""
+
+```
+
+## Array literal
+
+- Array with predefined values, an initalised array
+
+```go
+var names [2]string = [2]{"Aurora", "Grace"} // size is explicit
+// or
+names := [...]string{"Kyle", "Rania"} // here the size is inferred
+```
+
+### Iterators: For loops
+
+```go
+vals := [...]int{10, 20, 30}
+
+for i, val := range vals {
+  fmt.Printf("Index: %d, Value: %v\n", i, val)
+}
+```
+
+## Slices
+
+- Portions of arrays
+- Unlike arrays, slices are of **Variable size**
+
+They have 3 props:
+
+- pointer: start of the slice, the 1st element in the array
+- length
+- capacity (max number of items it can contain)
+
+```go
+arr := [...]string{"Johm", "Stefan", "Paul", "Nicholas"}
+people1 := arr[0:1] // {"John"}
+people2 := arr[1:3] // {"Stefan", "Paul", "Nicholas"}}
+
+len(people1) // length is 1 (it only has 1 element)
+cap(people1) // capacity 4 (that's the length of the array it refers to)
+```
+
+Slices **refer** to the original array, so if you mutate one element within a slice, the original and \*all the slices that contains that item will reflect the new value as well.
+
+Slices can also be literal:
+
+```go
+// slice literal
+arr := []string{"Johm", "Stefan", "Paul", "Nicholas"}
+// notice the difference with an array
+arr := [...]string{"Johm", "Stefan", "Paul", "Nicholas"}
+```
+
+A post on differences between slices and arrays can be read [here](https://www.sohamkamani.com/blog/golang/arrays-vs-slices/).
+
+Slices can be created also by using `make()`:
+
+```go
+make([]string, 3) // slice of strings, length an capacity of 3
+// or
+make([]string, 10, 15) // slice of strings, length of 10, capacity of 15
+```
+
+Whenever we instantiate a slice, Go will instantiate an array and slice it for us.
+
+New elements can be added to the end of the slice. If the capacity is not enough Go will handle this case for us and instantiate a new array with the required length.
+
+```go
+slice1 = make([]string, 0, 5)
+slice2 = append(slice1, 'hi')
+```
+
+## Hash Tables
+
+- contains key/value pairs
+- a hash function is used to compute the slot in memory for each key
+
+The hash function is nor called directly, this goes on behind the scenes.
+One can think at a hash table as an array (in memory). Instead of using integers as keys a user picks strings as keys. Still, Go has to map those strings to integers to be used as indices of the items in the array. This mapping is the task of the **hash function**.
+
+![hash table](./images/hash-table.png)
