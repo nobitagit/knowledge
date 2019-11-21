@@ -555,3 +555,47 @@ The hash function is nor called directly, this goes on behind the scenes.
 One can think at a hash table as an array (in memory). Instead of using integers as keys a user picks strings as keys. Still, Go has to map those strings to integers to be used as indices of the items in the array. This mapping is the task of the **hash function**.
 
 ![hash table](./images/hash-table.png)
+
+### Pros of hash tables
+
+A hash table is convenient because it has constant lookup time.
+A list - on the other hand - has linear lookup time. The bigger the list, the longer it will take to find the location of the value we want, because to scan we have to start from 0 and then go up to the last element in the list (worst case scenario).
+
+### Cons of hash tables
+
+The hash function might bump into collisions, ie 2 keys can be directed to the same index.
+This is very rare and unlikely to happen.
+
+A collision happens when two different keys are hashed to the same output.
+
+```
+H(a) = H(b)
+and
+a != b
+```
+
+Every hash function with more possible inputs than outputs is guaranteed to have at least one collision.
+
+---
+
+Possible expansion on this:
+
+- how to has functions deal with collisions?
+
+---
+
+## Maps
+
+Maps are Go's implementation of hash tables.
+
+```go
+var idMap map[string]int
+// or
+idMap = make(map[string]int)
+
+// or using a map literal
+idMap := map[string]int {
+  "Mark": 12211,
+  "Sue": 444234
+}
+```
