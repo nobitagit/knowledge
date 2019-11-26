@@ -54,3 +54,4 @@ Some more info [here](https://support.dnsimple.com/articles/caa-record/) and [he
 ## Security.txt
 
 It's a standard that's coming up to make sure people know how to contact an org in regards to security.
+Generate one here https://securitytxt.org/
