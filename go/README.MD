@@ -586,7 +586,7 @@ Possible expansion on this:
 
 ## Maps
 
-Maps are Go's implementation of hash tables.
+Maps are Go's implementation of **hash tables**.
 
 ```go
 var idMap map[string]int
@@ -596,6 +596,27 @@ idMap = make(map[string]int)
 // or using a map literal
 idMap := map[string]int {
   "Mark": 12211,
-  "Sue": 444234
+	"Sue": 444234,
+}
+
+// adding a key/val
+idMap["Jim"] = 22988
+
+// deleting a key/val
+delete(idMap, "Mark")
+
+// Two value assignment checks for existence on
+idMap := map[string]int{
+	"Jane": 233}
+_, p := idMap["Jane"]
+fmt.Printf("%v", p)
+// true
+```
+
+One can also iterate through a map:
+
+```go
+for key, val := range idMap {
+	fmt.Printf("%v => %v", key, val)
 }
 ```

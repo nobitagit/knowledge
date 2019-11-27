@@ -106,3 +106,17 @@ This behaviour is comparable to the [Thread scheduling](../general-programming/R
 The suggestion is to run the goroutines on one core, and that's the default. If one wants to use more cores it is possible by setting an env variable, but it has to be noted that using multiple cores might be slower than only one. At any given time only one thread per core is allowed to run.
 
 For a comparison of thread vs goroutines read [this great table](https://medium.com/rungo/achieving-concurrency-in-go-3f84cbf870ca), under the section "Threads vs Goroutines\*\* or [this gist](https://gist.github.com/thatisuday/1a357a725113e1c1cdf174a537287afd#file-threasvsgoroutines-md).
+
+## Passing by value vs by reference
+
+From [this article](https://www.sohamkamani.com/blog/golang/arrays-vs-slices/).
+In Go there's no "pass by reference", everything is pass by value.
+
+![Array assignment](images/array-assignment.svg)
+
+_Note the memory location of each copied item is **different** in the second array_.
+This means that only the value has been copied, not the reference!
+
+Reference passing is done via pointers:
+
+![Pointer assignment](images/array-pointers.svg)
