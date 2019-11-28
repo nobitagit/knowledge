@@ -364,7 +364,7 @@ Returns the number of scanned items.
 var name string
 
 fmt.Printf("Insert your name")
-num, err := fmt.Scan(&name)
+_, err := fmt.Scan(&name)
 
 fmt.Printf(name)
 ```
@@ -516,7 +516,7 @@ len(people1) // length is 1 (it only has 1 element)
 cap(people1) // capacity 4 (that's the length of the array it refers to)
 ```
 
-Slices **refer** to the original array, so if you mutate one element within a slice, the original and \*all the slices that contains that item will reflect the new value as well.
+Slices **refer** to the original array, so if you mutate one element within a slice, the original and all the slices that contains that item will reflect the new value as well.
 
 Slices can also be literal:
 
@@ -620,3 +620,37 @@ for key, val := range idMap {
 	fmt.Printf("%v => %v", key, val)
 }
 ```
+
+## Structs
+
+Structs group together objects of different data types.
+
+```go
+type User struct {
+	firstName string
+	lastName string
+	age int
+}
+```
+
+Structs can be initialised with `new`. Undeclared values will be 0 (the zero value of that data type):
+
+```go
+u1 := new(User)
+fmt.Printf("%v", u1.age)
+// 0
+```
+
+They can also be instantiated by using a struct literal
+
+```go
+u2 := User{firstName: "Alfred"}
+fmt.Printf("%v", u2.firstName)
+// Alfred
+```
+
+## Exercise 3.1
+
+Write a program which prompts the user to enter integers and stores the integers in a sorted slice. The program should be written as a loop. Before entering the loop, the program should create an empty integer slice of size (length) 3. During each pass through the loop, the program prompts the user to enter an integer to be added to the slice. The program adds the integer to the slice, sorts the slice, and prints the contents of the slice in sorted order. The slice must grow in size to accommodate any number of integers which the user decides to enter. The program should only quit (exiting the loop) when the user enters the character ‘X’ instead of an integer.
+
+Submit your source code for the program, “slice.go”.
