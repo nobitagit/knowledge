@@ -140,7 +140,7 @@ const password1 = "very-safe-password-me-thinks";
 
 bcrypt.hash(password1, rounds, (err, hash) => {
   // '$2b$10$S3ptFBZB7C4/0ofGSEo8MegfbiKa4LyJViLc5RaaxQsOGMaA1nlZq'
-  // Store hash in your password DB.
+  // Store hash in your DB, as is.
   console.log(hash);
 });
 
