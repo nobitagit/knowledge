@@ -532,7 +532,7 @@ A post on differences between slices and arrays can be read [here](https://www.s
 Slices can be created also by using `make()`:
 
 ```go
-make([]string, 3) // slice of strings, length an capacity of 3
+make([]string, 3) // slice of strings, length and capacity of 3
 // or
 make([]string, 10, 15) // slice of strings, length of 10, capacity of 15
 ```
@@ -654,3 +654,50 @@ fmt.Printf("%v", u2.firstName)
 Write a program which prompts the user to enter integers and stores the integers in a sorted slice. The program should be written as a loop. Before entering the loop, the program should create an empty integer slice of size (length) 3. During each pass through the loop, the program prompts the user to enter an integer to be added to the slice. The program adds the integer to the slice, sorts the slice, and prints the contents of the slice in sorted order. The slice must grow in size to accommodate any number of integers which the user decides to enter. The program should only quit (exiting the loop) when the user enters the character ‘X’ instead of an integer.
 
 Submit your source code for the program, “slice.go”.
+
+```go
+package main
+
+import (
+	"fmt"
+	"log"
+	"sort"
+	"strconv"
+	"strings"
+)
+
+var resp string
+
+func start() {
+	store := make([]int, 0, 3)
+	for {
+		fmt.Printf("%v\n", store)
+		fmt.Printf("Please enter a number\n")
+		fmt.Printf("Enter x to exit.\n")
+		_, err := fmt.Scan(&resp)
+		if err != nil {
+			log.Fatal("error")
+		}
+
+		// X or x will terminate the program
+		if strings.ToLower(resp) == "x" {
+			fmt.Printf("Bye\n")
+			break
+		}
+
+		num, err := strconv.Atoi(resp)
+		if err != nil {
+			log.Fatal("error")
+		}
+		store = append(store, num)
+		sort.Ints(store)
+		fmt.Printf("%v\n", store)
+	}
+}
+
+func main() {
+	start()
+}
+```
+
+## Exercise 3.2
