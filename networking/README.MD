@@ -23,3 +23,15 @@ A client requesting `docs.example.com` will be instructed to request `mydocs.myh
 When requesting mydocs.myhost.com the A record will be interrogated and it will return the IP address where the relevant data is served.
 
 See more [here](https://www.netlify.com/blog/2016/01/12/this-weekends-ddos-attack-and-whats-in-a-cname/).
+
+## TLS handshake
+
+A TLS handshake takes place whenever a user navigates to a website over HTTPS and the browser first begins to query the website's origin server.
+
+Goals:
+
+- agree on a TLS (or SSL) version, based on the highest version supported between the 2 sides.
+- agree on which cipher suites to use
+- authenticate the identity of the server via its public key and the SSL cert
+
+Steps:

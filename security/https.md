@@ -63,6 +63,7 @@ A staple of CAs is that **they can only issue certs to owners of the domain they
 
 - Secure Socket Layer
 - built by Netscape in the 90s
+- superseded by TLS
 
 ## TLS
 
@@ -82,3 +83,15 @@ For instance:
 - client B supports TLS v.1.2 (and lower)
 
 The standard is to fallback to the **highest commonly supported versions** (in this case 1.2).
+
+TLS and SSL are cryptographic protocols designed to provide communication security over a computer network.
+
+> The connection is private (or secure) because symmetric cryptography is used to encrypt the data transmitted. The keys for this symmetric encryption are generated uniquely for each connection and are based on a shared secret that was negotiated at the start of the session (see [TLS handshake](../networking/README.MD#TLS&sp;handshake)). The server and client negotiate the details of which encryption algorithm and cryptographic keys to use before the first byte of data is transmitted.
+>
+> The negotiation of a shared secret is both secure (the negotiated secret is unavailable to eavesdroppers and cannot be obtained, even by an attacker who places themselves in the middle of the connection) and reliable (no attacker can modify the communications during the negotiation without being detected).
+>
+> The identity of the communicating parties can be authenticated using public-key cryptography. This authentication can be made optional, but is generally required for at least one of the parties (typically the server).
+>
+> The connection is reliable because each message transmitted includes a message integrity check using a message authentication code to prevent undetected loss or alteration of the data during transmission.
+
+The implementation of TLS and SSL protocols is open source and provided by [Open SSL](https://en.wikipedia.org/wiki/OpenSSL). The implementation is written in C, and the various languages provide wrappers around it to make them available to various platforms/systems, for ex. the [module `crypto` in Node](../node/crypto.md).
