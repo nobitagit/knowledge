@@ -1,2 +1,2 @@
-- what is bcrypt
+- [~what is bcrypt~](./security/cryptography.md#Protecting passwords with salt)
 - data structures: trees

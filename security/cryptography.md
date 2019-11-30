@@ -47,6 +47,10 @@ You can try:
 - Cryptographic hash function created in 1992
 - Many vulnerabilities have been discovered so far, so it's no longer safe for protecting passwords
 
+### Recommended algorithms for passwords
+
+Argon2, PBKDF2, crypt, bcrypt (very popular).
+
 ## HMAC
 
 - Hash-based Message Authentication Code
@@ -56,3 +60,95 @@ You can try:
 So 2 inputs (data and key), 1 output (hashed output).
 
 It checks for **integrity** AND **authenticity** (the data and the key are validated).
+
+## Protecting passwords with salts
+
+Two SAME passwords belonging to DIFFERENT users will yield a different hashed result.
+
+- must be generated randomly for each user on registration
+- it is appended to the password and then hashed
+- optionally one can specify a number or rounds (say, repeat the hashing operation 10 times)
+- one stores the output of the hash function and the salt itself
+
+To then compare the password on successive logins, we take the password, we append the salt, we redo the calculation and compare the result.
+
+This is a dummy, dumbed down version of what happens when we apply salt and hash a password, implemented in Js.
+
+**IF YOU ARE READING THIS: DO NOT COPY PASTE THIS CODE, USE AN IMPLEMENTATION LIKE BCRYPT. THIS CODE IS ONLY MEANT AS A SIMPLIFIED VERSION TO EXPLAIN THE PROCESS.**
+
+```js
+const crypto = require("crypto");
+
+function sha(password) {
+  return crypto
+    .createHash("sha256")
+    .update(password)
+    .digest("hex");
+
+}
+
+function getRandomString() {
+  return 'not-really-random-salt-for-this-demo';
+}
+
+function hash(password, rounds = 10) {
+  // generate a random string of at least length n to use as salt
+  const salt = getRandomString();
+  let hashed = sha(`${salt}${password}`);
+  for (let i = 0; i < rounds; i++) {
+    hashed = sha(hashed)
+  }
+
+
+  return `${salt}/${rounds}/${hashed}`;
+}
+
+function compare(rawPassword, hashedPwFromDB) {
+  const [salt, rounds, pw] = hashedPwFromDB.split('/');
+  const hashed = hash(rawPassword, rounds);
+  return hashedPwFromDB === hashed;
+}
+// usage:
+// 1. User registers a new account, in the DB we store
+const newUser = {
+  email: 'john@mc.com',
+  password: hash('very-safe-password')
+}
+// 2. User logs in, an passes credentials:
+{
+  email: 'john@mc.com',
+  password: 'very-safe-password'
+}
+// 3. We retrieve the user row from the the DB
+{
+  email: 'john@mc.com',
+  password: 'not-really-random-salt-for-this-demo/10/4ad31e6e04a0e0f8713522f0f378a798dc1dde89c81a652e8c6c24a4dacdb74a'
+}
+// 4. We compare
+const ret = compare('very-safe-password', 'not-really-random-salt-for-this-demo/10/4ad31e6e04a0e0f8713522f0f378a798dc1dde89c81a652e8c6c24a4dacdb74a');
+console.log(ret)
+// true
+```
+
+In an implementation that is closer to real life we would see:
+
+```js
+const bcrypt = require("bcrypt");
+
+const rounds = 10;
+const password1 = "very-safe-password-me-thinks";
+
+bcrypt.hash(password1, rounds, (err, hash) => {
+  // '$2b$10$S3ptFBZB7C4/0ofGSEo8MegfbiKa4LyJViLc5RaaxQsOGMaA1nlZq'
+  // Store hash in your password DB.
+  console.log(hash);
+});
+
+bcrypt.compare(
+  password1,
+  "$2b$10$S3ptFBZB7C4/0ofGSEo8MegfbiKa4LyJViLc5RaaxQsOGMaA1nlZq",
+  (err, res) => {
+    // res == true
+  }
+);
+```
