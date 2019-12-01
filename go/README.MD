@@ -700,4 +700,74 @@ func main() {
 }
 ```
 
-## Exercise 3.2
+## JSON
+
+Go provides multiple modules that allow to interact with the most common [RFCs](https://en.wikipedia.org/wiki/Request_for_Comments), for example the `http` module, or the bindings for JSON ([RFC 7159](https://tools.ietf.org/html/rfc7159)).
+
+Go allows going from a data structure to a JSON structure. This process is called **marshalling**.
+`Marshal` returns an array of bytes.
+
+```go
+person := Person(name: "Frank", age: 22)
+byteArr, err := json.Marshal(person)
+```
+
+The inverse is called **unmarshalling**.
+
+```go
+var person2 Person
+err := json.Unmarshal(byteArr, &person2)
+```
+
+The pointer needs to fit the attributes present in the json.
+
+## Files
+
+A convenience method is ReadFile:
+
+```go
+data, err := ioutil.ReadFile("./my-file.txt")
+```
+
+This takes care of all the operations of accessing a file (open, read, close) without us having to worry about them.
+If the file is very big though this can be slow and eat a lot of memory.
+If I have a 8Gb file and 8Gb RAM that's not going to work very well.
+
+`WriteFile(Name, DataBytes, Permissions)` does the same, but for writing files. Every time a new file will be created (no appending, just a new file that is created, written and closed).
+
+## Os
+
+Os allows a bit more flexibility, and more nuanced operations to deal with files.
+
+```go
+os.Open() // return a file descriptor
+os.Close()
+os.Write()
+os.Read()
+```
+
+Opening and reading a file:
+
+```go
+file, err := os.Open("newfile.txt")
+byteArr := make([]byte, 10) // 10 is the number of bytes that will be read
+res, err := os.Read(byteArr)
+file.Close()
+```
+
+Creating a file:
+
+```go
+file, err := os.Create("new-file.txt")
+byteArr := []byte{1,2,3}
+nb, err := file.Write(byteArr)
+// now the above bytes have been written
+// we can also write a string
+nb, err := file.Write("Hello")
+```
+
+## Exercise 4.1
+
+Write a program which prompts the user to first enter a name, and then enter an address. Your program should create a map and add the name and address to the map using the keys “name” and “address”, respectively. Your program should use Marshal() to create a JSON object from the map, and then your program should print the JSON object.
+
+Submit your source code for the program, “makejson.go”.
