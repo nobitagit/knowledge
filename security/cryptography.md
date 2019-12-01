@@ -152,3 +152,55 @@ bcrypt.compare(
   }
 );
 ```
+
+## Encryption
+
+> The key difference between encryption and hashing is that encrypted strings can be reversed back into their original decrypted form if you have the right key.
+>
+> -- [source](https://www.securityinnovationeurope.com/blog/page/whats-the-difference-between-hashing-and-encrypting)
+
+So, **encryption** is made to work both ways, while **hashing** is made to work only from clear text to hashed.
+
+> Encryption should only ever be used over hashing when it is a necessity to decrypt the resulting message. For example, if you were trying to send secure messages to someone on the other side of the world, you would need to use encryption rather than hashing, as the message is no use to the receiver if they cannot decrypt it.
+>
+> If the raw value doesn't need to be known for the application to work correctly, then hashing should always be used instead, as it is more secure.
+
+### Symmetric key encryption
+
+One key that works both ways.
+
+### Asymmetric key encryption
+
+Works via public key mechanism.
+
+### How to store keys to encrypt and decrypt
+
+Keys can be managed by using a KMS (Key management system).
+
+- Keys are put into a key store
+- Keys are then encrypted via the usage of a master key
+- Keys can be rotated for extra security
+
+Amazon provides Amazon Key Management Service or [KMS](https://aws.amazon.com/kms/), Hashicorp offers [Vault](https://www.vaultproject.io/), which is open source.
+
+As an example, here's how a workflow with Vault looks like:
+
+1. At rest, the DB is encrypted and Vault is unable to access it. Vault doesn't hold the master key and as such is unable to access it.
+
+![Vault 1](./images/vault-1.png)
+
+2. Vault uses a technique called Shamir's Secret Sharing. The **master key** is broken into many different keys called **shards**. These shards are distributed to trusted administrators or computers. A **minimum** number of shards is required to access. Say the key is broken into 5 shards and we say that at least 3 of them are required for access. Vault uses the shards to recreate the master key.
+
+![Vault 2](./images/vault-2.png)
+
+3. When we need access, Vault provides an API that a server or client (the drawing below shows a client, but in reality this will most of the times happen on servers) can interrogate to get the keys. The server will authenticate via either username/pw or - preferably - via a certificate that is installed on the server itself
+
+![Vault 3](./images/vault-3.png)
+
+4. Once authenticated, the server will request a specific key within the vault by specifying a path
+
+![Vault 4](./images/vault-4.png)
+
+5. The client or server has the key, so can finally access the target DB.
+
+![Vault 5](./images/vault-5.png)

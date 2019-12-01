@@ -44,3 +44,37 @@ require("crypto")
   .digest("hex");
 // '6448578a3b74d91ca1e0f4cc84db14685ad6586d717cacae2a6ec8b6aad59030'
 ```
+
+## Tools for symmetric encryption
+
+Node exposes `createCipheriv` and `CreateDecipheriv`.
+
+```js
+const crypto = require("crypto");
+
+const algo = "aes-256-cbc";
+const password = "my-safe-password";
+const salt = crypto.randomBytes(32);
+console.log(`Salt is : ${salt.toString("hex")}`);
+
+const key = crypto.scryptSync(password, salt, 32);
+
+// initialisation vector
+const iv = crypto.randomBytes(16);
+const cipher = crypto.createCipheriv(algo, key, iv);
+
+const dataToEncrypt = "My data";
+
+let encrypted = cipher.update(dataToEncrypt, "utf8", "hex");
+encrypted += cipher.final("hex");
+
+console.log(`In the DB you'll store: ${encrypted}`);
+
+// DECRYPT
+const decipher = crypto.createDecipheriv(algo, key, iv);
+
+let decrypted = decipher.update(encrypted, "hex", "utf8");
+decrypted += decipher.final("utf8");
+
+console.log(decrypted === dataToEncrypt); // true
+```
