@@ -167,11 +167,7 @@ So, **encryption** is made to work both ways, while **hashing** is made to work 
 
 ### Symmetric key encryption
 
-One key that works both ways.
-
-### Asymmetric key encryption
-
-Works via public key mechanism.
+One key that works both ways. Used for data at rest.
 
 ### How to store keys to encrypt and decrypt
 
@@ -204,3 +200,8 @@ As an example, here's how a workflow with Vault looks like:
 5. The client or server has the key, so can finally access the target DB.
 
 ![Vault 5](./images/vault-5.png)
+
+### Asymmetric key encryption
+
+Works via public key mechanism.
+It uses 2 keys, one to encrypt and one decrypt. This is known as the **public and private key pairs**.
