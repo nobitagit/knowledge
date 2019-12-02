@@ -5,3 +5,5 @@
 - To convert MOV files to mp4 `ffmpeg -i ~/in.mov ~/out.mp4`. [>](https://apple.stackexchange.com/a/276557/44487)
 
 - To easily screen capture in various formats use [Kap](https://getkap.co/).
+
+- A browser in terminal https://www.brow.sh/docs/installation/
