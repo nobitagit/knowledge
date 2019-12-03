@@ -3,12 +3,15 @@ package main
 import (
 	"bufio"
 	"bytes"
+	"encoding/json"
 	"fmt"
 	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strconv"
 	"strings"
+	"time"
 )
 
 func isMdFile(fileName []byte) bool {
@@ -38,6 +41,17 @@ func isBlackListed(fileName []byte) bool {
 	return contained
 }
 
+func prettyPrintResults(data map[string]int) {
+	json, err := json.MarshalIndent(data, "", "   ")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf("\nAdditions from last %v to today.\n", time.Now().AddDate(0, 0, -30).Format("2th Jan"))
+	fmt.Println("")
+	fmt.Println(string(json))
+}
+
 func main() {
 	cmd := exec.Command("git", "log", "--pretty=format:", "--name-only", "--since='30 days ago'", "--stat")
 	out, err := cmd.CombinedOutput()
@@ -57,20 +71,26 @@ func main() {
 		if isMd == true && !isBlackListed(filePath) {
 			filePaths = append(filePaths, filePath)
 			path := string(filePath)
-
+			fmt.Printf("Analysing file %v\n", path)
 			// store stats for each top level dir
 			dirName := getBaseDir(path)
 			_, exists := dirStats[dirName]
 			if exists == false {
 				dirStats[dirName] = 0
 			}
-			cmdStat := exec.Command("git", "diff", "@{30.days.ago}", "--shortstat", "--", path)
+			cmdStat := exec.Command("git", "diff", "@{30.days.ago}", "--numstat", "--", path)
 			out, err := cmdStat.CombinedOutput()
 			if err != nil {
 				msg, _ := fmt.Printf("Git command failed for file %s", path)
 				log.Fatal(msg)
 			}
-			fmt.Printf("%v contains md\n", string(out))
+			statsLine := bytes.Fields(out)
+			if len(statsLine) > 0 {
+				additions, _ := strconv.Atoi(string(statsLine[0]))
+				dirStats[dirName] = dirStats[dirName] + additions
+			}
 		}
 	}
+
+	prettyPrintResults(dirStats)
 }
