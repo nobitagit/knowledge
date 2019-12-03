@@ -543,7 +543,7 @@ New elements can be added to the end of the slice. If the capacity is not enough
 
 ```go
 slice1 = make([]string, 0, 5)
-slice2 = append(slice1, 'hi')
+slice2 = append(slice1, "hi")
 ```
 
 ## Hash Tables
