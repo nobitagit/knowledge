@@ -49,19 +49,28 @@ func main() {
 	scanner := bufio.NewScanner(r)
 
 	var filePaths [][]byte
-	var dirStats map[string]int
+	dirStats := make(map[string]int)
 
 	for scanner.Scan() {
 		filePath := scanner.Bytes()
 		isMd := isMdFile(filePath)
 		if isMd == true && !isBlackListed(filePath) {
 			filePaths = append(filePaths, filePath)
-			k := string(filePath)
-			dirStats[k] = 0
-			cmd2 := exec.Command("git", "log", "--pretty=format:", "--name-only", "--since='30 days ago'", "--stat")
-			fmt.Printf("%v contains md\n", scanner.Text())
+			path := string(filePath)
+
+			// store stats for each top level dir
+			dirName := getBaseDir(path)
+			_, exists := dirStats[dirName]
+			if exists == false {
+				dirStats[dirName] = 0
+			}
+			cmdStat := exec.Command("git", "diff", "@{30.days.ago}", "--shortstat", "--", path)
+			out, err := cmdStat.CombinedOutput()
+			if err != nil {
+				msg, _ := fmt.Printf("Git command failed for file %s", path)
+				log.Fatal(msg)
+			}
+			fmt.Printf("%v contains md\n", string(out))
 		}
 	}
-
-	fmt.Printf("%s\n", filePaths)
 }
