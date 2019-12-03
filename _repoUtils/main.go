@@ -15,6 +15,10 @@ func isMdFile(fileName []byte) bool {
 	return bytes.HasSuffix(fileName, []byte(".md")) || bytes.HasSuffix(fileName, []byte(".MD"))
 }
 
+func getBaseDir(fullPath string) string {
+	return strings.Split(fullPath, string(os.PathSeparator))[0]
+}
+
 func isBlackListed(fileName []byte) bool {
 	ignoredDirs := [2]string{".git", "_repoUtils"}
 
@@ -25,7 +29,7 @@ func isBlackListed(fileName []byte) bool {
 		return true
 	}
 	// derive the top level directory from the path
-	baseDir := strings.Split(dir, string(os.PathSeparator))[0]
+	baseDir := getBaseDir(dir)
 	var contained bool
 	for _, ignoredDir := range ignoredDirs {
 		contained = ignoredDir == baseDir
@@ -45,13 +49,19 @@ func main() {
 	scanner := bufio.NewScanner(r)
 
 	var filePaths [][]byte
+	var dirStats map[string]int
+
 	for scanner.Scan() {
 		filePath := scanner.Bytes()
 		isMd := isMdFile(filePath)
 		if isMd == true && !isBlackListed(filePath) {
 			filePaths = append(filePaths, filePath)
+			k := string(filePath)
+			dirStats[k] = 0
+			cmd2 := exec.Command("git", "log", "--pretty=format:", "--name-only", "--since='30 days ago'", "--stat")
 			fmt.Printf("%v contains md\n", scanner.Text())
 		}
 	}
+
 	fmt.Printf("%s\n", filePaths)
 }
