@@ -77,7 +77,7 @@ func generateFile(dirStats *map[string]int) {
 	f, _ := os.Create("_repoUtils/public/index.html")
 	defer f.Close()
 
-	t, err := template.ParseFiles("_repoUtils/tpl.html")
+	t, err := template.ParseFiles("_repoUtils/tpl.tpl")
 	if err != nil {
 		log.Fatalf("error parsing template %s", err)
 	}
