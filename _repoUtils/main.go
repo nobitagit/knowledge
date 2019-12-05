@@ -5,16 +5,15 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"html/template"
 	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 	"time"
-
-	"html/template"
-	// _ "github.com/knowledge/_repoUtils/tpl"
 )
 
 func isMdFile(fileName []byte) bool {
@@ -44,7 +43,7 @@ func isBlackListed(fileName []byte) bool {
 	return contained
 }
 
-func prettyPrintResults(data map[string]int) {
+func prettyPrintResults(data *map[string]int) {
 	json, err := json.MarshalIndent(data, "", "   ")
 	if err != nil {
 		log.Fatal(err)
@@ -53,6 +52,41 @@ func prettyPrintResults(data map[string]int) {
 	fmt.Printf("\nAdditions from last %v to today.\n", time.Now().AddDate(0, 0, -30).Format("2th Jan"))
 	fmt.Println("")
 	fmt.Println(string(json))
+}
+
+func generateFile(dirStats *map[string]int) {
+	type Entry struct {
+		Topic string
+		Count int
+	}
+
+	entries := make([]Entry, 0, len(*dirStats))
+
+	for k, v := range *dirStats {
+		topic := strings.ReplaceAll(strings.Title(k), "-", " ")
+		entry := Entry{Topic: topic, Count: v}
+		entries = append(entries, entry)
+	}
+	sort.SliceStable(entries, func(i, j int) bool {
+		return entries[i].Count > entries[j].Count
+	})
+
+	fmt.Printf("%v\n", entries)
+
+	// Dump all stats to the template file
+	f, _ := os.Create("_repoUtils/public/index.html")
+	defer f.Close()
+
+	t, err := template.ParseFiles("_repoUtils/tpl.html")
+	if err != nil {
+		log.Fatalf("error parsing template %s", err)
+	}
+	err = t.Execute(f, entries)
+	if err != nil {
+		log.Fatalf("error parsing template %s", err)
+	}
+
+	log.Output(1, "Index file generated")
 }
 
 func main() {
@@ -74,7 +108,7 @@ func main() {
 		if isMd == true && !isBlackListed(filePath) {
 			filePaths = append(filePaths, filePath)
 			path := string(filePath)
-			fmt.Printf("Analysing file %v\n", path)
+			log.Output(1, fmt.Sprintf("Analysing %v\n", path))
 			// store stats for each top level dir
 			dirName := getBaseDir(path)
 			_, exists := dirStats[dirName]
@@ -95,20 +129,6 @@ func main() {
 		}
 	}
 
-	prettyPrintResults(dirStats)
-
-	t := template.New("Stats")
-	t, _ = t.Parse(`
-		<ul>
-		{{range $key, $value := .}}
-			<li><strong>{{ $key }}</strong>: {{ $value }}</li>
-		{{end}}
-		</ul>
-	`)
-	t.Execute(os.Stdout, dirStats)
-
-	// t := template.New("Stats")
-	// t, _ = t.ParseFiles("tpl.html")
-	// t.ExecuteTemplate(os.Stdout, "tpl.html", dirStats
-
+	prettyPrintResults(&dirStats)
+	generateFile(&dirStats)
 }
