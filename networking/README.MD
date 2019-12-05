@@ -1,5 +1,7 @@
 # Networking
 
+- [Anatomy of a browser web request](./README.MD#Anatomy of a browser web reqeust)
+
 ## DNS records
 
 DNS (Domain name system) is the internet-wide phonebook that tells browsers or any other client how to resolve a specific domain name to an IP address of a server the can open a connection to.
@@ -9,6 +11,8 @@ Websites have 3 kinds of records today:
 - A Record: returns an IPv4 address of a server
 - AAAA Record: returns the IPv6 address of a server
 - CNAME Record: returns another domain name the browser should look up instead.
+
+note - there's also **TXT records** that allows associating arbitrary text with a host, such as readable info reg the server, network or data center. It can also contain machine readable info. More [here](https://en.wikipedia.org/wiki/TXT_record).
 
 So, if we a set up is:
 
@@ -35,3 +39,11 @@ Goals:
 - authenticate the identity of the server via its public key and the SSL cert
 
 Steps:
+
+**TODO**
+
+## Anatomy of a browser web request
+
+- the browser extracts the **domanin name** from the url
+- the computer sends a DNS request to the DNS servers configured on the computer
+- the DNS maps the domain to an IP address through its configured A records
