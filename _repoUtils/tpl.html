@@ -1,0 +1,20 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Knowledge</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+</head>
+
+<body>
+  <ul>
+    {{range $key, $value := .}}
+    <li><strong>{{ $key }}</strong>: {{ $value }}</li>
+    {{end}}
+  </ul>
+</body>
+
+</html>

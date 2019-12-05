@@ -12,6 +12,9 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"html/template"
+	// _ "github.com/knowledge/_repoUtils/tpl"
 )
 
 func isMdFile(fileName []byte) bool {
@@ -23,7 +26,7 @@ func getBaseDir(fullPath string) string {
 }
 
 func isBlackListed(fileName []byte) bool {
-	ignoredDirs := [2]string{".git", "_repoUtils"}
+	ignoredDirs := [3]string{".git", "_repoUtils", ".github"}
 
 	dir := filepath.Dir(string(fileName))
 
@@ -93,4 +96,19 @@ func main() {
 	}
 
 	prettyPrintResults(dirStats)
+
+	t := template.New("Stats")
+	t, _ = t.Parse(`
+		<ul>
+		{{range $key, $value := .}}
+			<li><strong>{{ $key }}</strong>: {{ $value }}</li>
+		{{end}}
+		</ul>
+	`)
+	t.Execute(os.Stdout, dirStats)
+
+	// t := template.New("Stats")
+	// t, _ = t.ParseFiles("tpl.html")
+	// t.ExecuteTemplate(os.Stdout, "tpl.html", dirStats
+
 }
