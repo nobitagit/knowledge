@@ -42,7 +42,7 @@ Every browser follows a different list:
 
 - Firefox: https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/included/
 - Chrome: it uses the certificates [included with the OS][1].
-- Opera: it install the most uses CA within installing the application, you can find the rest in the online root repository: https://certs.opera.com/
+- Opera: it installs the most used CA when installing the application, you can find the rest in the online root repository: https://certs.opera.com/
 - iOs: https://support.apple.com/kb/ht5012
 
 ([source](https://security.stackexchange.com/a/49008/155108))
