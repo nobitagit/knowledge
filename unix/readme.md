@@ -11,3 +11,11 @@ ${my_var:4:2} # "my"
 ```
 
 - See all colors in bash `for (( i = 0; i < 17; i++ )); do echo "$(tput setaf $i)This is ($i) $(tput sgr0)"; done`
+
+### Searching/finding stuff
+
+To order `ls` by modified date (asc/desc):
+```
+ls -t
+ls -tr 
+```
