@@ -2,13 +2,13 @@
 
 ## XSS
 
-Best article I've found is [this one about CSPhttps://widget.intercom.io](https://www.troyhunt.com/locking-down-your-website-scripts-with-csp-hashes-nonces-and-report-uri/), a must read.
+Best article I've found is [this one about CSP](https://www.troyhunt.com/locking-down-your-website-scripts-with-csp-hashes-nonces-and-report-uri/), a must read.
 
 ## Difference between XSS and CSRF
 
 > **Cross-Site Scripting** involves injecting a script into the real webpage, and **Cross-Site Request Forgery** involves tricking the user (or the browser) to make a request that they don’t really want to, starting from a malicious webpage/email/etc.
 >
-> [Reference](https://blog.usejournal.com/how-to-avoid-ruining-lives-front-end-security-matters-26d4f906c7a6)
+> [Reference](https://blog.usejournal.com/how-to-avoid-ruining-lives-front-end-security-matters-26d4f906c7a6`)
 
 ### CSP
 
