@@ -14,8 +14,8 @@ Best article I've found is [this one about CSP](https://www.troyhunt.com/locking
 
 Funny test, grab [this script](https://pastebin.com/aJna4paJ) and paste it into the console of dev tools on any website you want to test./
 
-- Troy Hunt on CSP https://www.yo;.com/watch?v=L97wtYCqfwM
-- Him again, on his CSP implementation https://www.troyhunt.com/my-blog-now-has-a-content-security-policy-heres-how-ive-done-it/
+- Troy Hunt on CSP [here](https://www.youtube.com/watch?v=L97wtYCqfwM)
+- Him again, on [his CSP implementation](https://www.troyhunt.com/my-blog-now-has-a-content-security-policy-heres-how-ive-done-it/)
 - CSP validator https://cspvalidator.org/
 - https://observatory.mozilla.org/ and https://csp-evaluator.withgoogle.com/ can give some insights on the CSP implementation.
 - https://addons.mozilla.org/en-US/firefox/addon/laboratory-by-mozilla/ can generate one for you.
