@@ -9,3 +9,9 @@ The HTTP RFC does not specify a maximum header length, but in reality most serve
 [source](https://security.stackexchange.com/a/113365/155108)
 
 A server that receives an exceedingly large header will reject the request issuing a 400.
+
+## HTTP requests
+
+### Preflight requests
+
+Preflight requests enable the browser to ask for the server’s permission before making requests with certain HTTP methods and headers. This permissions model puts the server in charge of how cross-origin requests behave. [source](https://livebook.manning.com/book/cors-in-action/chapter-5/7)
