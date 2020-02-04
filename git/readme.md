@@ -6,6 +6,12 @@
 git config user.email "email@example.com"
 ```
 
+## Get file from other branch
+
+```sh
+git checkout branch-name -- file-name.py
+```
+
 ## Other
 
 - [some aliases](https://github.com/Bash-it/bash-it/blob/master/aliases/available/git.aliases.bash)
