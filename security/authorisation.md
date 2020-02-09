@@ -11,3 +11,7 @@
 > From these examples it should be clear that cookie sharing across domain boundaries is a desirable feature in Web applications and middleware.
 >
 > [Reference](https://jisajournal.springeropen.com/articles/10.1186/1869-0238-4-13)
+
+- **they require state**: as in, they generally represent a server side session
+
+### Token based approach

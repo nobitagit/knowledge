@@ -58,6 +58,7 @@ Every browser follows a different list:
 New CAs are added and removed with time.
 
 A staple of CAs is that **they can only issue certs to owners of the domain they are certifying**.
+It has be noted that a certificate does only confirm that the domain us owned by the recipient of the cert.
 
 ## SSL
 
@@ -95,3 +96,75 @@ TLS and SSL are cryptographic protocols designed to provide communication securi
 > The connection is reliable because each message transmitted includes a message integrity check using a message authentication code to prevent undetected loss or alteration of the data during transmission.
 
 The implementation of TLS and SSL protocols is open source and provided by [Open SSL](https://en.wikipedia.org/wiki/OpenSSL). The implementation is written in C, and the various languages provide wrappers around it to make them available to various platforms/systems, for ex. the [module `crypto` in Node](../node/crypto.md).
+
+## Securing an app via Https
+
+### Redirect traffic from http to https
+
+The idea is to instruct the server to respond to a request such as `http://wwww.mysite.com` with a 301 PERMANENT REDIRECT to https version.
+
+A request such as
+
+```
+GET /index.php HTTP/1.1
+Host: www.example.org
+```
+
+Will receive a response like:
+
+```
+HTTP/1.1 301 Moved Permanently
+Location: https://www.example.org/index.php
+```
+
+The browser will then re-request the same page over https.
+
+There's a problem though. Every time a request is issued for `http://www.example.org` and the server responds, this first request is done over a non secure connection.
+This is **an insertion point for a Man in the middle attack**.
+That's where STS comes into play.
+
+### HSTS or STS
+
+Hsts (http strict transport security) aims to solve this problem.
+The picture below is me trying typing `http://netlify.com` on a browser and hitting enter.
+Note the 307 Internal redirect, the "Location" (that instructs the browser to actually request `https://netlify.com`, which will in turn respond with a 301, redirecting to the www subdomain), and the "non-authoritative-reason: HSTS"
+
+![Hsts on Netlify](./images/hsts.png)
+
+If we inspect a request to site that has HSTS turned on, we will se something like:
+
+```
+strict-transport-security: max-age=31536000
+```
+
+This instructs the browser that for the whole duration of max-age, every outbound request to that website originating as `http`, will be upgraded automatically to `https` **internally, before even hitting wire**.
+
+This is now much better, but still, the first part of the request is insecure.
+
+### HSTS preloading
+
+> [...] used to submit domains for inclusion in Chrome's HTTP Strict Transport Security (HSTS) preload list. This is a list of sites that are hardcoded into Chrome as being HTTPS only.
+
+It's done via [this form](https://hstspreload.org/).
+Once added to the list, the website will not even send the first request as http, it will - **even the first time** - send out an https request, straight from the browser.
+
+This is a one way operation, rolling back is not possible.
+
+### Mixed content
+
+Mixed content is when a page is served over https but some of its components, such as some images, are requested over http. You generally see:
+
+- a **warning** if the resource is "inactive", as in, it can't contain scripts, such as an image. The image will be loaded, but the green padlock will be go away
+- an **error** if the resource is "active", such as an iframe. In this case the resource is refused.
+
+Mixed content can be avoided entirely by using the CSP's directive `upgrade-insecure-requests`.
+
+### Securing cookies
+
+Secure cookies will be sent only over https. The same page served via http will simply not send the cookie when the request is issued.
+
+### HPKP
+
+This stands for "Http public key pinning)"
+
+- Implemented as a header

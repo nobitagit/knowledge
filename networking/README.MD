@@ -14,7 +14,7 @@ Websites have 3 kinds of records today:
 
 note - there's also **TXT records** that allows associating arbitrary text with a host, such as readable info reg the server, network or data center. It can also contain machine readable info. More [here](https://en.wikipedia.org/wiki/TXT_record).
 
-So, if we a set up is:
+So, if we have set up such as:
 
 ```md
 // config for docs.example.com
