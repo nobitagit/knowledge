@@ -131,13 +131,13 @@ Note the 307 Internal redirect, the "Location" (that instructs the browser to ac
 
 ![Hsts on Netlify](./images/hsts.png)
 
-If we inspect a request to site that has HSTS turned on, we will se something like:
+If we inspect a request to a site that has HSTS turned on, we will see something like:
 
 ```
 strict-transport-security: max-age=31536000
 ```
 
-This instructs the browser that for the whole duration of max-age, every outbound request to that website originating as `http`, will be upgraded automatically to `https` **internally, before even hitting wire**.
+This instructs the browser that for the whole duration of max-age, every outbound request to that website originating as `http`, will be upgraded automatically to `https` **internally, before even hitting the wire**.
 
 This is now much better, but still, the first part of the request is insecure.
 
@@ -168,3 +168,8 @@ Secure cookies will be sent only over https. The same page served via http will 
 This stands for "Http public key pinning)"
 
 - Implemented as a header
+- It looks like:
+
+```
+public-key-pins: pin-SHA256="FGTU6679..." ; max-age=1232332 ; includeSubDomains ; report-uri="https://..."
+```
