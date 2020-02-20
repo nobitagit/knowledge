@@ -9,3 +9,10 @@
 - A browser in terminal https://www.brow.sh/docs/installation/
 
 - To delete a site from Brave/Chrome autocomplete, type it, highlight it and press `SHIFT + FN + BACKSPACE`.
+
+- To kill and restart the touchbar process when it's stuck
+
+```
+sudo pkill TouchBarServer;
+sudo killall “ControlStrip”;
+```
