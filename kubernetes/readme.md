@@ -43,3 +43,8 @@ To install the ui:
 - `kubectl proxy`
 - open http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
 - paste the token copied above
+
+## Pods
+
+Pods are environments for containers. One pod can host one or more containers.
+Every Pod has an IP address.
