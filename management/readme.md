@@ -65,6 +65,28 @@ Google Cal has this feature. Look for "speedy meetings" in the settings.
 
 When in meeting, **avoid** checking email and phone. Put the phone face down and consider airplane mode. This is not only for maximising attention, but also to send a message to the other attendees that the meeting is important.
 
+## When you schedule a meeting
+
+Write the details in the description, a list of things people have to go over during the call, if they need to make some prep, and - important - the expected outcome, which is in general a list of action points that are agreed and distributed.
+
+Ex.
+
+```
+Meeting title: improve security documentation
+
+Description:
+
+Prepare some examples of documentation you find useful.
+Address all the below points:
+
+- Setting expectations
+- Understand the audience of these docs
+- Understand the tone & level of detail we want to use
+- Showing/finding existing examples that we like
+- Agreeing on a format we want to use
+- Define action points for a follow up meeting
+```
+
 ## GTD or Getting Things Done
 
 We as humans are bad at remembering and organising mentally. That's why we need a system.
