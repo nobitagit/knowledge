@@ -87,6 +87,8 @@ Address all the below points:
 - Define action points for a follow up meeting
 ```
 
+The meeting should always start with a review of the expectations for the same (basically read all of the above).
+
 ## GTD or Getting Things Done
 
 We as humans are bad at remembering and organising mentally. That's why we need a system.
