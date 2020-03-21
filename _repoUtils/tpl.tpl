@@ -4,8 +4,8 @@
   <meta charset="utf-8">
 
   <title>Knowledge</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <meta name="description" content="Aurelio Ogliari's knowledge repository">
+  <meta name="author" content="Aurelio">
 
 </head>
 

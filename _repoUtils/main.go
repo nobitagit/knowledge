@@ -49,7 +49,7 @@ func prettyPrintResults(data *map[string]int) {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("\nAdditions from last %v to today.\n", time.Now().AddDate(0, 0, -30).Format("2th Jan"))
+	fmt.Printf("\nAdditions from last %v to today.\n", time.Now().AddDate(0, 0, -90).Format("2th Jan"))
 	fmt.Println("")
 	fmt.Println(string(json))
 }
@@ -90,7 +90,7 @@ func generateFile(dirStats *map[string]int) {
 }
 
 func main() {
-	cmd := exec.Command("git", "log", "--pretty=format:", "--name-only", "--since='30 days ago'", "--stat")
+	cmd := exec.Command("git", "log", "--pretty=format:", "--name-only", "--since='90 days ago'", "--stat")
 	out, err := cmd.CombinedOutput()
 
 	if err != nil {
@@ -115,7 +115,7 @@ func main() {
 			if exists == false {
 				dirStats[dirName] = 0
 			}
-			cmdStat := exec.Command("git", "diff", "@{30.days.ago}", "--numstat", "--", path)
+			cmdStat := exec.Command("git", "diff", "@{90.days.ago}", "--numstat", "--", path)
 			out, err := cmdStat.CombinedOutput()
 			if err != nil {
 				msg, _ := fmt.Printf("Git command failed for file %s", path)
