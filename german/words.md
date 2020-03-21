@@ -11,6 +11,7 @@ Aufpassen: take care, give attention to stg
 ## B
 
 Bereit: ready (see also vorbereiten)
+der Beutel: bag
 
 > Bist du bereit?
 
@@ -32,6 +33,10 @@ Eigentlich: actually, for real
 
 > Was wollen sie eigentlich?
 
+Eilig: hurried
+einschalten: to switch on
+erscheinen: appear
+
 ## F
 
 Fest: fixed
@@ -46,6 +51,20 @@ Gerade: just (time)
 
 > Ich habe es gerade gemacht
 
+das Geschäft; store
+
+## O
+
+obwohl: even though
+
+## P
+
+plötzlich: suddenly
+
+## R
+
+runter: down
+
 ## S
 
 der Schritt: step
@@ -54,10 +73,14 @@ der Schritt: step
 
 Ubrigens: by the way
 der Unterschied: the difference
+unversehrt: intact
 
 ## V
 
+verrückt: insane
 Vorbereiten: prepare
+vorschlagen: suggest
+die Vorschrift: rule
 
 ## Z
 
