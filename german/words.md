@@ -36,10 +36,12 @@ Eigentlich: actually, for real
 
 Fest: fixed
 
-# G
+## G
 
 Geduld: patience
+
 Gelegenheit: opportunity
+
 Gerade: just (time)
 
 > Ich habe es gerade gemacht
