@@ -46,6 +46,10 @@ Gerade: just (time)
 
 > Ich habe es gerade gemacht
 
+## S
+
+der Schritt: step
+
 ## U
 
 Ubrigens: by the way
@@ -54,3 +58,9 @@ der Unterschied: the difference
 ## V
 
 Vorbereiten: prepare
+
+## Z
+
+Zusätzlich: additional, extra
+
+> Wird das zusätzlich kosten? (will there be any extra cost?)
