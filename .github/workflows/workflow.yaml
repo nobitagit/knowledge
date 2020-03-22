@@ -13,7 +13,7 @@ jobs:
           persist-credentials: false
 
       - name: Log branch
-        run: echo "Branch --> " && git rev-parse --abbrev-ref HEAD
+        run: git diff @{90.days.ago} --numstat -- vscode | head -n1 | awk '{print $1;}'
 
       - name: Calculate stats and generate html
         uses: cedrickring/golang-action@1.5.1

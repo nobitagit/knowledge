@@ -90,15 +90,16 @@ func generateFile(dirStats *map[string]int) {
 }
 
 func main() {
-	o := exec.Command("git", "rev-parse", "--abbrev-ref", "HEAD")
+	o := exec.Command("git", "diff", "@{90.days.ago}", "--numstat", "--", "vscode", "|", "head", "-n1", "|", "awk", "'{print $1;}'")
 	out1, err1 := o.CombinedOutput()
 
 	if err1 != nil {
 		log.Fatal("Git command failed")
 	}
 
-	fmt.Printf("Git branch: %s", out1)
+	fmt.Printf("Br ---> : %s", out1)
 
+	// git log --pretty=format: --name-only --since='90 days ago' --stat
 	cmd := exec.Command("git", "log", "--pretty=format:", "--name-only", "--since='90 days ago'", "--stat")
 	out, err := cmd.CombinedOutput()
 
@@ -125,6 +126,10 @@ func main() {
 			if exists == false {
 				dirStats[dirName] = 0
 			}
+
+			// git diff @{90.days.ago} --numstat -- [PATH]
+			// To print only the first word
+			// git diff @{90.days.ago} --numstat -- [PATH] | head -n1 | awk '{print $1;}'
 			cmdStat := exec.Command("git", "diff", "@{90.days.ago}", "--numstat", "--", path)
 			out, err := cmdStat.CombinedOutput()
 			if err != nil {
