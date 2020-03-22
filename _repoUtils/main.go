@@ -91,7 +91,9 @@ func generateFile(dirStats *map[string]int) {
 
 func main() {
 	// DEBUG: check how git sees this repo history on the runner
-	o := exec.Command("git", "diff", "@{90.days.ago}", "--numstat", "--", "vscode", "|", "head", "-n1", "|", "awk", "'{print $1;}'")
+	// o := exec.Command("git", "diff", "@{90.days.ago}", "--numstat", "--", "vscode", "|", "head", "-n1", "|", "awk", "'{print $1;}'")
+	// o := exec.Command("git", "log", "--pretty=oneline", "|", "tail", "-n", "10")
+	o := exec.Command("git", "log", "--pretty=oneline")
 	out1, err1 := o.CombinedOutput()
 
 	if err1 != nil {
