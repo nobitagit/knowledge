@@ -6,6 +6,7 @@
   <title>Knowledge</title>
   <meta name="description" content="Aurelio Ogliari's knowledge repository">
   <meta name="author" content="Aurelio">
+  <link rel="stylesheet" type="text/css" href="./style.css">
 
 </head>
 
