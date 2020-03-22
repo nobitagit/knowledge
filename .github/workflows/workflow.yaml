@@ -8,6 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
+          ref: master
           fetch-depth: 0
           persist-credentials: false
 
