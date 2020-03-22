@@ -90,12 +90,22 @@ func generateFile(dirStats *map[string]int) {
 }
 
 func main() {
+	o := exec.Command("git", "rev-parse", "--abbrev-ref", "HEAD")
+	out1, err1 := o.CombinedOutput()
+
+	if err1 != nil {
+		log.Fatal("Git command failed")
+	}
+
+	fmt.Printf("Git branch: %s", out1)
+
 	cmd := exec.Command("git", "log", "--pretty=format:", "--name-only", "--since='90 days ago'", "--stat")
 	out, err := cmd.CombinedOutput()
 
 	if err != nil {
 		log.Fatal("Git command failed")
 	}
+
 	r := bytes.NewReader(out)
 	scanner := bufio.NewScanner(r)
 
