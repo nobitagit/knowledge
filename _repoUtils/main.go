@@ -90,6 +90,7 @@ func generateFile(dirStats *map[string]int) {
 }
 
 func main() {
+	// DEBUG: check how git sees this repo history on the runner
 	o := exec.Command("git", "diff", "@{90.days.ago}", "--numstat", "--", "vscode", "|", "head", "-n1", "|", "awk", "'{print $1;}'")
 	out1, err1 := o.CombinedOutput()
 
@@ -98,6 +99,7 @@ func main() {
 	}
 
 	fmt.Printf("Br ---> : %s", out1)
+	// DEBUG end
 
 	// git log --pretty=format: --name-only --since='90 days ago' --stat
 	cmd := exec.Command("git", "log", "--pretty=format:", "--name-only", "--since='90 days ago'", "--stat")
