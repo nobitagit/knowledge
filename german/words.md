@@ -11,6 +11,7 @@ Aufpassen: take care, give attention to stg
 ## B
 
 Bereit: ready (see also vorbereiten)
+bequem: comfortably
 der Beutel: bag
 
 > Bist du bereit?
@@ -73,6 +74,7 @@ der Schritt: step
 
 Ubrigens: by the way
 der Unterschied: the difference
+unterwegs: on the way
 unversehrt: intact
 
 ## V
@@ -84,6 +86,7 @@ die Vorschrift: rule
 
 ## Z
 
+ziemlich: quite
 Zusätzlich: additional, extra
 
 > Wird das zusätzlich kosten? (will there be any extra cost?)
