@@ -93,14 +93,14 @@ func main() {
 	// DEBUG: check how git sees this repo history on the runner
 	// o := exec.Command("git", "diff", "@{90.days.ago}", "--numstat", "--", "vscode", "|", "head", "-n1", "|", "awk", "'{print $1;}'")
 	// o := exec.Command("git", "log", "--pretty=oneline", "|", "tail", "-n", "10")
-	o := exec.Command("git", "log", "--pretty=oneline")
-	out1, err1 := o.CombinedOutput()
+	// o := exec.Command("git", "log", "--pretty=oneline")
+	// out1, err1 := o.CombinedOutput()
 
-	if err1 != nil {
-		log.Fatal("Git command failed")
-	}
+	// if err1 != nil {
+	// 	log.Fatal("Git command failed")
+	// }
 
-	fmt.Printf("Br ---> : %s", out1)
+	//fmt.Printf("Br ---> : %s", out1)
 	// DEBUG end
 
 	// git log --pretty=format: --name-only --since='90 days ago' --stat
@@ -134,7 +134,20 @@ func main() {
 			// git diff @{90.days.ago} --numstat -- [PATH]
 			// To print only the first word
 			// git diff @{90.days.ago} --numstat -- [PATH] | head -n1 | awk '{print $1;}'
-			cmdStat := exec.Command("git", "diff", "@{90.days.ago}", "--numstat", "--", path)
+			dateFormat := "2006-01-02"
+			startDate := time.Now().AddDate(0, 0, -90).Format(dateFormat)
+			sinceDate := fmt.Sprintf("--since=%s", startDate)
+			// find the commit hash of the oldest commit we consider
+			getCommitHash := exec.Command("git", "rev-list", sinceDate, "master", "--", path)
+			commitHashes, _ := getCommitHash.CombinedOutput()
+			oo := bytes.Split(commitHashes, []byte{'\n'})
+			fmt.Println("dadsd", string(commitHashes))
+			commitHash := string(oo[len(oo)-2])
+
+			//git rev-list --since='2018-12-24' --until="2020-03-25" master -- git/readme.md| tail -1
+			//cmdStat := exec.Command("git", "diff", "@{90.days.ago}", "--numstat", "--", path)
+			cmdStat := exec.Command("git", "diff", string(commitHash), "--numstat", "--", path)
+
 			out, err := cmdStat.CombinedOutput()
 			if err != nil {
 				msg, _ := fmt.Printf("Git command failed for file %s", path)

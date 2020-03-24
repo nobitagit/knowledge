@@ -12,6 +12,13 @@ git config user.email "email@example.com"
 git checkout branch-name -- file-name.py
 ```
 
+## What is a reflog?
+
+Git stores every action that records data into the reflog.
+While the `log` really only contains the commits, the `reflog` contains all actions performed such as switching branches, merges, rebases. Every action, just like a commit, is assigned a hash, so you can inspect it (`git show`), or `cherry-pick`, or `git revert` to it.
+
+> Every Git repository—every clone—has its own reflogs. In general, no two different Git repositories will agree as to what goes into the reflogs.
+
 ## What do we really mean by branch?
 
 See [here](https://stackoverflow.com/questions/25068543/what-exactly-do-we-mean-by-branch) and [here](https://stackoverflow.com/a/58020183/1446845).
