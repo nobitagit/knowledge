@@ -90,19 +90,6 @@ func generateFile(dirStats *map[string]int) {
 }
 
 func main() {
-	// DEBUG: check how git sees this repo history on the runner
-	// o := exec.Command("git", "diff", "@{90.days.ago}", "--numstat", "--", "vscode", "|", "head", "-n1", "|", "awk", "'{print $1;}'")
-	// o := exec.Command("git", "log", "--pretty=oneline", "|", "tail", "-n", "10")
-	// o := exec.Command("git", "log", "--pretty=oneline")
-	// out1, err1 := o.CombinedOutput()
-
-	// if err1 != nil {
-	// 	log.Fatal("Git command failed")
-	// }
-
-	//fmt.Printf("Br ---> : %s", out1)
-	// DEBUG end
-
 	// git log --pretty=format: --name-only --since='90 days ago' --stat
 	cmd := exec.Command("git", "log", "--pretty=format:", "--name-only", "--since='90 days ago'", "--stat")
 	out, err := cmd.CombinedOutput()
@@ -117,6 +104,22 @@ func main() {
 	var filePaths [][]byte
 	dirStats := make(map[string]int)
 
+	// This gets the oldest commit we want to analyse from
+	// While this looks pretty contrived, this is to avoid using reflogs, that won't work on
+	// the build pipelines #1
+	dateFormat := "2006-01-02"
+	startDate := time.Now().AddDate(0, 0, -90).Format(dateFormat)
+	sinceDate := fmt.Sprintf("--since=%s", startDate)
+	// find the commit hash of the oldest commit we consider
+	getCommitHash := exec.Command("git", "rev-list", sinceDate, "master")
+	commitHashes, _ := getCommitHash.CombinedOutput()
+	// we split by new line
+	chList := bytes.Split(commitHashes, []byte{'\n'})
+	// last line is a new line so, we want the last -1 item in the array, which is the
+	// oldest commit hash. While this is far from ideal, it will do for now
+	fmt.Println("Oldest relevant commit hash: ", string(chList[len(chList)-2]))
+	commitHash := string(chList[len(chList)-2])
+
 	for scanner.Scan() {
 		filePath := scanner.Bytes()
 		isMd := isMdFile(filePath)
@@ -130,19 +133,6 @@ func main() {
 			if exists == false {
 				dirStats[dirName] = 0
 			}
-
-			// git diff @{90.days.ago} --numstat -- [PATH]
-			// To print only the first word
-			// git diff @{90.days.ago} --numstat -- [PATH] | head -n1 | awk '{print $1;}'
-			dateFormat := "2006-01-02"
-			startDate := time.Now().AddDate(0, 0, -90).Format(dateFormat)
-			sinceDate := fmt.Sprintf("--since=%s", startDate)
-			// find the commit hash of the oldest commit we consider
-			getCommitHash := exec.Command("git", "rev-list", sinceDate, "master", "--", path)
-			commitHashes, _ := getCommitHash.CombinedOutput()
-			oo := bytes.Split(commitHashes, []byte{'\n'})
-			fmt.Println("dadsd", string(commitHashes))
-			commitHash := string(oo[len(oo)-2])
 
 			//git rev-list --since='2018-12-24' --until="2020-03-25" master -- git/readme.md| tail -1
 			//cmdStat := exec.Command("git", "diff", "@{90.days.ago}", "--numstat", "--", path)
