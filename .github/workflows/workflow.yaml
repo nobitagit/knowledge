@@ -18,7 +18,8 @@ jobs:
           args: go run ./_repoUtils/main.go
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./repoUtils/public
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: ./repoUtils/public # The folder the action should deploy.
