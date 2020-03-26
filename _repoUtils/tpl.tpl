@@ -12,7 +12,7 @@
 
 <body>
   <h1>Knowledge Stats</h1>
-  <h2>List of my topics of interest during the last 30 days</h2>
+  <h2>List of my topics of interest during the last 90 days</h2>
   <ol>
     {{range .}}
     <li><strong>{{ .Topic }}</strong>: {{ .Count }}</li>

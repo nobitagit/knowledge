@@ -106,7 +106,7 @@ func main() {
 
 	// This gets the oldest commit we want to analyse from
 	// While this looks pretty contrived, this is to avoid using reflogs, that won't work on
-	// the build pipelines #1
+	// the build pipelines see #3
 	dateFormat := "2006-01-02"
 	startDate := time.Now().AddDate(0, 0, -90).Format(dateFormat)
 	sinceDate := fmt.Sprintf("--since=%s", startDate)
