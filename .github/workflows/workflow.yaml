@@ -22,7 +22,3 @@ jobs:
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
           publish_dir: ./repoUtils/public
-        # with.:
-        #   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        #   BRANCH: gh-pages
-        #   FOLDER: repoUtils/public
