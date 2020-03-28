@@ -383,3 +383,19 @@ else
 end
 #...
 ```
+
+### Begin/end
+
+Begin is a way to group multiple expressions into one expression.
+It can be used in conjunction with `unless`/`until`, but it will always execute at least once.
+
+```rb
+day = "Sunday"
+def log_day
+  puts day
+end
+a = begin
+  puts "I am working"
+  log_day
+end unless day == "Sunday" || day == "Saturday"
+```
