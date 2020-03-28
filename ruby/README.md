@@ -157,3 +157,229 @@ Tube.new("Victoria", "Seven Sisters")
 
 A class can only inherit from 1 class at a time. Multiple inheritance is not supported per se.
 If not specified, a class inherits from Object.
+
+Private methods are **inherited** by the subclasses, hence can be used.
+
+```rb
+class Product
+  attr_accessor :price
+
+  private
+
+  def calc_price(tax, shipping)
+    price + tax + shipping
+  end
+end
+
+class Laptop < Product
+  attr_accessor :shipping
+
+  def get_price(tax, shipping)
+     calc_price(tax, shipping) # this will work
+  end
+end
+
+l = Laptop.new
+l.price = 200
+l.get_price(20, 30) # 250
+```
+
+## Executable class body
+
+One can put any arbitrary code inside a class body, and it will be executed.
+
+```rb
+def move
+  puts "moving"
+end
+
+class Train
+  puts "initialising"
+
+  move
+end
+# the next 2 lines are logged straight away at runtime
+> initialising
+> moving
+```
+
+## Open classes
+
+If a class is defined and then another one is created with the same name, the 1st one is augmented with the methods of the 2nd.
+Even an instance that was created before the 2nd definition will inherit these new methods, as long as they are used after the 2nd definition.
+This is quite surprising...
+
+```rb
+class Tube
+  def move
+    puts "moving"
+  end
+end
+
+t = Tube.new
+
+class Tube
+  def destination=(station)
+    @destination = station
+  end
+
+  def log
+    puts " destination is #{@destination}"
+  end
+end
+
+t.destination=("Waterloo")
+t.log
+# destination is Waterloo
+```
+
+If we redefine an existing method it will be monkey patched with the new definition.
+
+```rb
+class Tube
+  def move
+     puts "moving faster"
+  end
+end
+t.move
+# moving faster
+```
+
+NOTE: this also works for stdlib methods!
+
+```rb
+class String
+  def size
+    puts "this method is now broken"
+    12
+  end
+end
+
+s = "hello"
+s.size
+# "this method is now broken"
+# > 12
+```
+
+This can be exploited to patch broken 3rd party libs methods.
+
+## Class equality
+
+This is nice.
+
+```rb
+class Tube
+  attr_reader :number
+  def initialize(number)
+    @number = number
+  end
+end
+
+t1 = Tube.new("123")
+t2 = Tube.new("123")
+
+t1 == t2
+# false
+
+# BUT I can...
+class Tube
+  def ==(otherTube)
+     number == otherTube.number
+  end
+end
+
+t1 == t2
+# true
+```
+
+Note that, if we review all we've seen so far the above can also be called like this:
+
+```rb
+t1.==(t2)
+# true
+t1.== t2
+# true
+```
+
+This is because parens are optional when invoking a method.
+
+## Flow control
+
+### If/else
+
+```rb
+cond = true
+if cond
+  "all good"
+else
+  "something is off"
+end
+
+# or as 1 liner
+if cond then "all good" else "something is off" end
+# nothe that hre we use the "then" keyword
+
+# or
+"all good" if cond
+```
+
+### Truthy/falsy
+
+Only `false` and `nil` evaluate to false.
+Everythig else will be truthy.
+
+```
+""
+0
+[]
+```
+
+All of these are truthy.
+
+### If not
+
+One can use `unless`.
+
+### Conditional initilisation
+
+A pattern that is very used, initialise a class only if not done already.
+
+```rb
+tube ||= Tube.new
+```
+
+This has a quirk though, because it relies on the truthiness/falsiness of `tube`.
+While in this case it looks ok, look at this:
+
+```rb
+flag? ||= true
+# true
+flag? = false
+# false
+flag? ||= true
+# false
+```
+
+While I purposefully set flag to true on the last line, the value was not set.
+
+### And, or, ||, &&
+
+**Warning**: these are not really interchangeable!
+
+- `and` and `or` have a much lower precedence than the `&&` and `||` operators
+- `&&` has higher precedence than `||`
+- `and` and `or` has the same precedence
+
+### Case
+
+```rb
+day = 2
+case day
+when 0 then "Monday"
+when 1 then "Tuesday"
+when 2 then "Wednesday"
+else
+  "I have no idea"
+end
+#...
+```
