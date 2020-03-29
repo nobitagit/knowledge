@@ -452,3 +452,31 @@ rescue StandardError
   puts "soemthing happened"
 end
 ```
+
+### Raising exceptions
+
+```rb
+begin
+  name = "Andy"
+  if name != "andy"
+    raise NameError.new "The name doesn't match"
+  end
+end
+# NameError: The error doesn't match
+```
+
+To execute some logic after any sort of exception is raised, use `ensure`:
+
+```rb
+begin
+  some_non_existing_method()
+rescue NoMethodError
+  puts "all good"
+rescue ZeroDivisionError
+  puts "can't divide by 0"
+rescue StandardError
+  puts "soemthing happened"
+ensure
+  puts "this will always execute after any exception is thrown"
+end
+```
