@@ -1,5 +1,11 @@
-on: push
-name: Build website
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    # every day at 1am
+    - cron: "0 1 * * *"
+name: Knowledge page
 jobs:
   build-and-deploy:
     name: Build and deploy
@@ -8,7 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          # ref: master
           fetch-depth: 0
           persist-credentials: false
 
@@ -17,7 +22,7 @@ jobs:
         with:
           args: go run ./_repoUtils/main.go
 
-      - name: Deploy
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
