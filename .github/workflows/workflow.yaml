@@ -5,7 +5,7 @@ on:
   schedule:
     # every day at 1am
     - cron: "0 1 * * *"
-name: Knowledge page
+name: Knowledge stats page
 jobs:
   build-and-deploy:
     name: Build and deploy
