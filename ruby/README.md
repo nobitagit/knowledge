@@ -387,15 +387,68 @@ end
 ### Begin/end
 
 Begin is a way to group multiple expressions into one expression.
-It can be used in conjunction with `unless`/`until`, but it will always execute at least once.
+`Begin` creates its own execution context.
+A common usage is to catch errors and recover gracefully.
 
 ```rb
-day = "Sunday"
-def log_day
-  puts day
+begin
+  some_non_existing_method()
+rescue
+  puts "all good"
 end
-a = begin
-  puts "I am working"
-  log_day
-end unless day == "Sunday" || day == "Saturday"
+```
+
+## Iterators
+
+### Each
+
+```rb
+[1,2,3].each do |a|
+  puts a
+end
+
+# same as
+[1,2,3].each { |a| puts a }
+```
+
+## Exceptions
+
+All exceptions in Ruby [here](https://airbrake.io/blog/ruby-exception-handling/ruby-exception-classes) and more below.
+
+`rescue` catches all exceptions.
+To catch exceptions per type:
+
+```rb
+begin
+  some_non_existing_method()
+rescue NoMethodError
+  puts "all good"
+rescue ZeroDivisionError
+  puts "can't divide by 0"
+end
+```
+
+To inspect the type of exception once can map the exception object to a variable like so:
+
+```rb
+begin
+  some_non_existing_method()
+rescue StandardError => msg
+  puts msg
+  puts e.backtrace.inspect
+end
+```
+
+Only 1 exception will be caught, so **order matters**, one wants to list rescue blocks from more specific to more generic.
+
+```rb
+begin
+  some_non_existing_method()
+rescue NoMethodError
+  puts "all good"
+rescue ZeroDivisionError
+  puts "can't divide by 0"
+rescue StandardError
+  puts "soemthing happened"
+end
 ```
