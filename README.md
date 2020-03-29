@@ -8,7 +8,7 @@ All the (un)useful stuff I learn along the way.
 
 ![Knowledge stats page](https://github.com/nobitagit/knowledge/workflows/Knowledge%20stats%20page/badge.svg)
 
-After every commit and every night at 1am UTC the statistics of my learnings are automatically aggregated and recalculated.
+After every commit and every day at 00:00am UTC the statistics of my learnings are automatically aggregated and recalculated.
 Some extracts of this are then displayed on the [homepage](https://nobitagit.github.io/knowledge/).
 
 To run the stats locally for the last 90 days, cd into the directory of this repo and run:

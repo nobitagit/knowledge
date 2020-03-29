@@ -12,6 +12,116 @@ bundle update --conservative somegem
 - Dynamic types
 - Multi paradigm (functional and procedural)
 
+## Types
+
+### Booleans
+
+Ruby doesn't have a bool class.
+
+True and false are instances of `TrueClass` and `FalseClass`.
+You can't subtype them.
+
+### Number
+
+Ruby has an `Integer` class and 2 derived classes from it: `Fixnum` and `Bignum`.
+The language automatically handles switching from one to the other.
+Long numbers can be interpolated with `_` for readability.
+
+```rb
+100_000_000
+```
+
+### Strings
+
+Interpolation
+
+```rb
+name = "John"
+"This person's name is #{name}"
+```
+
+Substitutions
+
+```rb
+# is substring contained
+"Africa"["ri"]
+=> "ri" # in case it is, it returns the string itself
+"Bridge"["go"]
+=> nil # in case it's not
+str = "H^llo, my n^me is M^x"
+str.gsub("^", "a")
+# => "Hallo, my name is Max"
+```
+
+Split a string
+
+```rb
+a = "Hello"
+a.chars
+["H", "e", "l", "l", "o"]
+```
+
+### Symbols
+
+Symbols in Ruby are similar to what enums are in other langs.
+Symbols are **globally unique and immutable**.
+
+Symbols are written like this:
+
+```rb
+:some_symbol
+:some_attr
+```
+
+Strings could be used in general to replace symbols but since a string is created every time the program reads that part of the code, Symbols have better perf, because the id of the symbol is the same.
+
+### Arrays
+
+```rb
+# create an array of words
+%w[these will be strings in an array]
+# ["these", "will", "be", "strings", "in", "an", "array"]
+%w[one\ word]
+#  ["one word"]
+# array of symbols
+%i[one symbol after the other]
+# [:one, :symbol, :after, :the, :other]
+
+# append an item
+[1,2,3] << 4
+# [1, 2, 3, 4]
+
+# filtering
+[1,44,3,55,31,2].select { |n| n > 10}
+# [44, 55, 31]
+```
+
+### Hashes
+
+```rb
+state = { "on" => true, "balance" => 223}
+# or
+state = { on: true, balance: 223}
+
+state[:on] # => true
+```
+
+### Parallel assignment and splats
+
+```rb
+a, b = 1, 2
+# destructure and ignore
+hour, _, day, _, year = [20, 30, 12, 04, 1980]
+# splats
+title, *rest = ["Mr", "John", "Stewart", "Hopkins"]
+rest
+# ["John", "Stewart", "Hopkins"]
+# also works greedily
+title, *rest, sr_jr = ["Mr", "John", "Stewart", "Hopkins", "sr"]
+rest
+# ["John", "Stewart", "Hopkins"]
+```
+
 ## Some basics
 
 ```rb
@@ -497,3 +607,16 @@ end
 ```
 
 Note that the ensure will **always** run.
+
+## Methods in depth
+
+### Varargs
+
+```rb
+def aggregate_by_type(type, *numbers)
+  agg = numbers.reduce(0) { |sum, i| sum + i }
+  puts "#{type}: #{agg}"
+end
+aggregate_by_type("oranges", 32, 34, 55, 89, 33)
+# oranges: 243
+```
