@@ -480,3 +480,20 @@ ensure
   puts "this will always execute after any exception is thrown"
 end
 ```
+
+If you want tp execute code in case there were no exceptions, but after those checks, you can add an `else`:
+
+```rb
+begin
+  3 + 1
+rescue StandardError
+  puts "soemthing happened"
+else
+  # this will execute if no exceptions is thrown
+  puts "else clause"
+ensure
+  puts "this will always execute after any exception is thrown"
+end
+```
+
+Note that the ensure will **always** run.
