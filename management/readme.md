@@ -9,6 +9,8 @@
 - Don't let other people create events on your own calendar
 - When a meeting is requested, ask if it can be solved with an email or a slack conversation
 - Stack meetings on specific days
+- Try and keep all the related events on the same day. If you have a meeting about X, if possible try and work on X on that same day
+- Schedule **everything** in the calendar
 
 > Each Sunday afternoon (or Friday afternoon), write down your top 3 priorities for the week and design your calendar to spend 80%+ of your time on those priorities.
 >
