@@ -72,6 +72,7 @@ der Schritt: step
 
 ## U
 
+überlegen: think
 Ubrigens: by the way
 der Unterschied: the difference
 unterwegs: on the way
