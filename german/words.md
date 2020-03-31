@@ -52,7 +52,11 @@ Gerade: just (time)
 
 > Ich habe es gerade gemacht
 
-das Geschäft; store
+das Geschäft: store
+
+# K
+
+sich kümmern: take care of
 
 ## O
 
@@ -70,6 +74,10 @@ runter: down
 
 der Schritt: step
 
+# T
+
+das Trinkgeld: gratuity, tip
+
 ## U
 
 überlegen: think
@@ -80,6 +88,7 @@ unversehrt: intact
 
 ## V
 
+verabreden: to meet up
 verrückt: insane
 Vorbereiten: prepare
 vorschlagen: suggest
