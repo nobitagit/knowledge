@@ -620,3 +620,92 @@ end
 aggregate_by_type("oranges", 32, 34, 55, 89, 33)
 # oranges: 243
 ```
+
+### Named args & default values
+
+```rb
+# implementation
+def aggregate_results(list: [], key_name: :amount, description: "the result of this call is ")
+
+end
+```
+
+Note that the default values are **required** in the method definition.
+
+More on this:
+
+```rb
+# default value. Note that this is NOT a named arg
+def aggregate_results(list = [])
+
+end
+```
+
+## Blocks, Procs & Lambdas
+
+https://blog.appsignal.com/2018/09/04/ruby-magic-closures-in-ruby-blocks-procs-and-lambdas.html
+
+## Constants
+
+Not really constants in Ruby, they can be reassigned.
+
+```rb
+MAX_AGE = 206000
+# later on...
+MAX_AGE = 334000 # totally ok, you'll just get a warning
+```
+
+## Modules
+
+- used for namespacing
+
+```rb
+module API
+  def self.get_users
+    # ...
+  end
+end
+
+API.get_users
+
+# can also contains classes
+module API
+  class Users
+    def get_by_id(id)
+      #...
+    end
+  end
+end
+
+API::Users.get_by_id(1)
+
+# can also contains classes
+module V2
+  module API
+    class Users
+      def get_by_id(id)
+        #...
+      end
+    end
+  end
+end
+
+V2::API::Users.get_by_id(1)
+```
+
+- used for mixins
+
+```rb
+module ErrorReporter
+  def timeLogger
+    puts Time.now
+  end
+end
+
+class User
+  include ErrorReporter
+end
+
+u = User.new
+u.timeLogger
+```

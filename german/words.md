@@ -10,6 +10,7 @@ Aufpassen: take care, give attention to stg
 
 ## B
 
+die Bedienung: waitress
 Bereit: ready (see also vorbereiten)
 bequem: comfortably
 der Beutel: bag
@@ -27,6 +28,7 @@ Da: can be used in place of "weil". (italian, poiche).
 ## E
 
 Ebenfalls: likewise, too, also, as well (see also "auch")
+entscheiden: decide
 
 > Unsere Nachbarn waren ebenfalls eingeladen (out neighbors were invited as well)
 
@@ -82,6 +84,7 @@ das Trinkgeld: gratuity, tip
 
 überlegen: think
 Ubrigens: by the way
+die Umgebung: surrounding area
 der Unterschied: the difference
 unterwegs: on the way
 unversehrt: intact
