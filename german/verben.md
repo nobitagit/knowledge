@@ -31,3 +31,31 @@ Here we see the "teeth" are accusative (chi/che cosa), so the reflexiv becomes d
 **NOTE**: at the end of the day the only difference is for the first 2 subjects (me, you), the rest is in reality unchanged.
 
 - [Exercise1](https://www.deutsch-perfekt.com/deutsch-ueben/reflexive-verben)
+
+## Lassen
+
+- ich lasse
+- du¨lässt
+- er lässt
+- wir lassen
+- iht **lasst**
+- sie lassen
+
+"Lassen" benützt man auch, wenn man **etwas veranlässt** (when you let something happen).
+
+> Tom lässt sich die Haare schneiden
+
+Hier, Tom machst es nicht selbst, sondern er lässt es **von jemand anderem machen**.
+
+> Wir lassen uns ein Haus bauen
+> We are getting a house built
+
+Hier auch, wir lassen jemand anderen bauen eine Haus für uns.
+
+"Lassen" kann man auch benuzten, wenn man ein Vorschlag (suggestion) hat.
+
+> Lass uns die Hausaufgabe machen
+
+Die präteritum Form ist **ließ**
+
+-[Video Unterricht](https://www.youtube.com/watch?v=dHfxkJZ4PQM&list=PLF9mJC4RrjIhhEGuI2x4_WWaIyn9q7MzV&index=6&t=0s)

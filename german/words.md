@@ -24,11 +24,13 @@ Bereits: already (see also vorbereiten)
 ## D
 
 Da: can be used in place of "weil". (italian, poiche).
+darstellen: represent, describe, portray
 
 ## E
 
 Ebenfalls: likewise, too, also, as well (see also "auch")
 entscheiden: decide
+die Erlaubnis: permission
 
 > Unsere Nachbarn waren ebenfalls eingeladen (out neighbors were invited as well)
 
@@ -101,5 +103,6 @@ die Vorschrift: rule
 
 ziemlich: quite
 Zusätzlich: additional, extra
+zustimmen: agree, confirm
 
 > Wird das zusätzlich kosten? (will there be any extra cost?)
