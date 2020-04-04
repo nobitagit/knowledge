@@ -8,6 +8,21 @@ See all open files
 Show command palette
 <kbd>CMD</kbd> + <kbd>p</kbd>
 
+Surround with text. Put this into your `keybindings.json`
+
+```
+  {
+    "key": "alt+s",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+      "snippet": "${1}${TM_SELECTED_TEXT}${1}"
+    }
+```
+
+And then:
+<kbd>OPTION</kbd> + <kbd>s<kbd>
+
 Show suggestions (intellisense style)
 <kbd>CTRL</kbd> + <kbd>SPACE</kbd> either on a new line or by highlighting a word
 

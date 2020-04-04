@@ -16,3 +16,9 @@
 sudo pkill TouchBarServer;
 sudo killall “ControlStrip”;
 ```
+
+## How to type special characters
+
+- Ä/ä, Ö/ö, Ü/ü (press "option" and "u" then the vowel)
+
+- ß (press "option" and "s")
