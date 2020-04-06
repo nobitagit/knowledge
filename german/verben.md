@@ -59,3 +59,26 @@ Hier auch, wir lassen jemand anderen bauen eine Haus für uns.
 Die präteritum Form ist **ließ**
 
 -[Video Unterricht](https://www.youtube.com/watch?v=dHfxkJZ4PQM&list=PLF9mJC4RrjIhhEGuI2x4_WWaIyn9q7MzV&index=6&t=0s)
+
+### Passiv mit lassen
+
+Aktiv Form
+
+> Man kann das Puzzle lösen
+
+Passiv Form
+
+> Das Puzzle lässt sich lösen
+> (The puzzle can be solved)
+
+Normalerweise lassen die Sätze mit "werden" und "lassen" sich formulieren.
+
+> Man kann die Qualitat verbessern
+
+Diese Satz wird mit "kann" + "partizip":
+
+> Die Qualitat kann verbessert werden
+
+oder, mit lassen + infinitiv:
+
+> Die Qualitat lässt sich verbessern

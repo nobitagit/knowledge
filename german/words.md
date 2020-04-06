@@ -62,6 +62,10 @@ das Geschäft: store
 
 sich kümmern: take care of
 
+## M
+
+manche: some
+
 ## O
 
 obwohl: even though
