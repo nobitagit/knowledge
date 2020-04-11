@@ -46,6 +46,12 @@ class HomeController < ApplicationController
 end
 ```
 
+**TIP**: You can view all routes by running:
+
+```sh
+rake routes
+```
+
 ## Models
 
 ```sh
@@ -70,3 +76,35 @@ Question.create email: 'andy@gray.com', body: 'some text'
 # #<Question id: 1, email: "andy@gray.com", body: "some text", created_at: "2020-04-05 00:08:46", updated_at: "2020-04-05 00:08:46">
 Question.first
 ```
+
+## Concerns
+
+Models and Controllers have a "concerns" folder.
+This can be used for shared methods.
+
+```rb
+## models/concerns/shared_method.rb
+module SharedMethod
+  def get_date
+    Time.now
+  end
+end
+
+## models/question.rb
+class Question < ApplicationRecord
+  include SharedMethod # note here
+
+  def get_body
+    # do something
+  end
+end
+
+## elsewhre.rb
+Question.all.map {|q| puts q.get_date }
+```
+
+This ensures that methods can be used in more than one place easily.
+
+## Relationships
+
+- https://guides.rubyonrails.org/association_basics.html
