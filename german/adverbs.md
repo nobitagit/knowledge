@@ -76,3 +76,19 @@ Link: http://www.nthuleen.com/teach/grammar/wodakompositaexplantw.html
    Katja dankt Georg dafür.
 10. Die Studenten freuen sich über den Lehrer.
     Die Studenten freuen sich über ihn.
+
+## Wo-Komposita
+
+- [Unterricht](https://www.youtube.com/watch?v=ZqelGAzSG90&list=PLF9mJC4RrjIhhEGuI2x4_WWaIyn9q7MzV&index=13&t=0s)
+
+> ~~Über was~~ lachst du?
+
+Das ist falsch, sondern man muss wo + über benutzen:
+
+> Worüber lachst du?
+
+> ~~Für was~~ interessierst du dich?
+>
+> **Wofür** interessierst du dich?
+
+**Wichtig**: Genau wie bei Da-komposita verwendet man Wo-Komposita, wenn man über **lebende Objekte** spricht.
