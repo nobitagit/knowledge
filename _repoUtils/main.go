@@ -25,7 +25,7 @@ func getBaseDir(fullPath string) string {
 }
 
 func isBlackListed(fileName []byte) bool {
-	ignoredDirs := [3]string{".git", "_repoUtils", ".github"}
+	ignoredDirs := [4]string{".git", "_repoUtils", ".github", "quotes"}
 
 	dir := filepath.Dir(string(fileName))
 
