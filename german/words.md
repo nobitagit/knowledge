@@ -38,6 +38,7 @@ Eigentlich: actually, for real
 
 > Was wollen sie eigentlich?
 
+Ebenfalls: likewise (auch: Gleichfalls)
 Eilig: hurried
 einschalten: to switch on
 erscheinen: appear
@@ -49,17 +50,17 @@ Fest: fixed
 ## G
 
 Geduld: patience
-
 Gelegenheit: opportunity
-
 Gerade: just (time)
 
 > Ich habe es gerade gemacht
 
 das Geschäft: store
+Gleichfalls: likewise (auch: ebenfalls)
 
 # K
 
+kaum: barely, hardly
 sich kümmern: take care of
 
 ## M
