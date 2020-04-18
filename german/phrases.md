@@ -1,5 +1,7 @@
 # Phrases
 
+- Würde ich so sagen (i would say so)
+
 ## I plan to...
 
 - **Ich habe vor**, mit dem Rauchen aufzuhören
