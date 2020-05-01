@@ -52,6 +52,7 @@ Projects can be grouped into folders. A folder mirrors the structure of a compan
 For instance:
 
 ```
+              _______
               FOLDERS
 
  Department A        Department B
@@ -60,7 +61,19 @@ For instance:
   |       |            |       |
 Team 1  Team 2       Team 3  Team 4
   |                            |
+  |           ________         |
   |           PROJECTS         |
   |                            |
  App            Test Env  ---------- Production
+                                        |
+              _________                 |
+              RESOURCES                 |
+                                        |
+                                -----------------
+                                |       |       |
+                              App      GKE    Cloud
+                            Engine           Storage
+                                              Bucket
 ```
+
+An organistation owns all the folders. You can set policies that apply to all folders/projects.
