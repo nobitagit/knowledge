@@ -580,7 +580,7 @@ Every hash function with more possible inputs than outputs is guaranteed to have
 
 Possible expansion on this:
 
-- how to has functions deal with collisions?
+- how do hash functions deal with collisions?
 
 ---
 
