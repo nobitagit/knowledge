@@ -83,3 +83,5 @@ Some examples are:
 
 - Cloud Foundry
 - Openshift: open source, by Red Hat
+
+![On Premise vs Iaas vs Paas vs Fully Managed](./images/iaas-vs-paas.png)
