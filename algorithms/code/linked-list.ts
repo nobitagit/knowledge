@@ -77,6 +77,26 @@ class LinkedList<T> {
     }
   }
 
+  removeLast() {
+    // empty LL -> do nothing
+    if (this.count == 0) {
+      // do nothing
+    } else if (this.count == 1) {
+      this.tail = undefined;
+      this.head = undefined;
+    } else {
+      let currentNode = this.head as BaseNode<T>;
+      // we loop until we find the last - 1 node
+      // (the one referencing the tail directly)
+      while (currentNode.next !== this.tail) {
+        currentNode = currentNode.next!;
+      }
+
+      currentNode!.next = undefined;
+      this.tail = currentNode;
+    }
+  }
+
   print() {
     console.log(this);
     printNodes<T>(this.head);

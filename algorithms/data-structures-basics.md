@@ -176,4 +176,49 @@ class LinkedList<T> {
     }
   }
 }
+
+const ll = new LinkedList();
+const head = new BaseNode(4);
+ll.addToTail(head);
+const middle = new BaseNode(5);
+ll.addToTail(middle);
+ll.removeFirst();
+ll.print();
+// 5
 ```
+
+Removing from the tail, is more complex, since the last node doesn't reference the previous one, so we have to traverse the LL from the head up to the last - 1 node.
+
+```ts
+class LinkedList<T> {
+  removeLast() {
+    // empty LL -> do nothing
+    if (this.count == 0) {
+      // do nothing
+    } else if (this.count == 1) {
+      this.tail = undefined;
+      this.head = undefined;
+    } else {
+      let currentNode = this.head as BaseNode<T>;
+      // we loop until we find the last - 1 node
+      // (the one referencing the tail directly)
+      while (currentNode.next !== this.tail) {
+        currentNode = currentNode.next!;
+      }
+
+      currentNode!.next = undefined;
+      this.tail = currentNode;
+    }
+  }
+}
+
+const ll = new LinkedList();
+const head = new BaseNode(4);
+ll.addToTail(head);
+const middle = new BaseNode(5);
+ll.addToTail(middle);
+ll.removeLast();
+ll.print();
+```
+
+This might result in a very expensive operation in case of very deep LLs.
