@@ -2,6 +2,11 @@
 
 From [PS Algorithms and Data Structures - Part 1](https://app.pluralsight.com/player?course=ads-part1&author=robert-horvick&name=ads-linked-list&clip=0&mode=live).
 
+## TOC
+
+- [Node](#Node)
+- [Linked List](#Linked-List)
+
 ## Node
 
 Basic building block for many DSs (Data Structures).
@@ -219,6 +224,7 @@ const middle = new BaseNode(5);
 ll.addToTail(middle);
 ll.removeLast();
 ll.print();
+// 4
 ```
 
 This might result in a very expensive operation in case of very deep LLs.
