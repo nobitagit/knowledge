@@ -133,11 +133,11 @@ This makes adding to the tail much easier.
 class LinkedList<T> {
   // this extends the implementation above
   addToTail(node: BaseNode<T> | undefined) {
-    // const tempTail = this.tail;
-    // this.tail = node;
     // if LL is empty tail and head reference the same node
     if (this.length === 0) {
       this.head = node;
+      // otherwise we mutate the pointer of the current tail
+      // to point to the newly appended node
     } else {
       this.tail.next = node;
     }
@@ -152,4 +152,28 @@ ll.addToTail(head);
 const middle = new BaseNode(5);
 ll.addToTail(middle);
 ll.print();
+// 4
+// 5
+```
+
+### Linked lists: removing nodes
+
+Removing from the front is very easy, since the head references the 2nd node in the LL.
+
+```ts
+class LinkedList<T> {
+  removeFirst() {
+    // empty LL -> do nothing
+    if (this.count == 0) {
+      return;
+    }
+
+    this.head = this.head.next;
+    this.count = this.count - 1;
+
+    if (this.count == 0) {
+      this.tail = undefined;
+    }
+  }
+}
 ```
