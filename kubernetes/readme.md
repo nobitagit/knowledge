@@ -44,7 +44,25 @@ To install the ui:
 - open http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/#/login
 - paste the token copied above
 
+## The K8s object model
+
+From [PS - Architecting with Google Kubernetes Engine - Foundations](https://app.pluralsight.com/course-player?clipId=eb702673-601f-4409-87b9-1ee8f8be232f)
+
+Kubernetes objects are composed of 2 elements:
+
+- **Object spec**: desired state described the the user (us)
+- **Object status**: current state described by K8s.
+
 ## Pods
 
-Pods are environments for containers. One pod can host one or more containers.
-Every Pod has an IP address.
+Pods are environments for containers and the smallest deployable unit in k8s.
+One pod can host one or more containers.
+
+![pod with 1 container](./images/pod1.png)
+
+If there are more containers in a pod, they are tightly coupled.
+They share resources, like networking and storage. Every Pod has an IP address.
+
+![pod with 3 containers](./images/pod2.png)
+
+### How a K8s cluster is composed
