@@ -6,6 +6,8 @@ From [PS Algorithms and Data Structures - Part 1](https://app.pluralsight.com/pl
 
 - [Node](#Node)
 - [Linked List](#Linked-List)
+- [Doubly Linked List](#Doubly-Linked-List)
+- [Stack](#Stack)
 
 ## Node
 
@@ -228,3 +230,9 @@ ll.print();
 ```
 
 This might result in a very expensive operation in case of very deep LLs.
+
+## Doubly Linked List
+
+This is a specialisation of the linked list. DLLs have 2 pointers, one to the next and one to the previous node.
+
+## Stack
