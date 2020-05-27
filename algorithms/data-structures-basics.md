@@ -249,3 +249,161 @@ This is a specialisation of the linked list. DLLs have 2 pointers, one to the ne
 ## Priority queue
 
 A specialisation of the queue.
+
+## trees
+
+Trees are similar to linked lists, in that they chain together nodes of data.
+instead of doing it in a **linear fashion** though, they do it in an **hierarchical** one.
+
+Each node in a tree can have many child nodes but **only one** parent.
+
+```
+                    |----|
+                    |    |
+                    |----|
+                      |
+                      |
+      _________________________________
+      |        |      |       |       |
+    |---|    |---|  |---|   |---|   |---|
+    |   |    |   |  |   |   |   |   |   |
+    |---|    |---|  |---|   |---|   |---|
+
+```
+
+This structure implies that **there will always be 1 and only 1 path to go from node A to node b (where B is a child node of A)**.
+
+This is an important limitation of the tree structure.
+
+## Binary tree
+
+A binary tree is composed of nodes that have 0, 1 or 2 child nodes.
+A node with 2 child nodes will have a **left child** and a **right child**.
+
+```
+    |---|
+    |   |
+    |---|
+      |
+  _________
+  |       |
+|---|   |---|
+|   |   |   |
+|---|   |---|
+
+LEFT   RIGHT
+```
+
+## Binary search tree
+
+This is a specialisation of the binary tree, where:
+
+- nodes are sorted
+- the left child node will contain a value that is **smaller than the parent**.
+- the right child node will contain a value that is **bigger than the parent**.
+
+```
+    |---|
+    | 4 |
+    |---|
+      |
+  _________
+  |       |
+|---|   |---|
+| 2 |   | 6 |
+|---|   |---|
+
+LEFT   RIGHT
+```
+
+### Adding data to a binary search tree
+
+Adding data happens though a recursive algo.
+
+### Case 1: an empty tree
+
+Whatever value we start with becomes the root node.
+
+```
+    |---|
+    | 4 |
+    |---|
+```
+
+### Case 2: adding a smaller value
+
+```
+    |---|
+    | 4 |
+    |---|
+      |
+  _____
+  |
+|---|
+| 2 |
+|---|
+```
+
+This happens recursively if more smaller values are added.
+
+```
+        |---|
+        | 4 |
+        |---|
+          |
+      _____
+      |
+    |---|
+    | 2 |
+    |---|
+      |
+  _____
+  |
+|---|
+| 1 |
+|---|
+```
+
+### Case 3: adding a higher value
+
+```
+        |---|
+        | 4 |
+        |---|
+          |
+          |
+      _________
+      |       |
+    |---|   |---|
+    | 2 |   | 6 |
+    |---|   |---|
+      |
+  _____
+  |
+|---|
+| 1 |
+|---|
+```
+
+### Case 4: adding a duplicate
+
+Duplicate will be sent to the right. In the case above we can add 4 and it will behave like this:
+
+```
+        |---|
+        | 4 |
+        |---|
+          |
+          |
+      _________
+      |       |
+    |---|   |---|
+    | 2 |   | 6 |
+    |---|   |---|
+      |       |
+  _____   _____
+  |       |
+|---|   |---|
+| 1 |   | 4 |
+|---|   |---|
+```
