@@ -18,7 +18,7 @@ function printNodes<T>(node: BaseNode<T> | undefined) {
   }
 }
 
-class LinkedList<T> {
+export class LinkedList<T> {
   public head: BaseNode<T> | undefined;
   public tail: BaseNode<T> | undefined;
   public count: number;

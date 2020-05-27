@@ -236,3 +236,16 @@ This might result in a very expensive operation in case of very deep LLs.
 This is a specialisation of the linked list. DLLs have 2 pointers, one to the next and one to the previous node.
 
 ## Stack
+
+- LIFO container
+- push, pop, peek
+- can be implemented by using a Linked List or an Array
+
+## Queue
+
+- FIFO container
+- enqueue, dequeue, peek,
+
+## Priority queue
+
+A specialisation of the queue.
