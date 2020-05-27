@@ -4,6 +4,10 @@
 
 - [The manager's handbook](https://themanagershandbook.com/)
 
+Also, other folders in this repo might be relevant here:
+
+- [Conducting interviews](../interviews/conducting-interviews.md)
+
 ## Manage time and calendar
 
 - Don't let other people create events on your own calendar
