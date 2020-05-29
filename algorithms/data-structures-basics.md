@@ -8,6 +8,11 @@ From [PS Algorithms and Data Structures - Part 1](https://app.pluralsight.com/pl
 - [Linked List](#Linked-List)
 - [Doubly Linked List](#Doubly-Linked-List)
 - [Stack](#Stack)
+- [Queue](#Queue)
+- [Priority Queue](#Priority-queue)
+- [Trees](#Trees)
+- [Binary Tree](#Binary-Tree)
+- [Binary Search Tree](#Binary-Search-Tree)
 
 ## Node
 
@@ -250,7 +255,7 @@ This is a specialisation of the linked list. DLLs have 2 pointers, one to the ne
 
 A specialisation of the queue.
 
-## trees
+## Trees
 
 Trees are similar to linked lists, in that they chain together nodes of data.
 instead of doing it in a **linear fashion** though, they do it in an **hierarchical** one.
@@ -275,7 +280,7 @@ This structure implies that **there will always be 1 and only 1 path to go from 
 
 This is an important limitation of the tree structure.
 
-## Binary tree
+## Binary Tree
 
 A binary tree is composed of nodes that have 0, 1 or 2 child nodes.
 A node with 2 child nodes will have a **left child** and a **right child**.
@@ -294,7 +299,7 @@ A node with 2 child nodes will have a **left child** and a **right child**.
 LEFT   RIGHT
 ```
 
-## Binary search tree
+## Binary Search Tree
 
 This is a specialisation of the binary tree, where:
 
@@ -438,3 +443,11 @@ This is a complex procedure. We star traversing from the root and:
 
 - If the value doesn't exist in the tree, we exit
 - If the node is a LEAF, we remove the parent's pointer to it
+- In the other cases we need to find the child node to replace the deleted node
+
+#### Case 1: Deleting a child node: a node with no right child
+
+Here below the nodes of value 1, 3 5, 6, 7 and 8 have no right child.
+We will remove node 8.
+
+![tree node removal 1](./images/tree-node-removal-1.png)
