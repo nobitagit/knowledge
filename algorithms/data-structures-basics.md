@@ -407,3 +407,34 @@ Duplicate will be sent to the right. In the case above we can add 4 and it will 
 | 1 |   | 4 |
 |---|   |---|
 ```
+
+### Searching in a binary tree
+
+Search happens recursively. We start from the root node and we traverse the structure until we find the value we want or until we exhaust the nodes.
+
+```ts
+find(node: TreeNode, value: number) {
+  if (node == null) {
+    return null;
+  }
+
+  if (node.value == value) {
+    return node;
+  }
+
+  if (value < node.value) {
+    return find(node.left);
+  }
+
+  return find(node.right);
+}
+```
+
+Searching in a binary tree can be much faster compared to a Linked List because even in the worst case scenario you wouldn't be traversing the whole tree, but a fraction of it.
+
+### Deleting a node in a binary tree
+
+This is a complex procedure. We star traversing from the root and:
+
+- If the value doesn't exist in the tree, we exit
+- If the node is a LEAF, we remove the parent's pointer to it
