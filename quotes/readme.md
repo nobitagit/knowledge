@@ -10,3 +10,7 @@ If you think people see you as a naive or immature, then you more likely act lik
 > Hard means worry: if you're not worrying that something you're making will come out badly, or that you won't be able to understand something you're studying, then it isn't hard enough. There has to be suspense. [...] Look for smart people and hard problems. Smart people tend to clump together, and if you can find such a clump, it's probably worthwhile to join it.
 >
 > -- [Paul Graham](http://www.paulgraham.com/hs.html?viewfullsite=1)
+
+> Research from Johns Hopkins Carey Business School found that deviant behavior from one team member causes others to work harder than if there wasn’t misconduct. So while it can be incredibly annoying to work with incompetent people, in the end, it can improve the rest of the team.
+>
+> - [4 Ways Effective Leaders Deal With Incompetent People](https://www.entrepreneur.com/article/283996)
