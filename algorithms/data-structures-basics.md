@@ -445,9 +445,42 @@ This is a complex procedure. We star traversing from the root and:
 - If the node is a LEAF, we remove the parent's pointer to it
 - In the other cases we need to find the child node to replace the deleted node
 
-#### Case 1: Deleting a child node: a node with no right child
+#### Case 1: Deleting a child node with no right child
 
 Here below the nodes of value 1, 3 5, 6, 7 and 8 have no right child.
 We will remove node 8.
 
 ![tree node removal 1](./images/tree-node-removal-1.png)
+
+The method here is to place node 6 where node 8 is now.
+The fundamental rules of the tree still apply:
+
+whatever is right of the root node (4) will always be bigger. So, whatever is left of the node to be removed is guaranteed to be greater than its parent's value (4 in this case).
+
+#### Case 2: Deleting a child node with a _right_ child that has no _left_ child
+
+![tree node removal 2](./images/tree-node-removal-1.png)
+
+### Inverting a binary tree
+
+```ts
+var invertTree = function (root: TreeNode) {
+  // base case: if root is null
+  // it means we already reached a leaf node
+  // so return null and stop the iteration
+  if (root == null) {
+    return null;
+  }
+
+  // Start inverting the tree.
+  // Store a temporary child node, so
+  // we can mutate root
+  let temp = root.left;
+  // swap left
+  root.left = invertTree(root.right);
+  // swap right
+  root.right = invertTree(temp);
+  // return the newly swapped root
+  return root;
+};
+```

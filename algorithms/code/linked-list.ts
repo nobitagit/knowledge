@@ -110,3 +110,11 @@ const middle = new BaseNode(5);
 ll.addToTail(middle);
 ll.removeFirst();
 ll.print();
+
+// 1. How to delete a node in a linked list
+// Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.
+// https://leetcode.com/explore/challenge/card/june-leetcoding-challenge/539/week-1-june-1st-june-7th/3348/
+function deleteNode(node: BaseNode<number>) {
+  node.value = node.next.value;
+  node.next = node.next.next;
+}
