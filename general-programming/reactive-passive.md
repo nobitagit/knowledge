@@ -2,8 +2,7 @@
 
 ## Sources
 
-- [Reactive programming vs Passive programming](https://vaibhavgupta.me/2017/12/31/reactive-programming-vs-passive-programming/)
-- [Reactive programming - why it matters](https://www.youtube.com/watch?v=49dMGC1hM1o&feature=youtu.be)
+- [Reactive programming - why it matters](https://www.youtube.com/watch?v=49dMGC1hM1o&feature=youtu.begit)
 
 Consider two modules, **Cart** and **Invoice** such that if an item is added to the Cart, Invoice should update.
 
@@ -20,6 +19,8 @@ Consider two modules, **Cart** and **Invoice** such that if an item is added to 
 One way to achieve this is to add dependency of Invoice on Cart, such that when Cart updates itself, it updates Invoice as well. Something like the following pseudo code in Cart:
 
 ```ts
+import { Invoice } from "../invoice";
+
 class Cart {
   addItemInCart(item: Item) {
     Invoice.update(item.price);
@@ -42,9 +43,15 @@ We can represent this relationship like so:
 Another way to achieve this is to invert the relationship so that Invoice depends on Cart, updating itself when Cart changes.
 
 ```ts
+import { Cart } from "../cart";
+
 class Invoice {
-  addItemInCart(item: Item) {
-    Invoice.update(item.price);
+  setup() {
+    Cart.on("product:added", this.updateItems.bind(this));
+  }
+
+  updateItems(product: Product) {
+    this.items(product);
   }
 }
 ```
@@ -58,3 +65,9 @@ This would be represented as:
   |--------|      |---------|
 
 ```
+
+## In short...
+
+- Passive: remote setters and getters
+
+- Reactive: Event observation and self updates
