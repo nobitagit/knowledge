@@ -6,3 +6,4 @@
 - use https://languagetool.org/ to spellcheck
 - to use an image from Unsplash, follow this tutorial https://www.youtube.com/watch?v=Bn3weNRQRDE (click on image, then go to https://source.unsplash.com/{ID})
 - if publishing on more than one platform, remember to use a canonical url
+- check the 99 most used tags https://dev.to/alfredosalzillo/the-99-most-used-tags-so-far-3ink
