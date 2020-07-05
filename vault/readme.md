@@ -1,6 +1,6 @@
 # Vault
 
-Some shorter infom about Vault and some fundamental concepts are also written [here](../security/cryptography.md#How-to-store-keys-to-encrypt-and-decrypt).
+Some shorter infomation about Vault and some fundamental concepts are also written [here](../security/cryptography.md#How-to-store-keys-to-encrypt-and-decrypt).
 
 ```sh
 brew install vault -y
@@ -48,7 +48,21 @@ Development mode should NOT be used in production installations!
 ==> Vault server started! Log data will stream in below:
 ```
 
+We can store the vault address and token in the environment, so we can start testing
+
 ```sh
 export VAULT_ADDR='http://127.0.0.1:8200'
 export VAULT_TOKEN='s.IHT9CuwqcZTPXlEw1d5hsUtD'
 ```
+
+When a dev server starts it works over http and start with an unsealed state.
+
+There 3 ways to interact with the vault:
+
+- via cli (using the `vault` command we installed with `brew`)
+- via http
+- via the dedicated UI
+
+## Vault UI
+
+In out case, we login via the browser using the `VAULT_ADDR`, http://127.0.0.1:8200
