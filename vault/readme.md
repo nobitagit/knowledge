@@ -154,3 +154,11 @@ version          2
 ```
 
 Note the version bump. Vault keep by default the last 10 versions.
+
+## Next steps
+
+[Working with Secrets](./working-with-secrets):
+
+- secrets lifecycles (create, read, update, delete)
+- what are secrets engines?
+-
