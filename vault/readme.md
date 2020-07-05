@@ -66,3 +66,91 @@ There 3 ways to interact with the vault:
 ## Vault UI
 
 In out case, we login via the browser using the `VAULT_ADDR`, http://127.0.0.1:8200
+
+## Inserting values in the vault
+
+### CLI
+
+```sh
+vault kv put secret/my-test age=25
+```
+
+This line:
+
+- selects `secret` as the Secrets Engine (note: `secret` didn't need to be created because it's there by default, but other engines can be created)
+- creates a new secret named `my-test`, or selects it if present
+- creates a new key/value pair `{age: 25}`
+
+```sh
+vault kv get secret/my-test
+
+====== Metadata ======
+Key              Value
+---              -----
+created_time     2020-07-05T11:37:08.902356Z
+deletion_time    n/a
+destroyed        false
+version          1
+
+===== Data =====
+Key       Value
+---       -----
+answer    15
+```
+
+### HTTP
+
+Vault exposes an API we can use to interact with our engines.
+
+```sh
+curl --location --request POST 'http://127.0.0.1:8200/v1/secret/data/my-test2' \
+--header 'X-Vault-Token: s.IHT9CuwqcZTPXlEw1d5hsUtD' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "data": {
+        "age": 26
+    }
+}'
+```
+
+We can then GET http://127.0.0.1:8200/v1/secret/data/my-test2.
+
+```json
+{
+  "request_id": "078daf1f-e129-08d0-d9b1-a46f142e230a",
+  "lease_id": "",
+  "renewable": false,
+  "lease_duration": 0,
+  "data": {
+    "data": {
+      "age": 26
+    },
+    "metadata": {
+      "created_time": "2020-07-05T11:47:52.435608Z",
+      "deletion_time": "",
+      "destroyed": false,
+      "version": 1
+    }
+  },
+  "wrap_info": null,
+  "warnings": null,
+  "auth": null
+}
+```
+
+## Updating secrets
+
+We use the same method as creating
+
+```sh
+vault kv put secret/my-test answer=35
+
+Key              Value
+---              -----
+created_time     2020-07-05T11:58:55.15214Z
+deletion_time    n/a
+destroyed        false
+version          2
+```
+
+Note the version bump. Vault keep by default the last 10 versions.
