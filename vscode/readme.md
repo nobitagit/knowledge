@@ -23,6 +23,10 @@ Surround with text. Put this into your `keybindings.json`
 And then:
 <kbd>OPTION</kbd> + <kbd>s<kbd>
 
+Jump to previous file
+<kbd>CMD</kbd> + <kbd>p<kbd>
+<kbd>CMD</kbd> + <kbd>p<kbd>
+
 Show suggestions (intellisense style)
 <kbd>CTRL</kbd> + <kbd>SPACE</kbd> either on a new line or by highlighting a word
 
