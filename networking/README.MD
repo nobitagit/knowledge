@@ -1,6 +1,6 @@
 # Networking
 
-- [Anatomy of a browser web request](./README.MD#Anatomy of a browser web reqeust)
+- [Anatomy of a browser web request](./README.MD#Anatomy of a browser web request)
 
 ## DNS records
 
