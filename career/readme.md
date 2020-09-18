@@ -67,6 +67,7 @@ What to do:
 - Suggest how hiring can be improved, if your hiring process had gaps
 - Resist the urge to make too many changes. Identify areas to improve but give yourself time.
 - Ask for 1:1s (virtual or real coffees) with as many people you can
+- Speak to people. If at the coffee break, introduce yourself.
 
 What to ask:
 
@@ -137,3 +138,13 @@ It's a great time to look for **big, ambitious but achievable goals**.
 - Write down goals, and add them to the calendar whenever possible
 - Invite people to join you at meetups. Write in Slack you're going and to write you if they want to join
 - At company events, meet people you rarely see or talk to
+- Can you create a cross-dept group that does a common activity together?
+- Can you improve someone else in the company
+- **Follow up**. Nurture relationships, write DMs with links ("I thought you might like this", "Thanks for the coffee, let's do it again next week")
+
+### Preparing for 1 year review
+
+- ask the boss for the format beforehand (it's not a secret!)
+- ask co-workers what to expect (is it casual? Have any suggestion?)
+- bring your accomplishments, clearly list what you improved
+- think about a plan for improvement
