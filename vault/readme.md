@@ -161,4 +161,4 @@ Note the version bump. Vault keep by default the last 10 versions.
 
 - secrets lifecycles (create, read, update, delete)
 - what are secrets engines?
--
+- getting the list of engines

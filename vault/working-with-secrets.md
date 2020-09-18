@@ -34,3 +34,19 @@ $ {
 ## What are secrets engines?
 
 SE are the mechanism that Vault uses to store secrets. There are a number of different types of engines depending on the types of secrets that we want to store.
+
+> Secrets engines are components which store, generate, or encrypt data. Secrets engines are incredibly flexible, so it is easiest to think about them in terms of their function. Secrets engines operate by receiving API calls that meet this interface. The calls receive data from the caller, take some action on that data, and they return a result.
+>
+> Some secrets engines simply store and read data - like encrypted Redis/Memcached. Other secrets engines connect to other services and generate dynamic credentials on demand. Other secrets engines provide encryption as a service, totp generation, certificates, and much more.
+
+Since SEs map to a path in the vault
+
+> To the user, secrets engines behave similar to a virtual filesystem, supporting operations like read, write, and delete.
+
+Paths enable introspection through `path-help`.
+
+To see all engines:
+
+```sh
+vault secrets list [--format=json]
+```
