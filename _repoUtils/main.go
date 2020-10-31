@@ -105,7 +105,6 @@ func main() {
 	scanner := bufio.NewScanner(r)
 
 	var filePaths [][]byte
-	// { "go": 1433, "kubernetes": 5}
 	dirStats := make(map[string]int)
 
 	// This gets the oldest commit we want to analyse from
