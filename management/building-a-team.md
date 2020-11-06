@@ -6,7 +6,7 @@ https://github.com/spetryjohnson/Talk---Hiring--Firing--and-Inspiring
 >
 > -- Gallup ([source](https://news.gallup.com/businessjournal/182792/managers-account-variance-employee-engagement.aspx))
 
-Unrelated - lots of intereseting articles from Gallup on management https://www.google.com/search?q=gallup+managers&oq=gallup+managers&aqs=chrome..69i64j69i57.5026j0j1&sourceid=chrome&ie=UTF-8
+Unrelated - lots of interesting articles from Gallup on management https://www.google.com/search?q=gallup+managers&oq=gallup+managers&aqs=chrome..69i64j69i57.5026j0j1&sourceid=chrome&ie=UTF-8
 
 - define your core values
 - define levels of your engineering team
@@ -20,6 +20,11 @@ Unrelated - lots of intereseting articles from Gallup on management https://www.
 > [source](https://hackernoon.com/actionable-core-values-for-your-engineering-team-922a4d6cf46a)
 
 [A practical way of defining them](https://hackernoon.com/actionable-core-values-for-your-engineering-team-922a4d6cf46a)
+
+## Engineering levels
+
+- [Monzo career progression](https://progression.monzo.com/)
+- [Soundcloud Engineering Levels](https://developers.soundcloud.com/blog/engineering-levels)
 
 ### Asana
 
