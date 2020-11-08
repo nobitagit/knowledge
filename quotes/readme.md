@@ -14,3 +14,15 @@ If you think people see you as a naive or immature, then you more likely act lik
 > Research from Johns Hopkins Carey Business School found that deviant behavior from one team member causes others to work harder than if there wasn’t misconduct. So while it can be incredibly annoying to work with incompetent people, in the end, it can improve the rest of the team.
 >
 > - [4 Ways Effective Leaders Deal With Incompetent People](https://www.entrepreneur.com/article/283996)
+
+> - “It has always appalled me that really bright scientists almost all work in the most competitive fields, the ones in which they are making the least difference. In other words, if they were hit by a truck, the same discovery would be made by somebody else about 10 minutes later.”
+>
+> —- Aubrey de Grey
+
+> “If everybody is thinking alike, then no one is thinking.”
+>
+> — Benjamin Franklin
+
+> "At critical moments in time, you can raise the aspirations of other people significantly, especially when they are relatively young, simply by suggesting they do something better or more ambitious than what they might have in mind. It costs you relatively little to do this, but the benefit to them, and to the broader world, may be enormous. This is in fact one of the most valuable things you can do with your time and with your life."
+>
+> -- Tyler Cowen
