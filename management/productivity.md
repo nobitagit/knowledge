@@ -1,6 +1,6 @@
 # Productivity
 
-- The most important thing is to take care your calendar. See [how here](./reamde.md).
+- The most important thing is to take care of your calendar. See [how here](./reamde.md).
 - Maintain your own OKRs.
 - Automate anything possible.
 - Delegate anything possible.
