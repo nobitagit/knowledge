@@ -1,8 +1,11 @@
 # Management
 
+> When you see a teammate struggling, are you one of the first people to go over and offer a hand? That’s a sign.
+
 ## Resources
 
 - [The manager's handbook](https://themanagershandbook.com/)
+- [First Round](https://firstround.com/review/this-90-day-plan-turns-engineers-into-remarkable-managers/)
 
 Also, other folders in this repo might be relevant here:
 
