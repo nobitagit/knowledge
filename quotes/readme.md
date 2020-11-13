@@ -26,3 +26,11 @@ If you think people see you as a naive or immature, then you more likely act lik
 > "At critical moments in time, you can raise the aspirations of other people significantly, especially when they are relatively young, simply by suggesting they do something better or more ambitious than what they might have in mind. It costs you relatively little to do this, but the benefit to them, and to the broader world, may be enormous. This is in fact one of the most valuable things you can do with your time and with your life."
 >
 > -- Tyler Cowen
+
+> "I'm not better than anyone else, I just train like hell"
+>
+> -- Ueli Steck
+
+> **Problems** are how we get better every single day
+>
+> -- [Amy Edmondson](https://youtu.be/SkFohYhIaSQ?t=468)

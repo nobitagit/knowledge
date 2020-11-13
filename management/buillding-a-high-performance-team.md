@@ -22,9 +22,10 @@ Benefit for team members:
 4. Superior leadership
 5. Clearly defined and interdependent roles
 6. Have complementary skills
-7. Quality awareness
-8. Effective work processes
-9. Flexible and adaptable
+7. Continuous learning and knowledge sharing
+8. Quality awareness
+9. Effective work processes
+10. Flexible and adaptable
 
 ### Sense of purpose
 
@@ -85,6 +86,60 @@ Example:
 - **Checkout team goals**: Provide a quick, seamless and safe payment experience
 - **Data analysis team goals**: Collect insightful data, store it safely and allow anyone in the company to access and consume it to increase every other team's output.
 
-## Long term goals
+## From long term to short term goals
 
-You start from defining long term goals
+You start from defining long term goals and from there, you derive short term ones.
+
+[See more](https://app.pluralsight.com/course-player?clipId=665a5bf8-f841-454b-885a-01d70770d6a2).
+
+Short term goals are usually **sprint goals**
+
+## Hiring for a new team
+
+1. Hire for values - very hard to change a person's values. You want the values to align with the team ones
+2. Skills and prospect
+
+## Psychological safety
+
+One of the **most important traits of a HPT**.
+It's the climate at work when some feels free to speak up.
+People are:
+
+- secure to ask for help
+- admit mistakes
+- discuss existing problems
+- share new ideas
+- criticising a project
+
+It's **NOT**:
+
+- being nice
+- being soft
+- everything is great
+- everything will work out
+- low ambition
+
+> **Problems** are how we get better every single day
+
+People need to be comfortable in sharing problems, issues and bad results to the management.
+
+- High psychological safety + no accountability = **comfort zone**
+- Low psychological safety + high accountability = **anxiety**
+- High psychological safety + high accountability = **thriving environment for HPTs**
+
+## Joining an existing team
+
+When joining, perform a team assessment. Rate based on the 10 characteristics of a HPT:
+
+1. Sense of purpose
+2. Shared values
+3. Established communication norms
+4. Superior leadership
+5. Clearly defined and interdependent roles
+6. Have complementary skills
+7. Continuous learning and knowledge sharing
+8. Quality awareness
+9. Effective work processes
+10. Flexible and adaptable
+
+![Team assessment](./images/buillding-a-hpt-chart.png)
