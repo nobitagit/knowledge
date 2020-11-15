@@ -102,14 +102,22 @@ Short term goals are usually **sprint goals**
 ## Psychological safety
 
 One of the **most important traits of a HPT**.
-It's the climate at work when some feels free to speak up.
+It's the climate at work when someone feels free to speak up.
+
+> I have defined psychological safety as the belief that the work environment is safe for interpersonal risk taking
+>
+> -- Amy Edmonson, "The Fearless Organization: Creating Psychological Safety in the Workplace for Learning, Innovation, and Growth"
+
 People are:
 
 - secure to ask for help
 - admit mistakes
 - discuss existing problems
 - share new ideas
+- share learnings
 - criticising a project
+- raising issues with management, even when these issues come from the managers themselves
+- giving feedback to any other colleague
 
 It's **NOT**:
 
@@ -118,6 +126,7 @@ It's **NOT**:
 - everything is great
 - everything will work out
 - low ambition
+- not a personality trait
 
 > **Problems** are how we get better every single day
 
@@ -125,7 +134,19 @@ People need to be comfortable in sharing problems, issues and bad results to the
 
 - High psychological safety + no accountability = **comfort zone**
 - Low psychological safety + high accountability = **anxiety**
+- Low psychological safety + Low accountability = **apathy**
 - High psychological safety + high accountability = **thriving environment for HPTs**
+
+It's important to understand that psychological safety can surely be a company-wide metric, but most likely different teams within the same company can score various degrees of PS.
+
+Making mistakes is part of the process, it's fundamental that a team surfaces candidly their mistakes and sets the ground to solving them.
+
+The consequences of high PS:
+
+- the team works to improve
+- employees are more engaged
+
+PS is a trait of the team, more than the individual. And it's not due to the chemistry of the people, it's instilled by the leaders. The leaders of a group ensure that this value is embedded in the environment.
 
 ## Joining an existing team
 
@@ -143,3 +164,16 @@ When joining, perform a team assessment. Rate based on the 10 characteristics of
 10. Flexible and adaptable
 
 ![Team assessment](./images/buillding-a-hpt-chart.png)
+
+Once you have highlighted the pain points, which one to prioritise depends on context.
+
+- What needs to change?
+- How does success look like?
+- Who needs to change and how?
+
+Good to track with OKRs.
+
+### Coaching
+
+Team coaching needs to be continuous and happen at least quarterly.
+1:1 coaching should be more frequent.

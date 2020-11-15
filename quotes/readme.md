@@ -34,3 +34,7 @@ If you think people see you as a naive or immature, then you more likely act lik
 > **Problems** are how we get better every single day
 >
 > -- [Amy Edmondson](https://youtu.be/SkFohYhIaSQ?t=468)
+
+> Who is on a team matters less than how the team members interact, structure their work, and view their contributions.
+>
+> -- [Google research on successful teams](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/)
