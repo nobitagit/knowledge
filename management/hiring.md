@@ -1,5 +1,9 @@
 # Hiring
 
+> A resume correlates loosely with whether or not you know how to do a job
+>
+> -- [Chris Voss](https://youtu.be/llctqNJr2IU?t=561)
+
 ## Ideas
 
 - [Publish a page with requirements, suggestions & overview of the process](https://asana.com/eng/interview-guide)

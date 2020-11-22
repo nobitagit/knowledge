@@ -20,3 +20,18 @@ From [Think Fast, Talk Smart: Communication Techniques](https://www.youtube.com/
 
 - It's ok to be average. Don't try to overdo.
 - Turn the conversation into an opportunity and not a challenge. If it's asked to you to speak, say "yes, thanks".
+
+---
+
+## Smile when you enter a room
+
+## Start with a compliment
+
+## Ask why
+
+Asking why is a great way of going out of the usual path of a conversation
+
+- "I work as a lawyer" => Why did you start that?
+- Why did you apply to our company?
+
+## Make the other people feel at ease

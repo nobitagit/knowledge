@@ -38,3 +38,11 @@ If you think people see you as a naive or immature, then you more likely act lik
 > Who is on a team matters less than how the team members interact, structure their work, and view their contributions.
 >
 > -- [Google research on successful teams](https://rework.withgoogle.com/blog/five-keys-to-a-successful-google-team/)
+
+> A resume correlates loosely with whether or not you know how to do a job
+>
+> -- [Chris Voss](https://youtu.be/llctqNJr2IU?t=561)
+
+> Cry at the beginning, so you can smile at the end
+>
+> -- [Marta Vieira da Silva](https://youtu.be/lrT8_jqprgw?t=53)
