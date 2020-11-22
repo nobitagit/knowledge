@@ -35,3 +35,5 @@ Asking why is a great way of going out of the usual path of a conversation
 - Why did you apply to our company?
 
 ## Make the other people feel at ease
+
+## Have the first thing you want to say ready

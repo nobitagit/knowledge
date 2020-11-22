@@ -46,3 +46,7 @@ If you think people see you as a naive or immature, then you more likely act lik
 > Cry at the beginning, so you can smile at the end
 >
 > -- [Marta Vieira da Silva](https://youtu.be/lrT8_jqprgw?t=53)
+
+> Recent investigations have shown that the explicit written description of an ideal future produces similar results. A large body of research conducted in the industrial and business domains also demonstrates that future authoring or goal-setting results in improved productivity and performance.
+>
+> -- Jordan B Peterson, Raymond Mar - [The benefits of writing](https://selfauthoring.blob.core.windows.net/media/Default/Pdf/WritingBenefits.pdf) research paper
