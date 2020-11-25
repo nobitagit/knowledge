@@ -50,3 +50,7 @@ If you think people see you as a naive or immature, then you more likely act lik
 > Recent investigations have shown that the explicit written description of an ideal future produces similar results. A large body of research conducted in the industrial and business domains also demonstrates that future authoring or goal-setting results in improved productivity and performance.
 >
 > -- Jordan B Peterson, Raymond Mar - [The benefits of writing](https://selfauthoring.blob.core.windows.net/media/Default/Pdf/WritingBenefits.pdf) research paper
+
+> “A friend of mine once paraphrased David Gergen, saying on the subject of repetition, “If you want to get your point across, especially to a broader audience, you need to repeat yourself so often, you get sick of hearing yourself say it. And only then will people begin to internalize what you’re saying.”
+>
+> [LinkedIn's CEO Jeff Weiner](https://www.businessinsider.com/linkedin-ceo-jeff-weiner-on-leadership-2014-9?r=DE&IR=T#ixzz3TaXO2Buy)
