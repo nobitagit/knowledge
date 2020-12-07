@@ -1,5 +1,28 @@
 # Ruby
 
+## Installing
+
+```sh
+brew install rbenv
+rbenv install 2.5.8
+rbenv use 2.5.8
+vim  ~/.zshrc
+```
+
+Add 
+```
+# make rbenv load automatically when you open up the Terminal https://www.digitalocean.com/community/tutorials/how-to-install-      ruby-on-rails-with-rbenv-on-macos
+eval "$(rbenv init -)"
+```
+Save and quit.
+
+```sh
+source ~/.zshrc
+which ruby
+# should point to the rbenv one
+gem install bundler
+```
+
 To update only a single gem:
 
 ```sh

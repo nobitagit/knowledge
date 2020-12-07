@@ -24,8 +24,7 @@ And then:
 <kbd>OPTION</kbd> + <kbd>s<kbd>
 
 Jump to previous file
-<kbd>CMD</kbd> + <kbd>p<kbd>
-<kbd>CMD</kbd> + <kbd>p<kbd>
+<kbd>CMD</kbd> + <kbd>p</kbd> + <kbd>p</kbd>
 
 Show suggestions (intellisense style)
 <kbd>CTRL</kbd> + <kbd>SPACE</kbd> either on a new line or by highlighting a word
@@ -104,6 +103,9 @@ For example to delete everything inside parens `(THIS WILL BE REMOVED) => ()`
 <kbd>di(</kbd> or
 <kbd>ci(</kbd>
 See https://leanpub.com/boostyourcodingfuwithvscodeandvim/read#leanpub-auto-editing-like-magic-with-vim-operators for more
+
+Toggle Terminal tray :boom:
+<kbd>CMD</kbd> + <kbd>j</kbd>
 
 ## Breadcrumbs
 
