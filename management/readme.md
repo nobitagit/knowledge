@@ -6,6 +6,7 @@
 
 - [The manager's handbook](https://themanagershandbook.com/)
 - [First Round](https://firstround.com/review/this-90-day-plan-turns-engineers-into-remarkable-managers/)
+- [Why You Must Be Ruthless in Business (re. firing)](https://www.youtube.com/watch?v=glMU6ZL4UYs)
 
 Also, other folders in this repo might be relevant here:
 
