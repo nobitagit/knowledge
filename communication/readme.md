@@ -7,3 +7,15 @@ Warning: not all of this is supposed to be particularly serious.
 - Leave a weird book at the side of your desk. [Reference](https://www.amazon.com/Rude-Hand-Gestures-World-Offending/dp/0811878074)
 
 ![An amazon review](./images/amazon-review.png)
+
+## How to convince people
+
+[Source](https://github.com/nobitagit/knowledge.git)
+
+When someone is gatekeeping:
+
+- "Have you ever made an exception?"
+
+When someone is stomping their feet and doesn't agree with you at all:
+
+- "If I was in your position, I would feel the same" (taking their side so they are more likely to change their mind)
