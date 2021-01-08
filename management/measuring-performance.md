@@ -2,6 +2,7 @@
 
 - [Great article from Contentful](https://www.contentful.com/blog/2020/10/06/implementing-four-key-metrics-contentful/)
 - [Gitlab KPIs page](https://about.gitlab.com/handbook/engineering/performance-indicators/)
+- https://engineering-management.space/post/software-engineering-kpis/
 
 Engineering KPIs:
 
