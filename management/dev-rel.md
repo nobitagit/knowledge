@@ -33,3 +33,10 @@ Commit to your actions.
 - volunteer to present a topic you want to learn
 - announce publicly you'll be doing X
 - take on interviews for tech you don't know very well
+
+## Introducing changes
+
+A good way to propose and introduce changes is by RFCs.
+
+- read ths [article](https://engineering-management.space/post/rfc-driven-development/)
+- see the rust [documentation](http://rust-lang.github.io/rfcs/) about their RFC flow
