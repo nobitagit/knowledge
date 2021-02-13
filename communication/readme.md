@@ -19,3 +19,5 @@ When someone is gatekeeping:
 When someone is stomping their feet and doesn't agree with you at all:
 
 - "If I was in your position, I would feel the same" (taking their side so they are more likely to change their mind)
+
+- Use the other person name, when you are talking to someone
