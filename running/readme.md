@@ -24,3 +24,7 @@ The average pace is the tempo pace.
 See [this video](https://youtu.be/D4G39xnkkS0?t=108)
 
 - S&C should take up around 25% of the weekly training time. It avoids injuries and gets the most out of the training.
+
+## How to prepare a 5k
+
+https://www.youtube.com/watch?v=y28NK1E-ywU
