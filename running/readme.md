@@ -9,6 +9,12 @@ S&C - strength and conditioning
 Use [this](https://www.omnicalculator.com/sports/training-pace).
 Put in a recent running result and calculate your paces.
 
+## How to test your MHR (Max heart rate)
+
+- You need to be well rested. See [this source](https://youtu.be/lmB5cTOWCbs?t=330). You won't be able to hit your MHR when tired.
+- Inclination doesn't matter. See [here](https://youtu.be/lmB5cTOWCbs?t=626)
+- 
+
 ## Tempo run
 
 Use the best pace you can sustain for 60 minutes.
