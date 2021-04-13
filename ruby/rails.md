@@ -2,6 +2,10 @@
 
 An empty project to follow along can be found [here](https://github.com/nobitagit/docker-rails-postgres)
 
+## Keep in mind
+
+- Everything in `/app` is autoloaded
+
 ## Controllers
 
 ```sh
