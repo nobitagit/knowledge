@@ -54,3 +54,9 @@ If you think people see you as a naive or immature, then you more likely act lik
 > “A friend of mine once paraphrased David Gergen, saying on the subject of repetition, “If you want to get your point across, especially to a broader audience, you need to repeat yourself so often, you get sick of hearing yourself say it. And only then will people begin to internalize what you’re saying.”
 >
 > [LinkedIn's CEO Jeff Weiner](https://www.businessinsider.com/linkedin-ceo-jeff-weiner-on-leadership-2014-9?r=DE&IR=T#ixzz3TaXO2Buy)
+> 
+
+
+> Developers rather create 1000 if-statements before ensuring data consistency once.
+>
+> https://twitter.com/philgiese/status/1362376910353874946
