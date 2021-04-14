@@ -13,7 +13,6 @@ Put in a recent running result and calculate your paces.
 
 - You need to be well rested. See [this source](https://youtu.be/lmB5cTOWCbs?t=330). You won't be able to hit your MHR when tired.
 - Inclination doesn't matter. See [here](https://youtu.be/lmB5cTOWCbs?t=626)
-- 
 
 ## Tempo run
 
@@ -34,3 +33,28 @@ See [this video](https://youtu.be/D4G39xnkkS0?t=108)
 ## How to prepare a 5k
 
 https://www.youtube.com/watch?v=y28NK1E-ywU
+
+## How to increase your weekly running distance (and improve race times)
+
+From [this article](https://www.trainingpeaks.com/blog/how-to-increase-your-marathon-training-mileage/).
+
+### Run more frequently
+
+- Work towards adding 1 day per week
+- It's ok to start with only a 4 or 5km run
+- Once you run 6 or 7 days a week, think about doubling some runs. For instance, you can run twice every Tuesday.
+
+### Do a second long(er) run each week.
+
+- Not as long as the main long run
+- May include a faster pace portion
+- Sandwich this within easy days (or an easy and a rest day)
+
+For example:
+
+- a 20k with kms 17, 18, 19 each one 15 seconds faster than the preceding one
+- a 18k with the 8kms in the middle each one that start with a 30 seconds surge to 10k pace, then the rest of the km normal, easy and steady pace
+
+### Increase base runs distance
+
+This should be done extremely gradually and when not increasing long runs.
