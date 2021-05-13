@@ -58,3 +58,8 @@ For example:
 ### Increase base runs distance
 
 This should be done extremely gradually and when not increasing long runs.
+Consider though that:
+
+>  Beginners should spend several years building a solid base with 20-, 30- and 40-mile (~65k) weeks. Only then should you consider building your weekly mileage to 50 or 60 miles or more.
+>
+> [citation](https://blog.mapmyrun.com/how-to-run-more-every-week-beyond-the-10-rule/)
