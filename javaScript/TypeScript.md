@@ -1,10 +1,28 @@
 # TypeScript
 
+## Useful types
+
+```ts
+// allows only for {}
+type EmptyObject = {
+  [K in any]: never
+}
+```
+
+## Generics as callable
+
+```ts
+interface userRequest <T extends Function> {
+  isPending: boolean,
+  data: ReturnType<() => T> | EmptyObject
+}
+```
+
 ## How to type an arrow function with generics
 
 ```ts
 export const identity = <T extends {}>(o: T): T => o;
-// or 
+// or
 const foo = <T>(o: T) => o
 // or - if using JSX, which would be thrown off by the above
 const foo = <T,>(o: T) => o
@@ -18,7 +36,7 @@ For example in a test I might have:
 ```ts
 const svg = container.querySelector('svg');
 expect(svg.style).toEqual('position: absolute'); // this will throw because svg might be null
-      
+
 // but since it's a test file we are 100% sure the svg is there so:
 expect(svg!.style)... // error goes away
 ```
