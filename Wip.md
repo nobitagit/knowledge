@@ -29,4 +29,3 @@ How to quickly try some html. Paste this in the browser bar
 ```
 data:Text/html,<input type="range" multiple min=0 max=24 value=0,24 step=1.0>
 ```
-
