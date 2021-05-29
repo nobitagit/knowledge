@@ -69,6 +69,8 @@ Starting from the simplest scenario of a uni-processor machine there are 3 ways 
 2. 1 thread per DBMS worker
 3. Process pool
 
+### 1 process per DBMS worker
+
 <img src="./images/1processx1worker.png" width="700"/>
 
 PROs:
@@ -77,6 +79,8 @@ PROs:
 CONs:
 - More memory intensive, as processes are heavier than threads
 - The data that needs to be shared by multiple processes (like the locks) has to be stored outside of the process, in shared memory spaces given by the OS. As we have seen, each process has **private** space, so it can't share these info, it needs to read it from a shared memory space.
+
+### 1 thread per DBMS worker
 
 <img src="./images/1threadx1worker.png" width="700"/>
 
@@ -93,5 +97,15 @@ CONs:
 - Memory management can be tricky. As we have seen, threads share memory within the same process, so they can race to get the same resources.
 - Harder to port across OSes.
 
+### Process pool
 
+<img src="./images/process-pool.png" width="700"/>
 
+Since 1 process x worker is simpler to do, this approach tries to leverage that while limiting its memory footprint.
+
+> A central process holds all DBMS client connections and, as each SQL request comes in from a client, the request is given to one of the processes in the process pool
+>
+> The SQL Statement is executed through to completion, the result is returned to the database client, and the process is returned to the pool to be allocated to the next request
+
+The pool size is generally fixed.
+If no process is free an incoming request must wait for one to become available in the pool again.
