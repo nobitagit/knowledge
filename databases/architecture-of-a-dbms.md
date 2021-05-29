@@ -69,6 +69,7 @@ Starting from the simplest scenario of a uni-processor machine there are 3 ways 
 2. 1 thread per DBMS worker
 3. Process pool
 
-![1 process x 1 worker](./images/1processx1worker.png)
+<img src="./images/1processx1worker.png" width="400"/>
 
-![1 thread x 1 worker](./images/1threadx1worker.png)
+<img src="./images/1threadx1worker.png" width="400"/>
+
