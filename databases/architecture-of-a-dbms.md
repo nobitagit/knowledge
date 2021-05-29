@@ -71,5 +71,27 @@ Starting from the simplest scenario of a uni-processor machine there are 3 ways 
 
 <img src="./images/1processx1worker.png" width="700"/>
 
+PROs:
+- Easier to implement because a lot of the "hard work" about memory management is delegated to the OS
+
+CONs:
+- More memory intensive, as processes are heavier than threads
+- The data that needs to be shared by multiple processes (like the locks) has to be stored outside of the process, in shared memory spaces given by the OS. As we have seen, each process has **private** space, so it can't share these info, it needs to read it from a shared memory space.
+
 <img src="./images/1threadx1worker.png" width="700"/>
+
+Each connection is allocated a new thread. As each client
+submits SQL requests, the request is executed entirely by its corresponding thread running a DBMS worker. This thread runs within the
+DBMS process and, once complete, the result is returned to the client
+and the thread waits on the connection for the next request **from that
+same client**.
+
+PROs:
+- More memory efficient than the 1st approach
+
+CONs:
+- Memory management can be tricky. As we have seen, threads share memory within the same process, so they can race to get the same resources.
+- Harder to port across OSes.
+
+
 
