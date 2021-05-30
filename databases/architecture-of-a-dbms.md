@@ -109,3 +109,13 @@ Since 1 process x worker is simpler to do, this approach tries to leverage that 
 
 The pool size is generally fixed.
 If no process is free an incoming request must wait for one to become available in the pool again.
+
+## Shared data and process boundaries
+
+All the 3 methods above have in common that **they aim to execute concurrent requests as independently as possible**. Full independence is not possible since they need to share some data like locks or the DB space itself.
+
+Locks are managed by the **lock table**, which resides in a shared memory space.
+
+## Evolution of the process model
+
+Hardware has progressed enormously over the last 3 decades and the process model has evolved to make the most of this change. Process pool for instance has evolved into thread pooling, but at its core the 3 models above still offer a good representation of the fundamentals of today's DBs.
