@@ -1,4 +1,4 @@
-# Architecture of a Database System
+# Architecture of a Database System (pt. 1)
 
 From [this paper](https://dsf.berkeley.edu/papers/fntdb07-architecture.pdf), written by Joseph M. Hellerstein, Michael Stonebraker and James Hamilton
 
@@ -119,3 +119,7 @@ Locks are managed by the **lock table**, which resides in a shared memory space.
 ## Evolution of the process model
 
 Hardware has progressed enormously over the last 3 decades and the process model has evolved to make the most of this change. Process pool for instance has evolved into thread pooling, but at its core the 3 models above still offer a good representation of the fundamentals of today's DBs.
+
+> Today, nearly all serious database deployments involve multiple processors.
+
+Continues on the [next page](./architecture-of-a-dbms-2.md)
