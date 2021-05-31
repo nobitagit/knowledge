@@ -30,6 +30,16 @@ This is a list of steps to ensure a web application is secure. This is **not** e
    - reset password
    - open a new incognito window and log in with new creds, so you see them working
    - first window should be logged out
+    
+#### User enumeration
+
+See [this article](https://sidechannel.tempestsi.com/once-upon-a-time-there-was-an-account-enumeration-4cf8ca7cd6c1).
+
+- Do not send errors such as "incorrect password" or "this email doesn't exist". Prefer generic messaging
+- Also generic messaging for email resets, such as "If this email exisists you will receive a reset link shortly"
+- Ensure the time to response between correct email and incorrect is consistent:
+
+> It can also be based on how long it takes a server to respond. A server may take one amount of time to respond for a valid username and a very different (usually longer) amount of time for an invalid username.
 
 ### More advanced
 
