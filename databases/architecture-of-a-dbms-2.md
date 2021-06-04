@@ -28,7 +28,7 @@ Read more [here](https://www.tektutorialshub.com/sql-server/fully-qualified-tabl
 
 If the query syntax ("is it valid SQL?") and semantics ("do the tables queried for exist?") are ok, the next step is to ensure the user is **authorised** to perform the `SELECT/DELETE/INSERT/UPDATE` action.
 
-![](./images/relational_query_processor.png)
+<img src="./images/relational_query_processor.png" width="400"/>
 
 If all is good we go to **query rewrite**
 
