@@ -9,6 +9,7 @@
   - skip authorisation? or do dummy authorisation with 1 role at first
   - skip query rewrite (no optimisation of the query)
 - Read/write operations are free from the Halloween problem
+- Query executor implements the iterator pattern https://en.wikipedia.org/wiki/Iterator_pattern
 
 ## Reading
 

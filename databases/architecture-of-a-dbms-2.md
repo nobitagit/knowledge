@@ -28,9 +28,9 @@ Read more [here](https://www.tektutorialshub.com/sql-server/fully-qualified-tabl
 
 If the query syntax ("is it valid SQL?") and semantics ("do the tables queried for exist?") are ok, the next step is to ensure the user is **authorised** to perform the `SELECT/DELETE/INSERT/UPDATE` action.
 
-<img src="./images/relational_query_processor.png" width="400"/>
+<img src="./images/relational_query_processor.png" width="700"/>
 
-If all is good we go to **query rewrite**
+If all is good we go to **query rewrite**.
 
 ### Query rewrite
 
@@ -53,7 +53,7 @@ Extra care needs to be taken when reading AND updating at the same time.
 >
 > The potential for this database error was first discovered [...] in 1976, on Halloween day while working on a query that was supposed to give a ten percent raise to every employee who earned less than $25,000. This query would run successfully, with no errors, but when finished all the employees in the database earned at least $25,000, because it kept giving them a raise until they reached that level. The expectation was that the query would iterate over each of the employee records with a salary less than $25,000 precisely once. In fact, because even updated records were visible to the query execution engine and so continued to match the query's criteria, salary records were matching multiple times and each time being given a 10% raise until they were all greater than $25,000.
 
-> **We must ensure data is available to the write, which has been fully read**
+**We must ensure data is available to the write, only after it has been fully read**.
 
 ### Query executor
 
@@ -65,3 +65,24 @@ Perf metrics for the query executor are:
 - DBMS throughput
 - time to first row
 
+The implementation generally makes use of the **iterator pattern**.
+This pattern mean that:
+
+- the whole query is broken into multiple operations
+- the first operation is executed
+- its result is piped into the 2nd operation, which in turns executes
+- the pattern goes on until the last operation is done
+
+This means that intermediate results are stored in memory and fed into the following operation.
+Extra care needs to be taken when reading and writing at the same time (any DELETE or UPDATE operation) for the reason exposed above in the halloween problem example.
+
+> SQL semantics forbid this behavior: a single SQL statement is not allowed to “see” its own updates. Some care is needed to ensure that this visibility rule is observed.
+
+The question is how to do it? Some examples:
+
+> A simple, safe implementation has the query optimizer choose plans that avoid indexes on the updated column. This can be quite inefficient in some cases.
+
+Or:
+
+> Another technique is to use a batch read-then-write scheme. This interposes Record-ID materialization and fetching operators between the index scan and the data modification operators in the dataflow.
+> The materialization operator receives the IDs of all tuples to be modified and stores them in temporary file
