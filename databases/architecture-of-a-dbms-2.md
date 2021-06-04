@@ -86,3 +86,14 @@ Or:
 
 > Another technique is to use a batch read-then-write scheme. This interposes Record-ID materialization and fetching operators between the index scan and the data modification operators in the dataflow.
 > The materialization operator receives the IDs of all tuples to be modified and stores them in temporary file
+
+## 2. Storage Management
+
+There are 2 main type of storage/access management:
+
+1. raw-mode access: a very low level storage that ensures fast access to data
+2. standard OS file system: create a very large file in the OS and the DB manages it
+
+_Where_ to write data is one problem, but _when_ to write is also a key task of a DBMS.
+
+> the **write ahead logging protocol** requires that writes to the log device must precede corresponding writes to the database device, and commit requests cannot return to users until commit log records have been reliably written to the log device.
