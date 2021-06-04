@@ -4,6 +4,11 @@
 
 Best article I've found is [this one about CSP](https://www.troyhunt.com/locking-down-your-website-scripts-with-csp-hashes-nonces-and-report-uri/), a must read.
 
+## Spear phishing
+
+[Spear phishing](https://www.csoonline.com/article/3334617/what-is-spear-phishing-why-targeted-email-attacks-are-so-difficult-to-stop.html) is the act of sending and emails to specific and well-researched targets while purporting to be a trusted sender.
+This is a consideration to keep in mind when thinking about user enumeration issues (since they can be seen as lower impact at first)
+
 ## Difference between XSS and CSRF
 
 > **Cross-Site Scripting** involves injecting a script into the real webpage, and **Cross-Site Request Forgery** involves tricking the user (or the browser) to make a request that they don’t really want to, starting from a malicious webpage/email/etc.
