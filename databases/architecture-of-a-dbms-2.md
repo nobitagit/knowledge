@@ -15,6 +15,8 @@ A relational query processor job is to:
 
 ### Query Parsing and Authorization
 
+![](./images/relational_query_processor.png)
+
 > Given an SQL query, the parser first considers each of the table references in the FROM clause. It canonicalizes table names into a fully qualified name of the form `server.database.schema.table`. This is also called a **four part name**.
 >
 > Systems that do not support queries spanning multiple servers need only canonicalize to `database.schema.table`, and systems that support only one database per DBMS can canonicalize to just `schema.table`
