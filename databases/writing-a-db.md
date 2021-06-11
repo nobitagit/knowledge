@@ -11,6 +11,11 @@
 - Read/write operations are free from the Halloween problem
 - Query executor implements the iterator pattern https://en.wikipedia.org/wiki/Iterator_pattern
 
+
+### Logging
+
+- follow the write ahead logging protocol (first write the log, then do the operation in the DB)
+
 ## Reading
 
 - https://www.sqlite.org/queryplanner.html
