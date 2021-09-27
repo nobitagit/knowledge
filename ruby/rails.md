@@ -2,6 +2,10 @@
 
 An empty project to follow along can be found [here](https://github.com/nobitagit/docker-rails-postgres)
 
+## Links
+
+- [Zero downtime migrations](https://github.com/LendingHome/zero_downtime_migrations#adding-a-column-with-a-default)
+
 ## Keep in mind
 
 - Everything in `/app` is autoloaded
