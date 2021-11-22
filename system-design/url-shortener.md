@@ -26,6 +26,22 @@ Check input and output:
 ### 3. **Estimate.** Starting from some ballpark numbers write your expectations.
 
 - Lots of reads compared to writes. Estimate: 100:1
+- **Traffic estimate**. 500 millions of new URLs x month. This means:
+
+```
+100 (reads ratio) * 500 million = 50 billion reads x month
+```
+
+- How many queries x second?
+
+```
+Number of seconds in a month:
+seconds x minutes in 1 hour x hours in 1 day x days in 1 month
+60      X 60                x 24             x 30
+= 2,592,000
+
+500 million /
+```
 
 4. **Define the APIs**:
    - Endpoints that we expose
