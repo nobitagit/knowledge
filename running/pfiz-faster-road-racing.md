@@ -40,7 +40,7 @@ This means that for method c. you would start just below 6min/k pace and progres
 
 Start at same starting pace as long runs and increase up to lactate threshold pace for the last 5 to 4k.
 
-|                 | % of MHR | % of HRR | based on 195bpm MHR | based on 195bpm MHR |
+|                 | % of MHR | % of HRR | based on 195bpm MHR | based on 153bpm HRR |
 |-----------------|----------|----------|---------------------|---------------------|
 | VO2Max          | 94-98    | 92-97    | 183-191             | 182-190             |
 | LT              | 80-91    | 75-88    | 156-177             | 157-177             |
