@@ -28,8 +28,11 @@ d. between 17 and 29% slower than HM pace
 Based on a MHR of 195bpm and RHR of 42bpm this equates to:
 
 a. 144bpm to 163bpm
+
 b. (195-42) * 0,65 + 42 = **141** to (195-42) * 0,78 + 42 = **161** (note that the resting heart rate is added after calculating the %)
+
 c. 4.15/km => 5:20 - 6:00
+
 d. 4.25/km => 5:12 - 6:10
 
 This should roughly equate to somewhere between zone 2 and 3.
