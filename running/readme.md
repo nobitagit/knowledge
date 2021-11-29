@@ -8,6 +8,14 @@ S&C - strength and conditioning
 
 Use [this](https://www.omnicalculator.com/sports/training-pace).
 Put in a recent running result and calculate your paces.
+Based on a 1.34 HM:
+
+- Easy run: 5:13 / km
+- Tempo run 4:20 / km
+- VO2 max run: 3:54 / km
+- Speed run: 3:37 / km
+- Long run: 5:54 / km
+
 
 ## How to test your MHR (Max heart rate)
 

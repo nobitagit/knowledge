@@ -1,6 +1,6 @@
 # Faster road racing
 
-These are my notes from reading the book [Faster Road Racing, 5K to Half Marathon](https://www.amazon.de/-/en/Pete-Pfitzinger/dp/1450470459) by Pete Pfizinger.
+These are my notes from reading the book [Faster Road Racing, 5K to Half Marathon](https://www.amazon.de/-/en/Pete-Pfitzinger/dp/1450470459) by Pete Pfitzinger.
 
 My data:
 
@@ -53,4 +53,5 @@ Start at same starting pace as long runs and increase up to lactate threshold pa
 
 ## Lactate threshold (LT) training
 
+- [How to calculate LT](http://www.mariomoretti.it/podismo/articolo_34.asp)
 
