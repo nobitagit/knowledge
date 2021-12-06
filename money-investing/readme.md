@@ -128,7 +128,7 @@ So the order is inserted in the sellers' side.
 
 Where 100 is the number of shares John puts on the market.
 Marc also wants to sell SB shares. He wants to sell 750 at 35 dollars.
-His order is placed in the book **after** John's one, because the book is **sorted by price**, with the best price on top.
+His order is placed in the book **after** John's one, because the book SELL side is **sorted by price**, with the best price on top.
 Here's the state of the order book.
 
 | Buyers | Sellers  |
@@ -140,7 +140,97 @@ Here's the state of the order book.
 |        | 35$ - 750|
 |        |          |
 
+Tom wants to buy, but only at 29$. His order will enter the book:
 
+| Buyers | Sellers  |
+|--------|----------|
+|        |          |
+|70 - 29$|          |
+|        | 32$ - 100|
+|        |          |
+|        | 35$ - 750|
+|        |          |
+
+From this state, we can derive the **bid and ask**.
+The bid is the highest price a person is willing to pay for to buy a single share.
+The ask is the lowest price a person is willing to pay for to sell a single share.
+In the case above:
+
+- bid is 29
+- ask is 32
+
+The **last trade** is the price of the single share in the latest transaction. There hasn't been transactions so far, so last trade price is available.
+Another order comes in:
+
+
+| Buyers | Sellers  |
+|--------|----------|
+|30 - 31$|          |
+|70 - 29$|          |
+|        | 32$ - 100|
+|        |          |
+|        | 35$ - 750|
+|        |          |
+
+As we see, the BUY side of the book is **sorted by price too**, but with the highest price on top.
+Bid and ask changes:
+
+- bid is 31
+- ask is 32
+
+As we see, B&A is always the 2 values on top.
+
+Carol wants to buy now. She sends in a **market order**, so she will buy no matter what, paying the best price in that moment.
+
+- **order type**: market
+- **quantity**: 50
+- **side**: BUY
+- **ticker**: SB (Bob's company's ticker)
+- **price**: -- (no price for market orders)
+
+This will change the order book:
+
+| Buyers | Sellers  |
+|--------|----------|
+|30 - 31$|          |
+|70 - 29$|          |
+|        | 32$ - 50 |
+|        |          |
+|        | 35$ - 750|
+|        |          |
+
+50 shares have been deducted from the topmost entry in the sell side.
+Carol is filled, her order is complete and was executed at 32$ per shares.
+John is **partially filled**, his order to sell has been partially executed, he still has 50 shares left to sell.
+
+- bid is 31$
+- ask is 32$
+- last trade is 32$
+
+A new order comes in, Paul wants to buy:
+
+- **order type**: limit
+- **quantity**: 140
+- **side**: BUY
+- **ticker**: SB (Bob's company's ticker)
+- **price**: 33
+
+The order books assigns the remaining 50 shares from John @ 32$. Notice how Paul is willing to pay 33, but still pays only 32 for the first 50 shares.
+John is completely filled now.
+Paul though still wants 90 more shares, so his order is added to the order book with a request of buying 90 (140-50) shares at 33.
+
+| Buyers | Sellers  |
+|--------|----------|
+|90 - 33$|          |
+|30 - 31$|          |
+|70 - 29$|          |
+|        |          |
+|        | 35$ - 750|
+|        |          |
+
+- bid is 33$
+- ask is 35$
+- last trade is 32
 
 ### Quick notes
 
