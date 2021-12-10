@@ -232,6 +232,59 @@ Paul though still wants 90 more shares, so his order is added to the order book 
 - ask is 35$
 - last trade is 32
 
+## Market cap
+
+It's the total number of outstanding shares * the value of each share.
+The MC of each company goes up and down every day based on fluctuations.
+
+**Blue chips** are companies with a big market cap (10 to 200 billions).
+The lower the cap, the higher the risk.
+
+> These large companies have usually been around for a long time, and they are major players in well-established industries. Investing in large-cap companies does not necessarily bring in huge returns in a short period of time, but over the long run, these companies generally reward investors with a consistent increase in share value and dividend payments. An example of a large-cap company is International Business Machines (IBM),1 Johnson & Johnson (JNJ),2 or Microsoft (MSFT).3
+>
+> Mid-cap companies generally have a market capitalization of between $2 billion and $10 billion. Mid-cap companies are established companies that operate in an industry expected to experience rapid growth. Mid-cap companies are in the process of expanding. They carry an inherently higher risk than large-cap companies because they are not as established, but they are attractive for their growth potential. An example of a mid-cap company is Eagle Materials (EXP).4
+
+Every quarter companies have to release **financial statements**. They release:
+
+- Balance sheet
+- Income statement: the document that is behind the earnings
+- Cash flow statement: where does the cash flow come from? From core operations or one off movements (like investing or selling assets?). Important to understand if the core business is really generating money
+
+These are verified by auditors.
+
+## Earnings
+
+[link](https://www.udemy.com/course/complete-investing-course-stocks-etfs-index-mutual-funds/learn/lecture/22963892?start=15#questions)
+
+- E or Earnings: the profit made by a company in a period (a quarter)
+- EPS or Earnings per share: E divided by the n. of shares outstanding.
+- PE ration or Price to earning: the ratio of the stock share price divided by the stock EPS. It tells you how much you are paying for each dollar a company makes. It flags if a company is overvalued or undervalued.
+
+If company A earns 3,000,000 and company B earns 9,000,000 from which company of the 2 would you buy 1 share?
+You can't tell with earnings alone because you would need to know the amount of shares outstanding.
+
+If A has 5,000 shares but B has 90,000 shares the value of 1 share differs dramatically in favour of A.
+EPS will then be calculated like so:
+
+- A: 3000000/5000 = 600
+- B: 9000000/90000 = 100
+
+So, here we see that A is actually a more desirable share to have, because it earns more.
+BUT still PE ratio is a better indicator of the worth of a stock because 2 shares with same EPS (say 30), can cost a very different amount.
+So PE will tell you that. A lower value is better.
+
+## Growth vs Value stocks
+
+Growth companies: companies that are not generating as much income relative to the share price but are expected to have high earnings growth in the future. They usually have a high PE ratio and do not give dividends. An example, Tesla.
+
+Value stocks: more established companies that have good income relative to the share price. Generally low PE ratio and pay out dividends. An example, Walmart, Coca Cola.
+
+## Book value
+
+It's the value value of the business according to its books. If a company had to sell all its assets and pay all its liabilities, the final amount would be its book value.
+**BVPS** it's the book value divided by the n. of outstanding shares.
+**Price to book** or **P/B** is calculated by dividing the stock price by its BVPS. It tells us **how much we're paying for each dollar of book value**.
+
 ### Quick notes
 
 - Never buy stocks pre-IPO, if offered any
