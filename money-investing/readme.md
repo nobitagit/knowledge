@@ -273,17 +273,33 @@ So, here we see that A is actually a more desirable share to have, because it ea
 BUT still PE ratio is a better indicator of the worth of a stock because 2 shares with same EPS (say 30), can cost a very different amount.
 So PE will tell you that. A lower value is better.
 
-## Growth vs Value stocks
-
-Growth companies: companies that are not generating as much income relative to the share price but are expected to have high earnings growth in the future. They usually have a high PE ratio and do not give dividends. An example, Tesla.
-
-Value stocks: more established companies that have good income relative to the share price. Generally low PE ratio and pay out dividends. An example, Walmart, Coca Cola.
-
 ## Book value
 
 It's the value value of the business according to its books. If a company had to sell all its assets and pay all its liabilities, the final amount would be its book value.
 **BVPS** it's the book value divided by the n. of outstanding shares.
 **Price to book** or **P/B** is calculated by dividing the stock price by its BVPS. It tells us **how much we're paying for each dollar of book value**.
+
+Here are a few PB values:
+
+- On 11.52
+- Tesla 37.03
+- Walmart 4.77
+- Amazon 14.48
+- Coca Cola 5.64
+- GE 2.84
+
+## Growth vs Value stocks
+
+Growth companies: companies that are not generating as much income relative to the share price but are expected to have high earnings growth in the future. They usually have a high PE ratio and do not give dividends. They have high PB. An example, Tesla.
+
+Value stocks: more established companies that have good income relative to the share price. Generally low PE ratio and pay out dividends. They have lower PB. An example, Walmart, Coca Cola.
+
+The difference in PB is due - in general - to the fact that value companies have more assets while growth companies are mostly values because of their **potential**, so there's more risk.
+
+## Dividends
+
+A dividend is a distribution of profits by a corp to its shareholders. Any profit not distributed is re-invested in the company itself.
+The corp announces when they will pay dividends on a day called **declaration date**.
 
 ### Quick notes
 
