@@ -299,7 +299,7 @@ The difference in PB is due - in general - to the fact that value companies have
 ## Dividends
 
 A dividend is a distribution of profits by a corp to its shareholders. Any profit not distributed is re-invested in the company itself.
-The corp announces when they will pay dividends on a day called **declaration date**.
+The corp announces when they will pay dividends on a day called **declaration date**. Most corps pay quarterly dividends.
 
 ### Quick notes
 

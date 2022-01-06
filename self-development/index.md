@@ -1,6 +1,7 @@
 # Self development
 
 - https://www.youtube.com/watch?v=cjES8831wKc
+- Learn how [not to give a fuck](https://github.com/keyvanakbary/learning-notes/blob/master/books/the-subtle-art-of-not-giving-a-fuck.md)
 
 ## Command respect
 
