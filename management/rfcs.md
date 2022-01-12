@@ -47,4 +47,3 @@ Something worth measuring is the rate of participation on RFCs. A low participat
 ## Examples
 
 - [Rust RFC template](https://github.com/rust-lang/rfcs/blob/master/0000-template.md)
-- []
