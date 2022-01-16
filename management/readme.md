@@ -23,7 +23,7 @@ Also, other folders in this repo might be relevant here:
 
 > Each Sunday afternoon (or Friday afternoon), write down your top 3 priorities for the week and design your calendar to spend 80%+ of your time on those priorities.
 >
-> [source](https://themanagershandbook.com/managing-yourself)
+> [source](https://themanagershandbook.com/managing-yourself/time-and-calendar)
 
 Also, make use of G Cal reminders (not just events).
 
