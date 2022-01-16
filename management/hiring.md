@@ -35,4 +35,49 @@ Again, **all three** must be there. Otherwise if they are only:
 
 ## Questions
 
-- [team players questions](<https://www.tablegroup.com/imo/media/doc/IdealTeamPlayerINTERVIEWQUESTIONS(11)singlepages.pdf>)
+- [team players questions](https://eod.ces.ncsu.edu/wp-content/uploads/2019/06/Potential-Interview-Questions-to-Help-Identify-Ideal-Team-Player.pdf?fwd=no)
+
+Potential Interview Questions to Help Identify the “Ideal Team Player”
+During the 2019 New CED Training, County Extension Directors learned about the characteristics of
+The Ideal Team Player (https://tablegroup.com/books/ideal-team-player): Humble, Hungry and
+Smart. With the help of Nikki Kurdys and the behavioral-based interview questions she shared with
+the CEDs, Extension Organizational Development offers the following as potential interview questions
+to help CEDs identify the Humble, Hungry and Smart characteristics in their job candidates. In
+addition, CEDs can look at Patrick Lencioni’s website (author of The Ideal Team Player) to view other
+potential interview questions:
+https://tablegroup.com/imo/media/doc/IdealTeamPlayerINTERVIEWQUESTIONS(11)singlepages.pdf
+Please keep in mind this is not an exhaustive list, one does not need to ask all of these questions of
+the job candidate, and additional interview questions need to be asked as well regarding technical
+skills, etc. Also, we should always avoid asking any personal questions or questions that are not
+associated with the job (i.e., questions regarding race, family, religion, personal choices, politics, etc.)
+Questions from Behavioral-Based Sample Interview Questions Nikki Kurdys Shared:
+HUMBLE:
+● Discuss a time when your integrity was challenged. How did you handle it?
+● Have you worked as a member of teams in the past? Describe the situation for me.
+● Give me an example of how you have worked effectively with people to accomplish an important result.
+● Tell me about a team project of which you are particularly proud.
+● Give me an example of a time you made a sacrifice to improve yourself.
+● Tell me about an objective in your last job that you failed to meet and why.
+● Give me an example of a mistake you made. What did you learn from your mistake?
+HUNGRY:
+● What has been the most difficult project you have ever had to complete?
+● Tell me about a situation in which you had to go above and beyond the call of duty in order to get a job done.
+● What motivates you to put forth your greatest effort?
+● Give me an example of when you have had to work under pressure. What was the circumstance and how
+did you deal with it to accomplish your goals?
+● In which areas do you feel you would like to develop?
+● Have you taken any steps in the past year to improve your skills or performance?
+● What challenges are you looking for in a position?
+● What motivates you most?
+SMART:
+● Tell me about a difficult or sensitive situation that required careful communication.
+● We have all dealt with difficult customers. Describe a situation where a customer tested your patience. How
+did you react?
+● Describe a situation where you had to work with a difficult person. How was the person difficult and how did
+you handle it?
+● Give an example of when you had to resolve a conflict with a co-worker or client. How did you resolve it?
+● Tell me about the best boss you ever had. Now tell me about the worst boss you ever had. What made it
+tough to work for him or her?
+● Give me an example of a time when you were criticized. How did you deal with it?
+● Tell me about a time you had to work on a project that did not work out the way it should have. What did you
+do?
