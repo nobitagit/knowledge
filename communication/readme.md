@@ -21,3 +21,7 @@ When someone is stomping their feet and doesn't agree with you at all:
 - "If I was in your position, I would feel the same" (taking their side so they are more likely to change their mind)
 
 - Use the other person name, when you are talking to someone
+
+## When to ramp up communication
+
+In moments of uncertainty, it's more important to communicate more. See [this video](https://www.ted.com/talks/amy_c_edmondson_how_to_lead_in_a_crisis?referrer=playlist-the_way_we_work_season_3).

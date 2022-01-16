@@ -65,6 +65,7 @@ See [here](https://www.anneloehr.com/2017/12/14/managers-do-this-first/)
 - Ask for a personality assessment (Myers Briggs or similar)
 - Tell them how you measure success
 - How can I know if you're stressed/upset
+- Trust them. If there are 2 or 3 possible routes, openly trust they will take the right one. ["Do whatever you feel is right"](./the-way-we-work.md). This is **not a sign of weakness**.
 
 **TAKE NOTES ABOUT THEIR ANSWERS**
 
