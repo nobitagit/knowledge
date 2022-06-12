@@ -25,3 +25,7 @@ When someone is stomping their feet and doesn't agree with you at all:
 ## When to ramp up communication
 
 In moments of uncertainty, it's more important to communicate more. See [this video](https://www.ted.com/talks/amy_c_edmondson_how_to_lead_in_a_crisis?referrer=playlist-the_way_we_work_season_3).
+
+## Personal branding
+
+- Felix Krause [updates the avatar every couple of years by taking the exact same photo](https://krausefx.com/blog/continuous-delivery-for-your-profile-picture) so everyone reconginised him when scrolling. The same can be done by playing with color filters.
