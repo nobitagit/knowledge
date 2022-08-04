@@ -9,3 +9,7 @@
 > As psychologists have become increasingly well-informed about the biochemical nature of emotional responses, it has become obvious that much of the positive emotion that human beings feel is a consequence of the release of the neurotransmitter dopamine, in response to evidence that satisfactory progress is being made towards desired goals. This means that it is difficult for people to experience hope and interest and engagement in the absence of well-specified goals.
 > [..]
 > -- Jordan B Peterson, Raymond Mar - [The benefits of writing](https://selfauthoring.blob.core.windows.net/media/Default/Pdf/WritingBenefits.pdf) research paper
+
+## Examples of OKRs
+
+- OKRs for [engineering managers](https://gitential.com/fast-and-ambitious-okrs-for-software-engineering-managers-and-teams/)
