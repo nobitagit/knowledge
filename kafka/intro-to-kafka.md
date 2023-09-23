@@ -76,3 +76,60 @@ The number of replicas is configurable and it is generally 3.
 
 - They can be written in any language
 - There is also a command line tool for testing producers and consumers, `kafka-console-consumer` and `kafka-console-producer`
+
+A consumer will subscribe to a topic from Kafka.
+In psuedo code
+
+```ts
+// some basic config to tell the consumer where the cluster is, what to consumer, how etc
+const config = {
+    groupId: 'consumer-group-id',
+    servers: 'kafka-1:9092',
+    interval: 4000
+}
+const consuner = new Consumer(config)
+consumer.on('message', (msg) => {
+    console.log(msg.key, msg,value)
+})
+consumer.subscribe('hello-world-topic') // can also be a regex (ie. subscribe to many messages)
+while (true) {
+    consumer.poll({ interval: 3000})
+}
+```
+
+The consumer never stops, hence the `while (true)`.
+Within the cluster, each topic is split into multiple partitions.
+
+![Alt text](images/partition-leaders.png)
+
+Each broker might contain one or more leaders. 
+Each partition has one and one or many followers.
+The leader will inform consumers and producers that when they read or write, they should communicate with him.
+The writes and reads happen on that partition.
+
+When a broker dies, if it contains a leader, then this leader will be replaced by one of the followers in another broker.
+
+![Alt text](images/partition-leaders-2.png)
+
+Events are **immiutable in Kafka**.
+
+- By default each event is retained for 1 week
+- Timespan can be configured per cluster or per topic
+- Timespan can be infinite
+
+A producer will:
+
+- **serialize the record**: takes the data structure of the message (topic, key, value) and turn it into a series of bytes to send
+- **partition**: determines which partition in the topic this message will be written to
+
+Each partition is a buffer, where messages wait to be sent over to the cluster.
+![Alt text](images/producer-design.png)
+
+When a producers sends over a message it might wait for acknowledgment.
+It either:
+
+- `acks 0 (NONE)` waits for no ack
+- `acks 1 (LEADER)` waits for the leader to be written
+- `acks -1 (ALL)` waits for the leader and all the followers to be written
+
+
