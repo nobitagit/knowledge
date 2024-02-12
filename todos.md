@@ -11,6 +11,7 @@
 - hooks for orbit
 - https://github.com/contiamo/restful-react
 - add  this to tls https://dev.to/victoria/what-is-tls-transport-layer-security-encryption-explained-in-plain-english-417a
+- Conflict-Free Replicated Data Types 
 
 ## Dev
 

@@ -13,3 +13,9 @@ A collection of notes regarding data mesh.
 - In traditional data pipelines/warehouse approach it is not uncommon to ingest data that have errors and fix it after ingestion. Cleansing data is common practice and part of the lingo.
 
 - In DM, products must adhere to quality standards and  be considered reliable. Data is cleansed at the **point of creation, not after ingestion**.
+
+> **Ubiquitous Language** is the term Eric Evans uses in Domain Driven Design for the practice of building up a common, rigorous language between developers and users. This language should be based on the Domain Model used in the software - hence the need for it to be rigorous, since software doesn't cope well with ambiguity.
+>
+> [Martin Fowler](https://martinfowler.com/bliki/UbiquitousLanguage.html)
+
+- We need to focus on the flow of information, rather than on its representation at a point in time.
