@@ -35,7 +35,7 @@ This phylosophy introduces new roles in the businees domain:
 
 A domain data team can expose different pieces of data, in different formats based on the need of the (internal) customers that are interested in consuming the data.
 
-- infinite strems of events (like "sessions started on a music player")
+- infinite streams of events (like "sessions started on a music player")
 - aggregated, materialsed views of a slice of the data ("all playlist currently available")
 
 ### Baseline characteristics of a data product to be useful
