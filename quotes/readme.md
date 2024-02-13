@@ -63,3 +63,11 @@ If you think people see you as a naive or immature, then you more likely act lik
 > It is far more important to communicate when you don't have the answers, than when when you do.
 >
 > [Amy Edmonson](https://www.ted.com/talks/amy_c_edmondson_how_to_lead_in_a_crisis?referrer=playlist-the_way_we_work_season_3)
+
+> It's not the domain experts knowledge that goes to production, it's the assumption of the developers that goes to production
+> 
+> Alberto Brandolini
+
+> The truth is the log. The database is a cache of a subset of the log.
+>
+> —Pat Helland

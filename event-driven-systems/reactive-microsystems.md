@@ -83,4 +83,56 @@ Events are facts. A fact represents something that has happened in the past.
 
 Facts are **immutable**. They can’t be changed or be retracted.
 
-We need to focus on the flow of information, rather than on its representation at a point in time.
+We need to focus on the flow of information, rather than on its representation at a point in time. Event Storiming is how we do that.
+
+Domain events are suited to:
+
+- describing the business
+- implementing the supporting software
+
+## Event storming
+
+> It’s a design process in which you bring all of the stakeholders—the domain experts and the programmers—into a single room, where they brainstorm using Post-it notes, trying to find the domain lan‐ guage for the events and commands, exploring how they are causally related and the reactions they cause.
+
+- Explore the domain from the perspective of what happens in the system.
+- Explore what triggers the events. 
+- Agree on the shared terminology, the "Ubiquitous Language"
+- Different functions work together at the same time
+
+Example: https://www.youtube.com/watch?v=mLXQIYEwK24
+
+## Inter-service communication
+
+> It is unfortunate that synchronous HTTP (most often using REST) is widely considered as the “state of the art” microservice communi‐ cation protocol. Its synchronous nature introduces strong coupling between the services making it a very bad default protocol for inter‐ service communication. Asynchronous messaging makes a much better default for communication between microservices (or any set of distributed components, for that matter).
+
+- Always apply backpressure. If a service is degrading, it should ask the brokers to reduce their load.
+- Prefer async messaging to REST for communication
+- REST requires both services to be up and able to interact (ie. not overloaded/degraded)
+
+## How to improve microliths
+
+- Replace REST over HTTPS with async messaging
+- Examples are Kafka and AWS Kinesis
+- This helps to decouple the services by introducing temporal decoupling — **the services communicating do not need to be available at the same time**
+
+MSs should embrace the fact that data is not always at rest, but it's more and more in motion.
+Asynchronicity in cmmunication favours decoupling.
+
+## Scaling persistence
+
+CRUD is most often the wrong way to think about the design of MSs.
+
+>  When bookkeeping was done with clay tablets or paper and ink, accountants developed some clear rules about good accounting practices.
+> One never alters the books; if an error is made, it is annotated and a new compensating entry is made in the books. The books are thus a complete history of the transactions of the business.
+> Update-in-place strikes many systems designers as a cardinal sin: it vio‐ lates traditional accounting practices that have been observed for hun‐ dreds of years.
+>
+> —Jim Gray, The Transaction Concept, 1981
+
+Disk space used to be very expensive. This is one of the reasons why most SQL databases are using update-in-place—overwriting existing records with new data as it arrives.
+Today disk space is cheap so there is little-to-no reason to use update-in-place for System of Record. 
+
+> We can afford to store all data that has ever been created in a system, giving us the entire history of everything that has ever happened in it.
+
+> The truth is the log. The database is a cache of a subset of the log.
+>
+> —Pat Helland

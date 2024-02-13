@@ -19,3 +19,9 @@ A collection of notes regarding data mesh.
 > [Martin Fowler](https://martinfowler.com/bliki/UbiquitousLanguage.html)
 
 - We need to focus on the flow of information, rather than on its representation at a point in time.
+
+- Read the definition of Single Source of Truth https://en.wikipedia.org/wiki/Single_source_of_truth especially Master Data Management, Event Store etc.
+
+> It's not the domain experts knowledge that goes to production, it's the assumption of the developers that goes to production
+> 
+> Alberto Brandolini
