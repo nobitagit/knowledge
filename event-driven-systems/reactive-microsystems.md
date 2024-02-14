@@ -136,3 +136,66 @@ Today disk space is cheap so there is little-to-no reason to use update-in-place
 > The truth is the log. The database is a cache of a subset of the log.
 >
 > —Pat Helland
+
+## Event sourcing
+
+> Event Sourcing ensures that all changes to application state are stored as a sequence of events. Not just can we query these events, we can also use the event log to reconstruct past states, and as a foundation to automatically adjust the state to cope with retroactive changes.
+> 
+> [M. Fowler](https://martinfowler.com/eaaDev/EventSourcing.html)
+
+- You store every event that change the state 
+- You can rebuild the entire state anytime
+- You can decide to persist the state at the end of the day, but keep the daily increments in memory, so we avoid the expensive I/O that comes from the interaction with the System of Record.
+
+> Application states can be stored either in memory or on disk. Since an application state is purely derivable from the event log, you can cache it anywhere you like. A system in use during a working day could be started at the beginning of the day from an overnight snapshot and hold the current application state in memory. Should it crash it replays the events from the overnight store. At the end of the working day a new snapshot can be made of the state. New snapshots can be made at any time in parallel without bringing down the running application.
+
+In a waym, we'd be storing 2 entities: 
+- the state
+- the event log
+
+This series of events is in fact an event aggregate, and it's generally tied to an event stream for the outer world to subscribe to.
+
+A simple way to help you name events is to remember that they should be a past-tense description of what happened. Unlike com‐ mands, which would be phrased in the imperative (CreateOrder, SubmitPayment, and ShipProducts).
+
+Compare: `createOrder` to `orderCreated`, `shipProduct` to `productShipped`.
+
+## CQRS (Command Query Responsibility Segregation)
+
+This patterns separates the read from the write when dealing with data objects.
+
+> "CQRS is simply the creation of two objects where there was previously only one. The separation occurs based upon whether the methods are a command or a query (the same definition that is used by Meyer in Command and Query Separation: a command is any method that mutates state and a query is any method that returns a value)."
+>
+> — [Greg Young, CQRS, Task Based UIs, Event Sourcing](https://learn.microsoft.com/en-us/previous-versions/msp-n-p/jj591573(v=pandp.10)?redirectedfrom=MSDN)
+
+The nature of event logs means that we can aggregate their "view" (ie. their state representation) in a number of ways. In practice, we don't really have to choose, we can use many ways of aggregating the state, based on what we need it for.
+This is the **read side**.
+You could pick one, two or all of these:
+
+- Traditional RDBMSs, like MySQL, Oracle, or Postgres
+- Scalable distributed SQL, like Spanner or CockroachDB
+- Key-value-based, like DynamoDB
+- Hybrid key-value/column-oriented, like Cassandra
+- Document-oriented, like MongoDB 
+- Graph-oriented, like Neo4j
+- Streaming products, like Flink or Kafka Streams
+- Search products, like ElasticSearch
+
+The advantage is that, based on our specific use case, we can decide to materialise the state in the best suited infrastructure for the job.
+
+As an example, if you want to build a graph of friends, and run queries along the lines of “who’s my friend’s best friend?”, this query will be most efficiently answered by a graph-oriented database (such as Neo4j).
+
+In other words, by having the event log as the single source of truth in your system, you easily can produce any kind of view on the data that works best for the specific use-case—so-called [Polyglot Persistence](https://martinfowler.com/bliki/PolyglotPersistence.html).
+
+### Tradeoffs and disadvantages of CQRS with event sourcing
+
+- complex: if you need to ship an MVP, this is surely too much overhead, and REST over HTTP is a better fit
+- the write side and read side will be eventually consistent
+- deletion of events (think GDPR) is not easy at all
+
+## Short history of big data strategies
+
+- First, big data was at rest. Hadoop was an example. Data was collected an processed offline overnight, with hours of latency
+- Then data in motion appeared and a hybrid approach came to life. Lambda Architecture is an example of that, with 2 layers, one for speed (close to real time) and one for bigger, batch processed jobs.
+- Lastly, data in motion has been embraced fully, and the intent is to remove batch processing altogether.
+
+
