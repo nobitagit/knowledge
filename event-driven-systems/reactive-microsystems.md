@@ -61,7 +61,7 @@ How to avoid microliths:
 
 ## Events-First Domain-Driven Design
 
-EF DDD is a set of principles help us to shift the focus from the nouns (the domain objects) to the verbs (the events) in the domain. 
+💡EF DDD is a set of principles help us to shift the focus from the nouns (the domain objects) to the verbs (the events) in the domain. 
 
 - Think event-first
 - Do not be biased by the current structure
@@ -120,7 +120,7 @@ Asynchronicity in cmmunication favours decoupling.
 
 ## Scaling persistence
 
-CRUD is most often the wrong way to think about the design of MSs.
+💡CRUD is most often the wrong way to think about the design of MSs.
 
 >  When bookkeeping was done with clay tablets or paper and ink, accountants developed some clear rules about good accounting practices.
 > One never alters the books; if an error is made, it is annotated and a new compensating entry is made in the books. The books are thus a complete history of the transactions of the business.
@@ -167,7 +167,7 @@ This patterns separates the read from the write when dealing with data objects.
 >
 > — [Greg Young, CQRS, Task Based UIs, Event Sourcing](https://learn.microsoft.com/en-us/previous-versions/msp-n-p/jj591573(v=pandp.10)?redirectedfrom=MSDN)
 
-The nature of event logs means that we can aggregate their "view" (ie. their state representation) in a number of ways. In practice, we don't really have to choose, we can use many ways of aggregating the state, based on what we need it for.
+💡The nature of event logs means that we can aggregate their "view" (ie. their state representation) in a number of ways. In practice, we don't really have to choose, we can use many ways of aggregating the state, based on what we need it for.
 This is the **read side**.
 You could pick one, two or all of these:
 

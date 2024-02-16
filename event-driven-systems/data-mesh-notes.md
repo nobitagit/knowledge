@@ -25,3 +25,10 @@ A collection of notes regarding data mesh.
 > It's not the domain experts knowledge that goes to production, it's the assumption of the developers that goes to production
 > 
 > Alberto Brandolini
+
+- A shared DB across multiple services is called [integration Database](https://martinfowler.com/bliki/IntegrationDatabase.html). An integration database needs a schema that takes all its client applications into account. The resulting schema is either more general, more complex or both - because it has to unify what should be separate BoundedContexts. 
+> On the whole integration databases lead to serious problems becaue the database becomes a point of coupling between the applications that access it. This is usually a deep coupling that significantly increases the risk involved in changing those applications and making it harder to evolve them. As a result most software architects that I respect take the view that **integration databases should be avoided.**
+
+-  Turning attention to that 5 to 20 percent of the equation, technology is still how we deliver change. But what technology best suits Data-as-a-Product?
+Data mesh is a scalable way of applying order to the data we have today vs data lakes where data is centralized to one place and difficult to move, scale, and to get the agility we need. Imagine, for example, if Amazon in its early days had decided to stockpile every book into one distribution center, and then tried to distribute those books everywhere in the world from once single location. Sounds a little bit ludicrous, right? You can almost imagine the scale of that and how it would grind to a halt very quickly. It would become very difficult to manage, and very disorganized.
+Companies like Amazon have always acknowledged the fact that the best way to scale is to distribute these effort through its network, hubs, and resellers. And data is a similar thing which is why data mesh is a better solution when preparing ourselves for a product thinking approach. From [this post](https://www.kinandcarta.com/en-us/insights/2021/10/5-steps-to-enable-data-as-a-product-thinking/)
