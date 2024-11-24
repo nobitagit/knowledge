@@ -19,7 +19,7 @@ Fluid Scaling Technology for Agile is FAST Agile.
 - Bring everyone together to work as one Collective.
 - Visually represent business goals on a wall.
 - Let the Collective self-organise into teams to break down and do the work.
-- On a short cadence, synch and repeat the above step.
+- On a short cadence, sync and repeat the above step.
 
 ### The Collective
 
