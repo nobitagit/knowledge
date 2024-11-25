@@ -54,7 +54,6 @@ If you think people see you as a naive or immature, then you more likely act lik
 > “A friend of mine once paraphrased David Gergen, saying on the subject of repetition, “If you want to get your point across, especially to a broader audience, you need to repeat yourself so often, you get sick of hearing yourself say it. And only then will people begin to internalize what you’re saying.”
 >
 > [LinkedIn's CEO Jeff Weiner](https://www.businessinsider.com/linkedin-ceo-jeff-weiner-on-leadership-2014-9?r=DE&IR=T#ixzz3TaXO2Buy)
->
 
 > Developers rather create 1000 if-statements before ensuring data consistency once.
 >
@@ -65,9 +64,13 @@ If you think people see you as a naive or immature, then you more likely act lik
 > [Amy Edmonson](https://www.ted.com/talks/amy_c_edmondson_how_to_lead_in_a_crisis?referrer=playlist-the_way_we_work_season_3)
 
 > It's not the domain experts knowledge that goes to production, it's the assumption of the developers that goes to production
-> 
+>
 > Alberto Brandolini
 
 > The truth is the log. The database is a cache of a subset of the log.
 >
 > —Pat Helland
+
+> The path to innovation isn't a straight line.
+>
+> - A.O.
