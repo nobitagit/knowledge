@@ -42,6 +42,10 @@ See [this video](https://youtu.be/D4G39xnkkS0?t=108)
 
 https://www.youtube.com/watch?v=y28NK1E-ywU
 
+## How to run a sub-3 Marathon
+
+- [...with just enough training](https://bridgerridgerun.wordpress.com/2015/03/30/how-to-run-a-3-hour-marathon-a-just-enough-training-approach/)
+
 ## How to increase your weekly running distance (and improve race times)
 
 From [this article](https://www.trainingpeaks.com/blog/how-to-increase-your-marathon-training-mileage/).
