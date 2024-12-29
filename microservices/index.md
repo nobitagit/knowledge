@@ -48,3 +48,6 @@ _Events:_
 - Example: “Order has been placed.”
 
 Events are used in pub-sub or event-driven architectures.
+Events **represents facts**. Ex. "this has happened".
+
+Events favours decoupling.
