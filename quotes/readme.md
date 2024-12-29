@@ -74,3 +74,7 @@ If you think people see you as a naive or immature, then you more likely act lik
 > The path to innovation isn't a straight line.
 >
 > - A.O.
+
+> Better data reduces cost, often dramatically.
+>
+> - Tom Redman, people and data
