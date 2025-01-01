@@ -28,3 +28,11 @@ Never work in isolation.
 - Every effort to address data quality must start with the question, "Who touches that data and **how do we get them involved**?"
 
 - Every effort to improve business performance must start with the question, ‘What data do we need to complete this effort and **who do we need to get involved**?’
+
+- Data is a team sport, requiring unprecedented coordination among regular people
+
+> The issues start with confusion about the proper roles of data versus the information technologies that help create, store, transport and process the data. In particular, too many people conflate the two, or worse, subordinate data to tech. An unhealthy dynamic ensues in which the business develops unrealistic expectations of its IT department, which then fails to deliver, reducing business's trust in IT.
+
+[...]
+
+> some simple steps can begin the process. It starts with understanding that data and IT are different sorts of assets that require different styles of management. This leads to more realistic expectations of information technologists, which should include providing basic storage, transport and processing capabilities, and automating well-defined processes to increase scale and decrease unit costs. With these foundations, more aggressive digital transformations, and simpler, more powerful, better data architectures to promote advanced data science can follow.
