@@ -44,5 +44,7 @@ Ask yourself: “Will this matter in 6 months?” (If not, let it go.)
 Tell yourself: “I don’t need to gossip because I operate at a higher level.”
 
 1️⃣ Stop Gossiping About Them Immediately (People Will Notice)
+
 2️⃣ Be Neutral & Professional Around Them (No emotional reactions)
+
 3️⃣ If Possible, Find One Genuine Positive Thing About Them (Even a small compliment can change perceptions)
