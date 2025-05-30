@@ -32,6 +32,8 @@ The average pace is the tempo pace.
 
 - Most running injuries are repetitive strain injuries. Injuries can be avoided/reduced by running with 2 different types of shoes. [Source](https://youtu.be/gmBz3QC5JAg?t=129)
 
+> By strength training, you'll often get away with more errors within your training, because up to 70% of running injuries are as a result of training errors'.
+
 ## How to build a training plan
 
 See [this video](https://youtu.be/D4G39xnkkS0?t=108)
