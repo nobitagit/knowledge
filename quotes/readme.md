@@ -78,3 +78,7 @@ If you think people see you as a naive or immature, then you more likely act lik
 > Better data reduces cost, often dramatically.
 >
 > - Tom Redman, people and data
+>
+> > One misconception about highly successful cultures is that they are happy, lighthearted places. This is mostly not the case. They are energized and engaged, but at their core their members are oriented less around achieving happiness than around solving hard problems together.
+>
+> - The Culture Code by Daniel Coyle

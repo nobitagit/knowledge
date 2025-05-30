@@ -1,0 +1,6 @@
+torch
+transformers
+sentence-transformers
+langchain
+faiss-cpu
+gradio

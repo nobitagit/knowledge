@@ -36,6 +36,8 @@ Our brains are hardwired to recognise danger, so we need to constantly reasssure
 The group chemistry is very apparent, tangible.
 They are also quite addictive, external people want to be part of that group.
 
+> One misconception about highly successful cultures is that they are happy, lighthearted places. This is mostly not the case. They are energized and engaged, but at their core their members are oriented less around achieving happiness than around solving hard problems together.
+
 ## The Role of Vulnerability
 
 Leaders and team members can foster belonging by openly showing vulnerability. Admitting mistakes, asking for help, or sharing personal challenges encourages others to do the same, creating a safe environment where trust thrives.
